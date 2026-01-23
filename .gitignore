@@ -1,0 +1,39 @@
+# Python 가상환경
+.venv/
+venv/
+env/
+
+# IDE 설정 파일
+.idea/
+.vscode/
+
+# 컴파일/캐시 파일
+__pycache__/
+*.pyc
+
+# 로컬 실행 로그
+*.log
+
+# 크롬 드라이버 자동 설치 파일 (webdriver-manager)
+drivers/
+selenium_driver/
+
+# 구글 서비스 계정 키 (절대 올리면 안 됨)
+credentials/
+service_account.json
+*.pem
+*.p12
+*.key
+*.json
+
+# 환경 변수 파일
+.env
+.env.*
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# 빌드/배포 산출물
+dist/
+build/
