@@ -19,12 +19,12 @@ drivers/
 selenium_driver/
 
 # 구글 서비스 계정 키 (절대 올리면 안 됨)
-credentials/
+credentials/*
+!credentials/.gitkeep
 service_account.json
 *.pem
 *.p12
 *.key
-*.json
 
 # 환경 변수 파일
 .env

@@ -1,0 +1,21 @@
+{
+  "google_sheets": {
+    "service_account_file": "credentials/service_account.json",
+    "spreadsheet_name": "셀린느 상품 리스트"
+  },
+  "scraping_settings": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "headless": false,
+    "scroll_pause_time": 2
+  },
+  "selectors": {
+    "product_card": "li.o-listing-grid__item, div.m-product-listing",
+    "name": ".m-product-listing__meta-title",
+    "price": "strong[data-description='value']",
+    "link": "a.m-product-listing__link, a.o-product-listing__link"
+  },
+  "categories": {
+    "Belts(Woman)": "https://www.celine.com/ko-kr/celine-%EC%97%AC%EC%84%B1/%EC%95%A1%EC%84%B8%EC%84%9C%EB%A6%AC/%EB%B2%A8%ED%8A%B8/?nav=A009",
+    "Bracelets(Woman)": "https://www.celine.com/ko-kr/celine-%EC%97%AC%EC%84%B1/%EC%A3%BC%EC%96%BC%EB%A6%AC/%ED%8C%94%EC%B0%8C/?nav=A0051"
+  }
+}
