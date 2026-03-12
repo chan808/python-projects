@@ -1,31 +1,66 @@
+import re
+
 import gspread
 from google.oauth2.service_account import Credentials
-import re
+
+
+SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "카테고리", "가격"]
+WRITE_MODE_APPEND = "append"
+WRITE_MODE_OVERWRITE = "overwrite"
+SUPPORTED_WRITE_MODES = {WRITE_MODE_APPEND, WRITE_MODE_OVERWRITE}
+
 
 def get_spreadsheet(json_key_file: str, spreadsheet_name: str):
     scopes = [
         "https://www.googleapis.com/auth/spreadsheets",
-        "https://www.googleapis.com/auth/drive"
+        "https://www.googleapis.com/auth/drive",
     ]
     creds = Credentials.from_service_account_file(json_key_file, scopes=scopes)
     gc = gspread.authorize(creds)
     return gc.open(spreadsheet_name)
 
-def sanitize_sheet_name(name):
+
+def sanitize_sheet_name(name: str) -> str:
     return re.sub(r"[\\/?*\[\]]", "_", name)[:100]
 
-def get_or_create_worksheet(spreadsheet, sheet_name):
-    sheet_name = sanitize_sheet_name(sheet_name)
-    try:
-        ws = spreadsheet.worksheet(sheet_name)
-        return None
-    except gspread.WorksheetNotFound:
-        ws = spreadsheet.add_worksheet(title=sheet_name, rows="1000", cols="10")
-        ws.append_row(["번호", "제품명", "레퍼런스", "색상", "카테고리", "가격"])
-        return ws
 
-def append_products_to_sheet(ws, products):
+def get_or_create_worksheet(spreadsheet, sheet_name: str):
+    sanitized_name = sanitize_sheet_name(sheet_name)
+    try:
+        worksheet = spreadsheet.worksheet(sanitized_name)
+        return worksheet, False
+    except gspread.WorksheetNotFound:
+        worksheet = spreadsheet.add_worksheet(title=sanitized_name, rows="1000", cols="10")
+        return worksheet, True
+
+
+def ensure_headers(worksheet) -> None:
+    header_row = worksheet.row_values(1)
+    if header_row[: len(SHEET_HEADERS)] != SHEET_HEADERS:
+        worksheet.update("A1:F1", [SHEET_HEADERS])
+
+
+def clear_worksheet(worksheet) -> None:
+    worksheet.clear()
+    worksheet.update("A1:F1", [SHEET_HEADERS])
+
+
+def append_products_to_sheet(worksheet, products: list[dict], write_mode: str = WRITE_MODE_APPEND) -> int:
+    if write_mode not in SUPPORTED_WRITE_MODES:
+        supported_modes = ", ".join(sorted(SUPPORTED_WRITE_MODES))
+        raise ValueError(f"지원하지 않는 저장 모드입니다: {write_mode} ({supported_modes})")
+
+    if write_mode == WRITE_MODE_OVERWRITE:
+        clear_worksheet(worksheet)
+    else:
+        ensure_headers(worksheet)
+
     if not products:
-        return
-    rows = [[ "", p["name"], p["reference"], p["colors"], p["category"], p["price"]] for p in products]
-    ws.append_rows(rows)
+        return 0
+
+    rows = [
+        ["", product["name"], product["reference"], product["colors"], product["category"], product["price"]]
+        for product in products
+    ]
+    worksheet.append_rows(rows)
+    return len(rows)

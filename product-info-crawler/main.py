@@ -10,6 +10,8 @@ from utils.gsheet_helper import (
     append_products_to_sheet,
     get_or_create_worksheet,
     get_spreadsheet,
+    WRITE_MODE_APPEND,
+    WRITE_MODE_OVERWRITE,
 )
 
 
@@ -34,7 +36,7 @@ def build_driver(config: dict) -> webdriver.Chrome:
     return webdriver.Chrome(options=chrome_options)
 
 
-def run_scraping(brand_name: str, scraper_key: str, config: dict) -> None:
+def run_scraping(brand_name: str, scraper_key: str, config: dict, write_mode: str) -> None:
     driver = None
 
     try:
@@ -50,16 +52,20 @@ def run_scraping(brand_name: str, scraper_key: str, config: dict) -> None:
 
         for category_name, url in config["categories"].items():
             sheet_name = f"{brand_name} : {category_name}"
-            worksheet = get_or_create_worksheet(spreadsheet, sheet_name)
-
-            if worksheet is None:
-                st.warning(f"{sheet_name} 시트가 이미 있어 이번 실행에서는 건너뜁니다.")
-                continue
+            worksheet, created = get_or_create_worksheet(spreadsheet, sheet_name)
 
             st.info(f"{category_name} 수집 중")
             products = scraper.parse_category(category_name, url)
-            append_products_to_sheet(worksheet, products)
-            st.success(f"{category_name} 완료: {len(products)}건")
+            saved_count = append_products_to_sheet(worksheet, products, write_mode=write_mode)
+
+            if created:
+                st.caption(f"{sheet_name} 시트를 새로 만들었습니다.")
+            elif write_mode == WRITE_MODE_OVERWRITE:
+                st.caption(f"{sheet_name} 시트를 비우고 다시 기록했습니다.")
+            else:
+                st.caption(f"{sheet_name} 기존 시트에 이어서 기록했습니다.")
+
+            st.success(f"{category_name} 완료: {saved_count}건 저장")
 
         st.success(f"{brand_name} 전체 카테고리 수집이 끝났습니다.")
 
@@ -85,6 +91,12 @@ def main() -> None:
         horizontal=True,
     )
     selected_brand = brand_by_id[selected_brand_id]
+    write_mode = st.radio(
+        "시트 저장 방식",
+        [WRITE_MODE_OVERWRITE, WRITE_MODE_APPEND],
+        format_func=lambda mode: "덮어쓰기" if mode == WRITE_MODE_OVERWRITE else "이어쓰기",
+        horizontal=True,
+    )
 
     try:
         config = load_brand_config(selected_brand.config_path, project_root=PROJECT_ROOT)
@@ -96,7 +108,12 @@ def main() -> None:
         st.info(f"{selected_brand.display_name} 수집을 시작합니다.")
 
         try:
-            run_scraping(selected_brand.display_name, selected_brand.scraper_key, config)
+            run_scraping(
+                selected_brand.display_name,
+                selected_brand.scraper_key,
+                config,
+                write_mode,
+            )
         except Exception as exc:
             st.exception(exc)
 
