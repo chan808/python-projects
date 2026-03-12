@@ -43,3 +43,22 @@ class CrawlerRegistry:
         import core.crawler.celine           # noqa: F401
         import core.crawler.dior             # noqa: F401
         import core.crawler.bottega_veneta   # noqa: F401
+        # Kering Group
+        import core.crawler.gucci            # noqa: F401
+        import core.crawler.saint_laurent    # noqa: F401
+        import core.crawler.balenciaga       # noqa: F401
+        import core.crawler.boucheron        # noqa: F401
+        # LVMH Group
+        import core.crawler.fendi            # noqa: F401
+        import core.crawler.berluti          # noqa: F401
+        import core.crawler.loro_piana       # noqa: F401
+        import core.crawler.chaumet          # noqa: F401
+        import core.crawler.bulgari          # noqa: F401
+        # Prada Group
+        import core.crawler.prada            # noqa: F401
+        import core.crawler.miu_miu          # noqa: F401
+        # Richemont Group
+        import core.crawler.cartier          # noqa: F401
+        # Independent Brands
+        import core.crawler.damiani          # noqa: F401
+        import core.crawler.burberry         # noqa: F401

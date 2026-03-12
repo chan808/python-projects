@@ -1,5 +1,4 @@
-selenium
-webdriver-manager
+selenium>=4.11,<5
 beautifulsoup4
 gspread
 google-auth

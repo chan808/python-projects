@@ -1,4 +1,9 @@
 {
+  "brand": {
+    "id": "bottega",
+    "display_name": "Bottega",
+    "scraper": "bottega"
+  },
   "google_sheets": {
     "service_account_file": "credentials/service_account.json",
     "spreadsheet_name": "셀린느 상품 리스트"

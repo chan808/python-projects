@@ -1,76 +1,105 @@
+from pathlib import Path
+
 import streamlit as st
-import json
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 
-from scrapers.celine_scraper import CelineScraper
-from scrapers.bottega_scraper import BottegaScraper
-from utils.gsheet_helper import get_spreadsheet, get_or_create_worksheet, append_products_to_sheet
+from scrapers.registry import get_scraper_class
+from utils.config_loader import ConfigError, discover_brand_configs, load_brand_config
+from utils.gsheet_helper import (
+    append_products_to_sheet,
+    get_or_create_worksheet,
+    get_spreadsheet,
+)
 
-# --------------------
-# 1. 브랜드 선택
-# --------------------
-st.title("Multi-Brand 상품 크롤러")
-brand = st.radio("브랜드 선택", ["Celine", "Bottega"])
 
-# --------------------
-# 2. 선택한 브랜드 config 로드
-# --------------------
-config_file = f"config/{brand.lower()}.json"
-with open(config_file, "r", encoding="utf-8") as f:
-    config = json.load(f)
+PROJECT_ROOT = Path(__file__).resolve().parent
+CONFIG_DIR = PROJECT_ROOT / "config"
 
-spreadsheet_name = config["google_sheets"]["spreadsheet_name"]
-service_account_file = config["google_sheets"]["service_account_file"]
 
-# --------------------
-# 3. 크롤링 시작
-# --------------------
-if st.button("크롤링 시작"):
-    st.info(f"{brand} 크롤링 시작")
-
-    # Chrome 설정
+def build_driver(config: dict) -> webdriver.Chrome:
     chrome_options = Options()
-    if config["scraping_settings"].get("headless", False):
-        chrome_options.add_argument("--headless")
+    scraping_settings = config.get("scraping_settings", {})
+
+    if scraping_settings.get("headless", False):
+        chrome_options.add_argument("--headless=new")
+
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument(f"user-agent={config['scraping_settings']['user_agent']}")
 
-    driver = webdriver.Chrome(
-        service=Service(ChromeDriverManager().install()),
-        options=chrome_options
-    )
+    user_agent = scraping_settings.get("user_agent")
+    if user_agent:
+        chrome_options.add_argument(f"user-agent={user_agent}")
+
+    return webdriver.Chrome(options=chrome_options)
+
+
+def run_scraping(brand_name: str, scraper_key: str, config: dict) -> None:
+    driver = None
 
     try:
-        # 브랜드별 scraper 선택
-        if brand == "Celine":
-            scraper = CelineScraper(driver, config)
-        elif brand == "Bottega":
-            scraper = BottegaScraper(driver, config)
-        else:
-            st.error("지원하지 않는 브랜드입니다.")
-            driver.quit()
+        scraper_cls = get_scraper_class(scraper_key)
+        driver = build_driver(config)
+        scraper = scraper_cls(driver, config)
 
-        # 구글 시트 연결
-        spreadsheet = get_spreadsheet(service_account_file, spreadsheet_name)
+        google_sheets_config = config["google_sheets"]
+        spreadsheet = get_spreadsheet(
+            google_sheets_config["service_account_file"],
+            google_sheets_config["spreadsheet_name"],
+        )
 
-        # 모든 카테고리 순회
         for category_name, url in config["categories"].items():
-            sheet_name = f"{brand} : {category_name}"
-            ws = get_or_create_worksheet(spreadsheet, sheet_name)
-            if ws is None:
-                st.warning(f"⚠️ {sheet_name} 이미 존재, 크롤링 건너뜀")
+            sheet_name = f"{brand_name} : {category_name}"
+            worksheet = get_or_create_worksheet(spreadsheet, sheet_name)
+
+            if worksheet is None:
+                st.warning(f"{sheet_name} 시트가 이미 있어 이번 실행에서는 건너뜁니다.")
                 continue
 
-            st.info(f"{category_name} 크롤링 중...")
+            st.info(f"{category_name} 수집 중")
             products = scraper.parse_category(category_name, url)
-            append_products_to_sheet(ws, products)
-            st.success(f"✅ {category_name} 완료: {len(products)}건")
+            append_products_to_sheet(worksheet, products)
+            st.success(f"{category_name} 완료: {len(products)}건")
 
-        st.success(f"🎉 {brand} 모든 카테고리 크롤링 완료!")
+        st.success(f"{brand_name} 전체 카테고리 수집이 끝났습니다.")
 
     finally:
-        driver.quit()
+        if driver is not None:
+            driver.quit()
+
+
+def main() -> None:
+    st.title("멀티 브랜드 상품 크롤러")
+
+    try:
+        brand_summaries = discover_brand_configs(CONFIG_DIR, PROJECT_ROOT)
+    except ConfigError as exc:
+        st.error(f"브랜드 설정을 불러오지 못했습니다: {exc}")
+        st.stop()
+
+    brand_by_id = {brand.brand_id: brand for brand in brand_summaries}
+    selected_brand_id = st.radio(
+        "브랜드 선택",
+        [brand.brand_id for brand in brand_summaries],
+        format_func=lambda brand_id: brand_by_id[brand_id].display_name,
+        horizontal=True,
+    )
+    selected_brand = brand_by_id[selected_brand_id]
+
+    try:
+        config = load_brand_config(selected_brand.config_path, project_root=PROJECT_ROOT)
+    except ConfigError as exc:
+        st.error(f"설정 파일을 불러오지 못했습니다: {exc}")
+        st.stop()
+
+    if st.button("크롤링 시작", type="primary"):
+        st.info(f"{selected_brand.display_name} 수집을 시작합니다.")
+
+        try:
+            run_scraping(selected_brand.display_name, selected_brand.scraper_key, config)
+        except Exception as exc:
+            st.exception(exc)
+
+
+if __name__ == "__main__":
+    main()
