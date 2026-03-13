@@ -1,0 +1,28 @@
+{
+  "brand": {
+    "id": "dior",
+    "display_name": "Dior",
+    "scraper": "dior"
+  },
+  "google_sheets": {
+    "service_account_file": "credentials/service_account.json",
+    "spreadsheet_name": "디올 상품 리스트"
+  },
+  "scraping_settings": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "headless": false,
+    "request_delay_sec": 2.5,
+    "request_timeout_sec": 20,
+    "inter_category_delay_sec": 5
+  },
+  "selectors": {
+    "product_card": "article, div[class*='product'], li[class*='product']",
+    "name": "h2, h3, [data-testid*='product-name']",
+    "price": "[content][itemprop='price'], [data-testid*='price'], span[class*='price']",
+    "link": "a[href]"
+  },
+  "categories": {
+    "Wallet(Man)": "https://www.dior.com/ko_kr/fashion/%EB%82%A8%EC%84%B1-%ED%8C%A8%EC%85%98/%EA%B0%80%EC%A3%BD-%EC%86%8C%ED%92%88/%EB%B0%98%EC%A7%80%EA%B0%91",
+    "Ring(Woman)": "https://www.dior.com/ko_kr/fashion/%EC%97%AC%EC%84%B1-%ED%8C%A8%EC%85%98/%ED%8C%A8%EC%85%98%EC%A3%BC%EC%96%BC%EB%A6%AC/%EB%B0%98%EC%A7%80"
+  }
+}
