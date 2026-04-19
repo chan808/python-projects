@@ -1,32 +1,25 @@
+import random
 import re
 import time
 
 from bs4 import BeautifulSoup
 
 
-def scroll_to_bottom(driver, pause_time: float, product_card_selector: str = None, max_loops: int = 30):
-    last_count = 0
-    stable_rounds = 0
-
-    for _ in range(max_loops):
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(pause_time)
-
-        if not product_card_selector:
-            continue
-
-        html = driver.page_source
-        soup = BeautifulSoup(html, "html.parser")
-        cards = soup.select(product_card_selector)
-        count = len(cards)
-
-        if count == last_count:
-            stable_rounds += 1
-            if stable_rounds >= 3:
-                break
-        else:
-            last_count = count
-            stable_rounds = 0
+def human_scroll(driver, distance: int = None):
+    """실제 사람이 스크롤하는 것처럼 작은 단위로 나누어 스크롤합니다."""
+    if distance is None:
+        distance = driver.execute_script("return window.innerHeight") * random.uniform(0.7, 0.9)
+    
+    current_pos = driver.execute_script("return window.pageYOffset")
+    target_pos = current_pos + distance
+    
+    steps = random.randint(3, 7)
+    step_distance = distance / steps
+    
+    for _ in range(steps):
+        move = step_distance * random.uniform(0.8, 1.2)
+        driver.execute_script(f"window.scrollBy(0, {move});")
+        time.sleep(random.uniform(0.1, 0.3))
 
 
 def scroll_until_lazy_content_loaded(
@@ -43,10 +36,13 @@ def scroll_until_lazy_content_loaded(
     placeholder_retries = 0
 
     for _ in range(max_loops):
-        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(pause_time)
+        # [수정] 인간다운 스크롤 적용
+        human_scroll(driver)
+        time.sleep(pause_time * random.uniform(0.8, 1.2))
 
         html = driver.page_source
+        soup = BeautifulSoup(html, "parser.parser" if "html.parser" not in str(BeautifulSoup) else "html.parser")
+        # 실제로는 BeautifulSoup 호출 시 parser 이름을 직접 넣는 게 안전함
         soup = BeautifulSoup(html, "html.parser")
         cards = soup.select(product_card_selector)
         placeholders = soup.select(placeholder_selector) if placeholder_selector else []
@@ -79,6 +75,18 @@ def scroll_until_lazy_content_loaded(
         "placeholder_count": final_placeholders,
         "placeholder_retries": placeholder_retries,
     }
+
+
+def scroll_to_bottom(driver, pause_time: float, product_card_selector: str = None):
+    """페이지 끝까지 스크롤하여 모든 데이터를 로드합니다."""
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while True:
+        human_scroll(driver)
+        time.sleep(pause_time)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
+        last_height = new_height
 
 
 def parse_price(tag):

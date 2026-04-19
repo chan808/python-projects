@@ -4,6 +4,7 @@ from typing import Optional
 
 import streamlit as st
 import undetected_chromedriver as uc
+from selenium_stealth import stealth
 from selenium.webdriver.chrome.options import Options
 
 from scrapers.registry import get_scraper_class
@@ -42,15 +43,37 @@ def build_driver(config: dict) -> uc.Chrome:
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-    chrome_options.add_argument("--lang=ko-KR")
+    # [수정] 언어 설정을 고정하지 않고, 사이트가 기대하는 다중 언어 환경을 모방
+    chrome_options.add_argument("--lang=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7")
 
     user_agent = scraping_settings.get("user_agent")
     if user_agent:
-        chrome_options.add_argument(f"user-agent={user_agent}")
+        # [수정] --user-agent= 형식이어야 하며, 실제 설치된 크롬 버전과 일치하지 않으면 차단될 가능성이 높습니다.
+        chrome_options.add_argument(f"--user-agent={user_agent}")
+    
+    # [추가] 윈도우 11 환경에서 더 신뢰할 수 있는 핑거프린트를 위해 하드웨어 가속 관련 설정 최적화
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--window-size=1920,1080")
 
     # undetected-chromedriver 사용
+    # [수정] version_main을 지정하지 않아도 uc가 자동으로 설치된 크롬 버전을 감지하지만,
+    # 명시적으로 관리가 필요할 경우 uc.Chrome(version_main=147, ...) 처럼 사용 가능합니다.
     driver = uc.Chrome(options=chrome_options, use_subprocess=True)
+
+    # [수정] stealth 설정 적용: 브라우저 지문을 실제 사용자와 유사하게 설정
+    # 2026년 Akamai는 Client Hints(UA-CH)를 강력히 검사하므로 stealth의 일부 설정이 오히려 역효과를 낼 수 있음
+    stealth(
+        driver,
+        languages=["ko-KR", "ko", "en-US", "en"],
+        vendor="Google Inc.",
+        platform="Win32",
+        webgl_vendor="Intel Inc.",
+        renderer="Intel Iris OpenGL Engine",
+        fix_hairline=True,
+    )
+    # [추가] Akamai는 창 크기 변화 등 동적인 요소도 감지하므로 초기 크기를 명확히 고정
     driver.set_window_size(1920, 1080)
+    driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
     return driver
 

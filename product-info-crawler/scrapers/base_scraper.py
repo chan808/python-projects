@@ -20,17 +20,22 @@ class BaseScraper:
         html_lower = html.lower()
 
         if "403 forbidden" in html_lower or "error 403" in html_lower:
-            return "http_403"
+            return "http_403_forbidden"
         if "access denied" in html_lower:
-            return "access_denied"
-        if "captcha" in html_lower or "cf-chl" in html_lower:
-            return "captcha_or_challenge"
+            # Akamai 또는 자체 WAF 차단
+            if "reference #" in html_lower or "akamai" in html_lower:
+                return "akamai_access_denied"
+            return "general_access_denied"
+        if "captcha" in html_lower or "cf-chl" in html_lower or "hcaptcha" in html_lower:
+            return "captcha_challenge"
         if "just a moment" in html_lower and "cloudflare" in html_lower:
-            return "cloudflare_challenge"
+            return "cloudflare_wait"
         if "page unavailable" in html_lower and "reference id" in html_lower:
-            return "akamai_block"
+            return "akamai_unavailable"
         if "id=" in html_lower and "ip=" in html_lower and "date/time=" in html_lower:
-            return "generic_waf_block"
+            return "waf_incident_report"
+        if "distil" in html_lower or "imperva" in html_lower or "datadome" in html_lower:
+            return "advanced_bot_shield"
 
         return None
 

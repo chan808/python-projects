@@ -43,9 +43,12 @@ class DiorScraper(BaseScraper):
             pause_time=float(scraping_settings.get("scroll_pause_time", 3.0)),
             product_card_selector=selectors["product_card"],
             placeholder_selector=selectors.get("lazy_placeholder", ""),
-            max_loops=int(scraping_settings.get("max_scroll_loops", 12)),
+            max_loops=int(scraping_settings.get("max_scroll_loops", 20)),
             max_placeholder_retries=int(scraping_settings.get("max_placeholder_retries", 3)),
         )
+
+        # 스크롤 후 데이터가 DOM/JSON에 반영될 시간을 추가로 줌
+        time.sleep(2)
 
         html = self.driver.page_source
         block_reason = self._detect_block_reason(html)
@@ -66,7 +69,9 @@ class DiorScraper(BaseScraper):
         return products
 
     def extract_products_from_html(self, html: str, category_name: str, category_url: str) -> list[dict]:
-        products = self._extract_products_from_json_ld(html, category_name)
+        products = self._extract_products_from_next_data(html, category_name)
+        if not products:
+            products = self._extract_products_from_json_ld(html, category_name)
         if not products:
             products = self._extract_products_from_selectors(html, category_name, category_url)
 
@@ -80,6 +85,48 @@ class DiorScraper(BaseScraper):
             deduplicated.append(product)
 
         return deduplicated
+
+    def _extract_products_from_next_data(self, html: str, category_name: str) -> list[dict]:
+        soup = BeautifulSoup(html, "html.parser")
+        script = soup.find("script", id="__NEXT_DATA__")
+        if not script:
+            return []
+
+        try:
+            data = json.loads(script.string)
+            dictionnary = data.get("props", {}).get("pageProps", {}).get("queriesProductsDictionnary", {})
+        except (json.JSONDecodeError, AttributeError, KeyError):
+            return []
+
+        products = []
+        for key in dictionnary:
+            hits = dictionnary[key].get("hits", [])
+            for hit in hits:
+                name = hit.get("title") or hit.get("titleInt") or "N/A"
+                price_data = hit.get("price", {})
+                price = price_data.get("value") if isinstance(price_data, dict) else None
+                
+                sku = hit.get("sku") or hit.get("style_color_ref") or ""
+                
+                # 색상 정보 추출 (subtitle 또는 color.label)
+                colors = hit.get("subtitle") or ""
+                if not colors:
+                    color_data = hit.get("color", {})
+                    colors = color_data.get("label") if isinstance(color_data, dict) else ""
+
+                url_path = hit.get("attributes", {}).get("productLink", {}).get("uri", "")
+                full_url = urljoin("https://www.dior.com", url_path) if url_path else ""
+
+                products.append({
+                    "category": category_name,
+                    "name": str(name).strip(),
+                    "price": price,
+                    "url": full_url,
+                    "reference": str(sku).strip(),
+                    "colors": str(colors).strip(),
+                })
+        
+        return products
 
     def _extract_products_from_json_ld(self, html: str, category_name: str) -> list[dict]:
         soup = BeautifulSoup(html, "html.parser")

@@ -1,4 +1,6 @@
 import json
+import random
+import time
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -23,22 +25,33 @@ class LvScraper(BaseScraper):
         self.driver.get(url)
 
         try:
-            WebDriverWait(self.driver, scraping_settings.get("initial_wait_sec", 15)).until(
+            # [수정] LV는 로딩이 매우 무거울 수 있어 body 대기를 더 여유 있게 잡고, 
+            # 만약 로딩이 안 된다면 '접근 차단' 페이지일 가능성이 큼
+            WebDriverWait(self.driver, scraping_settings.get("initial_wait_sec", 25)).until(
                 EC.presence_of_element_located((By.TAG_NAME, "body"))
             )
+            # 페이지 로드 후 실제 사람처럼 약간의 무작위 대기 추가
+            import random
+            time.sleep(random.uniform(2.0, 5.0))
         except Exception:
+            # 로딩 실패 시 현재 소스 확인하여 차단 여부 체크
+            html = self.driver.page_source
+            self._check_html_or_raise(category_name, html, [])
             return []
 
         self._dismiss_known_popups(scraping_settings)
 
         scroll_result = scroll_until_lazy_content_loaded(
             self.driver,
-            pause_time=float(scraping_settings.get("scroll_pause_time", 2.5)),
+            pause_time=float(scraping_settings.get("scroll_pause_time", 3.0)),
             product_card_selector=selectors["product_card"],
             placeholder_selector=selectors.get("lazy_placeholder", ""),
-            max_loops=int(scraping_settings.get("max_scroll_loops", 8)),
-            max_placeholder_retries=int(scraping_settings.get("max_placeholder_retries", 2)),
+            max_loops=int(scraping_settings.get("max_scroll_loops", 30)),
+            max_placeholder_retries=int(scraping_settings.get("max_placeholder_retries", 3)),
         )
+
+        # 스크롤 후 데이터가 DOM/JSON에 반영될 시간을 추가로 줌
+        time.sleep(2)
 
         html = self.driver.page_source
         block_reason = self._detect_block_reason(html)
@@ -59,7 +72,9 @@ class LvScraper(BaseScraper):
         return products
 
     def extract_products_from_html(self, html: str, category_name: str, category_url: str) -> list[dict]:
-        products = self._extract_products_from_json_ld(html, category_name)
+        products = self._extract_products_from_next_data(html, category_name)
+        if not products:
+            products = self._extract_products_from_json_ld(html, category_name)
         if not products:
             products = self._extract_products_from_selectors(html, category_name, category_url)
 
@@ -73,6 +88,92 @@ class LvScraper(BaseScraper):
             deduplicated.append(product)
 
         return deduplicated
+
+    def _extract_products_from_next_data(self, html: str, category_name: str) -> list[dict]:
+        soup = BeautifulSoup(html, "html.parser")
+        script = soup.find("script", id="__NEXT_DATA__")
+        if not script:
+            return []
+
+        try:
+            data = json.loads(script.string)
+            page_props = data.get("props", {}).get("pageProps", {})
+            
+            # LV의 다양한 데이터 경로 확인 (2026년 기준 더 깊은 경로 포함)
+            items = []
+            # 1. 일반 카테고리 페이지
+            if "category" in page_props:
+                items = page_props["category"].get("products", [])
+            # 2. 제품 리스트 필드
+            elif "products" in page_props:
+                items = page_props["products"]
+            # 3. 검색 결과 또는 다른 변형
+            elif "searchResult" in page_props:
+                items = page_props["searchResult"].get("products", [])
+            # 4. PLP(Product List Page) 데이터
+            elif "plpData" in page_props:
+                items = page_props["plpData"].get("products", [])
+            
+            # 만약 items가 여전히 비어있다면, Apollo/Relay 같은 GraphQL 결과 확인
+            if not items and "apolloState" in data.get("props", {}):
+                apollo = data["props"]["apolloState"]
+                for key, val in apollo.items():
+                    if key.startswith("Product:") and isinstance(val, dict):
+                        items.append(val)
+
+            # 만약 items가 여전히 비어있다면, 더 깊은 곳을 찾음 (Dior와 유사한 구조일 경우 대비)
+            if not items and "queries" in page_props:
+                for query in page_props.get("queries", []):
+                    if "hits" in query:
+                        items.extend(query["hits"])
+                    elif "products" in query:
+                        items.extend(query["products"])
+
+        except Exception:
+            return []
+
+        products = []
+        for item in items:
+            # 이름 추출
+            name = item.get("name") or item.get("title") or item.get("titleInt") or "N/A"
+            
+            # SKU/Reference 추출
+            sku = item.get("sku") or item.get("identifier") or item.get("style_color_ref") or ""
+            
+            # 가격 추출
+            price_val = None
+            price_data = item.get("price")
+            if isinstance(price_data, list) and price_data:
+                price_data = price_data[0]
+            
+            if isinstance(price_data, dict):
+                price_val = price_data.get("value") or price_data.get("amount")
+            else:
+                price_val = price_data
+
+            # URL 추출
+            url_path = item.get("url") or item.get("attributes", {}).get("productLink", {}).get("uri") or ""
+            full_url = urljoin(LV_BASE_URL, url_path) if url_path else ""
+            
+            # 색상 추출
+            colors = ""
+            color_info = item.get("color") or item.get("subtitle") or ""
+            if isinstance(color_info, list):
+                colors = ", ".join(str(c) for c in color_info)
+            elif isinstance(color_info, dict):
+                colors = color_info.get("label", "")
+            else:
+                colors = str(color_info)
+
+            products.append({
+                "category": category_name,
+                "name": str(name).strip(),
+                "price": self._parse_price_value(price_val),
+                "url": full_url,
+                "reference": str(sku).strip(),
+                "colors": str(colors).strip(),
+            })
+        return products
 
     def _extract_products_from_json_ld(self, html: str, category_name: str) -> list[dict]:
         soup = BeautifulSoup(html, "html.parser")
