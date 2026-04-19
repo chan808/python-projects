@@ -1,22 +1,17 @@
 import re
 
 import gspread
-from google.oauth2.service_account import Credentials
 
 
 SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "카테고리", "가격"]
 WRITE_MODE_APPEND = "append"
 WRITE_MODE_OVERWRITE = "overwrite"
 SUPPORTED_WRITE_MODES = {WRITE_MODE_APPEND, WRITE_MODE_OVERWRITE}
+WORKSHEET_INITIAL_ROWS = 5000
 
 
 def get_spreadsheet(json_key_file: str, spreadsheet_name: str):
-    scopes = [
-        "https://www.googleapis.com/auth/spreadsheets",
-        "https://www.googleapis.com/auth/drive",
-    ]
-    creds = Credentials.from_service_account_file(json_key_file, scopes=scopes)
-    gc = gspread.authorize(creds)
+    gc = gspread.service_account(filename=json_key_file)
     return gc.open(spreadsheet_name)
 
 
@@ -30,7 +25,7 @@ def get_or_create_worksheet(spreadsheet, sheet_name: str):
         worksheet = spreadsheet.worksheet(sanitized_name)
         return worksheet, False
     except gspread.WorksheetNotFound:
-        worksheet = spreadsheet.add_worksheet(title=sanitized_name, rows="1000", cols="10")
+        worksheet = spreadsheet.add_worksheet(title=sanitized_name, rows=WORKSHEET_INITIAL_ROWS, cols="10")
         return worksheet, True
 
 

@@ -28,7 +28,7 @@ def _validate_required_keys(section: dict, required_keys: tuple[str, ...], secti
         raise ConfigError(f"{section_name} 필수 키가 비어 있습니다: {missing}")
 
 
-def load_brand_config(config_path: Path, project_root: Path) -> dict:
+def load_brand_config(config_path: Path, project_root: Path, validate_credentials: bool = False) -> dict:
     if not config_path.exists():
         raise ConfigError(f"설정 파일이 없습니다: {config_path.name}")
 
@@ -65,7 +65,7 @@ def load_brand_config(config_path: Path, project_root: Path) -> dict:
     if not service_account_path.is_absolute():
         service_account_path = project_root / service_account_path
 
-    if not service_account_path.exists():
+    if validate_credentials and not service_account_path.exists():
         raise ConfigError(
             f"서비스 계정 키 파일이 없습니다: {service_account_path.relative_to(project_root)}"
         )

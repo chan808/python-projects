@@ -9,14 +9,29 @@
     "spreadsheet_name": "디올 상품 리스트"
   },
   "scraping_settings": {
-    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
     "headless": false,
-    "request_delay_sec": 2.5,
-    "request_timeout_sec": 20,
-    "inter_category_delay_sec": 5
+    "scroll_pause_time": 2.5,
+    "max_products_per_category": 24,
+    "max_scroll_loops": 8,
+    "max_placeholder_retries": 2,
+    "initial_wait_sec": 15,
+    "inter_category_delay_sec": 5,
+    "popup_selectors": [
+      "#onetrust-accept-btn-handler",
+      "button[aria-label='Close']",
+      "button[aria-label='close']",
+      "button[class*='close']"
+    ],
+    "popup_xpaths": [
+      "//button[contains(., '동의')]",
+      "//button[contains(., 'Accept')]",
+      "//button[contains(., '닫기')]"
+    ]
   },
   "selectors": {
-    "product_card": "article, div[class*='product'], li[class*='product']",
+    "product_card": "div.lazyload-wrapper .DS-Card",
+    "lazy_placeholder": "div.lazyload-wrapper .lazyload-placeholder",
     "name": "h2, h3, [data-testid*='product-name']",
     "price": "[content][itemprop='price'], [data-testid*='price'], span[class*='price']",
     "link": "a[href]"

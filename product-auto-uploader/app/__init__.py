@@ -1,0 +1,1 @@
+"""Product auto uploader package."""

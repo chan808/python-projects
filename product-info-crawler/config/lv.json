@@ -1,0 +1,45 @@
+{
+  "brand": {
+    "id": "lv",
+    "display_name": "Louis Vuitton",
+    "scraper": "lv"
+  },
+  "google_sheets": {
+    "service_account_file": "credentials/service_account.json",
+    "spreadsheet_name": "루이비통 상품 리스트"
+  },
+  "scraping_settings": {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+    "headless": false,
+    "scroll_pause_time": 3.0,
+    "max_products_per_category": 0,
+    "max_scroll_loops": 10,
+    "max_placeholder_retries": 3,
+    "initial_wait_sec": 20,
+    "inter_category_delay_sec": 5,
+    "popup_selectors": [
+      "#onetrust-accept-btn-handler",
+      "button[aria-label='Close']",
+      "button[aria-label='close']",
+      "button[class*='close']",
+      "button[class*='modal-close']"
+    ],
+    "popup_xpaths": [
+      "//button[contains(., '동의')]",
+      "//button[contains(., 'Accept')]",
+      "//button[contains(., 'Accept All')]",
+      "//button[contains(., '닫기')]"
+    ]
+  },
+  "selectors": {
+    "product_card": "li.lv-product-card, li[class*='productCard'], div[class*='product-card']",
+    "lazy_placeholder": "li[class*='skeleton'], li[class*='placeholder']",
+    "name": "p[class*='name'], h3[class*='name'], span[class*='productName']",
+    "price": "span[class*='price'], p[class*='price']",
+    "link": "a[href*='/kor-kr/'], a[href*='/products/']"
+  },
+  "categories": {
+    "Wallet(Man)": "https://kr.louisvuitton.com/kor-kr/men/wallets-and-small-leather-goods/compact-long-wallets/_/N-to842er",
+    "Bag(Woman)": "https://kr.louisvuitton.com/kor-kr/women/handbags/lv-icons/_/N-td4mq4v"
+  }
+}

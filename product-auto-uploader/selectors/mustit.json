@@ -1,0 +1,30 @@
+{
+  "fields": {
+    "category": {
+      "selector": "TODO_CATEGORY_SELECTOR",
+      "action": "fill"
+    },
+    "brand_name": {
+      "selector": "TODO_BRAND_SELECTOR",
+      "action": "fill"
+    },
+    "product_code": {
+      "selector": "TODO_PRODUCT_CODE_SELECTOR",
+      "action": "fill"
+    },
+    "product_name": {
+      "selector": "TODO_PRODUCT_NAME_SELECTOR",
+      "action": "fill"
+    },
+    "price": {
+      "selector": "TODO_PRICE_SELECTOR",
+      "action": "fill"
+    }
+  },
+  "image_upload": {
+    "selector": "TODO_IMAGE_INPUT_SELECTOR"
+  },
+  "submit_button": {
+    "selector": "TODO_SUBMIT_BUTTON_SELECTOR"
+  }
+}

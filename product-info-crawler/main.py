@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Optional
 
 import streamlit as st
-from selenium import webdriver
+import undetected_chromedriver as uc
 from selenium.webdriver.chrome.options import Options
 
 from scrapers.registry import get_scraper_class
@@ -31,21 +31,28 @@ STORAGE_TARGET_GOOGLE_SHEETS = "google_sheets"
 STORAGE_TARGET_EXCEL = "excel"
 
 
-def build_driver(config: dict) -> webdriver.Chrome:
-    chrome_options = Options()
+def build_driver(config: dict) -> uc.Chrome:
+    chrome_options = uc.ChromeOptions()
     scraping_settings = config.get("scraping_settings", {})
 
+    # [중요] headless 모드는 아카마이 감지 확률을 크게 높이므로 가급적 끕니다.
     if scraping_settings.get("headless", False):
-        chrome_options.add_argument("--headless=new")
+        chrome_options.add_argument("--headless")
 
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+    chrome_options.add_argument("--lang=ko-KR")
 
     user_agent = scraping_settings.get("user_agent")
     if user_agent:
         chrome_options.add_argument(f"user-agent={user_agent}")
 
-    return webdriver.Chrome(options=chrome_options)
+    # undetected-chromedriver 사용
+    driver = uc.Chrome(options=chrome_options, use_subprocess=True)
+    driver.set_window_size(1920, 1080)
+
+    return driver
 
 
 def save_products(
@@ -100,6 +107,7 @@ def run_scraping(
     excel_path = None
 
     try:
+        config["project_root"] = str(PROJECT_ROOT)
         scraper_cls = get_scraper_class(scraper_key)
         if getattr(scraper_cls, "requires_driver", True):
             driver = build_driver(config)
@@ -234,7 +242,11 @@ def main() -> None:
     )
 
     try:
-        config = load_brand_config(selected_brand.config_path, project_root=PROJECT_ROOT)
+        config = load_brand_config(
+            selected_brand.config_path,
+            project_root=PROJECT_ROOT,
+            validate_credentials=(storage_target == STORAGE_TARGET_GOOGLE_SHEETS),
+        )
     except ConfigError as exc:
         st.error(f"설정 파일을 불러오지 못했습니다: {exc}")
         st.stop()

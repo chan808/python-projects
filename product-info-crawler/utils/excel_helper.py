@@ -84,9 +84,10 @@ def append_products_to_excel_sheet(
     if not products:
         return 0
 
-    for product in products:
+    start_row = worksheet.max_row if write_mode == WRITE_MODE_APPEND else 1
+    for idx, product in enumerate(products, start=start_row):
         worksheet.append(
-            ["", product["name"], product["reference"], product["colors"], product["category"], product["price"]]
+            [idx, product["name"], product["reference"], product["colors"], product["category"], product["price"]]
         )
 
     return len(products)

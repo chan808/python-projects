@@ -7,33 +7,32 @@ from selenium.webdriver.support import expected_conditions as EC
 
 class BottegaScraper(BaseScraper):
     def parse_category(self, category_name: str, url: str):
-        print(f"[*] Bottega - {category_name} 접속 중")
         self.driver.get(url)
 
         selectors = self.config["selectors"]
 
-        # 1) 상품 카드가 페이지에 나타날 때까지 대기
         try:
             WebDriverWait(self.driver, 15).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, selectors["product_card"]))
             )
-        except Exception as e:
-            print("❌ 상품 카드가 로딩되지 않았습니다.", e)
+        except Exception:
+            html = self.driver.page_source
+            self._check_html_or_raise(category_name, html, [])
             return []
 
-        # 2) 스크롤
         scroll_to_bottom(
             self.driver,
             self.config["scraping_settings"].get("scroll_pause_time", 2),
             product_card_selector=selectors["product_card"]
         )
 
-        # 3) 리스트 페이지 파싱
-        soup = BeautifulSoup(self.driver.page_source, "html.parser")
+        html = self.driver.page_source
+        soup = BeautifulSoup(html, "html.parser")
         cards = soup.select(selectors["product_card"])
-        print(f"   -> 발견된 상품 카드 수: {len(cards)}")
+        self._check_html_or_raise(category_name, html, cards)
 
         products = []
+        seen_urls: set[str] = set()
 
         for card in cards:
             # 3-1) 이름
@@ -67,6 +66,10 @@ class BottegaScraper(BaseScraper):
             if not reference and link_tag:
                 reference = link_tag.get("data-pid", "")
 
+            if detail_url and detail_url in seen_urls:
+                continue
+            seen_urls.add(detail_url)
+
             products.append({
                 "category": category_name,
                 "name": name,
@@ -78,26 +81,19 @@ class BottegaScraper(BaseScraper):
 
         # 4) 색상이 비어 있는 상품만 상세 페이지에 들어가서 보완
         for p in products:
-            # URL 없으면 스킵
-            if not p["url"]:
-                continue
-            # 이미 메인에서 색상 있으면 스킵
-            if p["colors"]:
+            if not p["url"] or p["colors"]:
                 continue
 
             ref_detail, colors_detail = self.parse_detail(p["url"])
 
             if colors_detail:
                 p["colors"] = colors_detail
-            # 레퍼런스가 비어 있고, 상세에서 가져온 값이 있으면 보완
             if not p["reference"] and ref_detail:
                 p["reference"] = ref_detail
 
         return products
 
     def parse_detail(self, detail_url: str):
-        """상세 페이지에 들어가서 색상/레퍼런스를 보완"""
-        print(f"   -> 상세 페이지 진입: {detail_url}")
         self.driver.get(detail_url)
 
         detail_selectors = self.config.get("detail_selectors", {})
@@ -110,8 +106,8 @@ class BottegaScraper(BaseScraper):
                 WebDriverWait(self.driver, 10).until(
                     EC.presence_of_element_located((By.CSS_SELECTOR, color_selector))
                 )
-            except Exception as e:
-                print("   ❌ 상세 페이지 로딩 실패(색상 요소 발견 못함):", e)
+            except Exception:
+                pass
 
         soup = BeautifulSoup(self.driver.page_source, "html.parser")
 

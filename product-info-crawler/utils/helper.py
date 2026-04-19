@@ -1,31 +1,17 @@
-import time
 import re
+import time
 
 from bs4 import BeautifulSoup
 
 
 def scroll_to_bottom(driver, pause_time: float, product_card_selector: str = None, max_loops: int = 30):
-    # last_height = driver.execute_script("return document.body.scrollHeight")
-    # for _ in range(max_scrolls):
-    #     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    #     time.sleep(pause_time)
-    #     new_height = driver.execute_script("return document.body.scrollHeight")
-    #     if new_height == last_height:
-    #         break
-    #     last_height = new_height
-    """
-        - window 맨 아래까지 여러 번 스크롤하면서 상품이 더 이상 늘어나지 않을 때까지 반복
-        - product_card_selector를 넘기면, 실제 상품 개수를 기준으로 종료 판단
-        """
-
     last_count = 0
     stable_rounds = 0
 
-    for i in range(max_loops):
+    for _ in range(max_loops):
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(pause_time)
 
-        # product_card_selector 없으면 기존 scrollHeight 방식만 사용
         if not product_card_selector:
             continue
 
@@ -33,22 +19,73 @@ def scroll_to_bottom(driver, pause_time: float, product_card_selector: str = Non
         soup = BeautifulSoup(html, "html.parser")
         cards = soup.select(product_card_selector)
         count = len(cards)
-        print(f"   [스크롤 {i + 1}] 상품 개수: {count}")
 
         if count == last_count:
             stable_rounds += 1
-            # 2~3번 연속으로 개수가 안 늘어나면 끝난 걸로 판단
             if stable_rounds >= 3:
-                print("   -> 더 이상 상품이 늘어나지 않아 스크롤 종료")
                 break
         else:
             last_count = count
             stable_rounds = 0
 
+
+def scroll_until_lazy_content_loaded(
+    driver,
+    pause_time: float,
+    product_card_selector: str,
+    placeholder_selector: str,
+    max_loops: int = 8,
+    max_placeholder_retries: int = 2,
+    stable_rounds_to_finish: int = 2,
+) -> dict:
+    last_count = 0
+    stable_rounds = 0
+    placeholder_retries = 0
+
+    for _ in range(max_loops):
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(pause_time)
+
+        html = driver.page_source
+        soup = BeautifulSoup(html, "html.parser")
+        cards = soup.select(product_card_selector)
+        placeholders = soup.select(placeholder_selector) if placeholder_selector else []
+        product_count = len(cards)
+        placeholder_count = len(placeholders)
+
+        if placeholder_count > 0 and placeholder_retries < max_placeholder_retries:
+            placeholder_retries += 1
+            driver.execute_script("window.scrollTo(0, 0);")
+            time.sleep(pause_time)
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(pause_time)
+            continue
+
+        if product_count == last_count:
+            stable_rounds += 1
+            if stable_rounds >= stable_rounds_to_finish:
+                break
+        else:
+            last_count = product_count
+            stable_rounds = 0
+
+    final_html = driver.page_source
+    final_soup = BeautifulSoup(final_html, "html.parser")
+    final_products = len(final_soup.select(product_card_selector))
+    final_placeholders = len(final_soup.select(placeholder_selector)) if placeholder_selector else 0
+
+    return {
+        "product_count": final_products,
+        "placeholder_count": final_placeholders,
+        "placeholder_retries": placeholder_retries,
+    }
+
+
 def parse_price(tag):
     content_price = tag.get("content")
     if content_price:
         return int(content_price)
-    else:
-        price_text = tag.get_text(strip=True)
-        return int(re.sub(r"[^\d]", "", price_text))
+
+    price_text = tag.get_text(strip=True)
+    digits = re.sub(r"[^\d]", "", price_text)
+    return int(digits) if digits else None
