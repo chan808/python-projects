@@ -81,11 +81,11 @@ class LvScraperTest(unittest.TestCase):
     def test_detect_block_reason(self) -> None:
         scraper = LvScraper(None, {"scraping_settings": {}, "selectors": {}})
 
-        self.assertEqual(scraper._detect_block_reason("<html><body>403 Forbidden</body></html>"), "http_403")
-        self.assertEqual(scraper._detect_block_reason("<html><body>Access Denied</body></html>"), "access_denied")
+        self.assertEqual(scraper._detect_block_reason("<html><body>403 Forbidden</body></html>"), "http_403_forbidden")
+        self.assertEqual(scraper._detect_block_reason("<html><body>Access Denied</body></html>"), "general_access_denied")
         self.assertEqual(
             scraper._detect_block_reason("<html><body>Just a moment... cloudflare</body></html>"),
-            "cloudflare_challenge",
+            "cloudflare_wait",
         )
         self.assertIsNone(scraper._detect_block_reason("<html><body>normal page</body></html>"))
 
