@@ -1,3 +1,4 @@
+import random
 import time
 from pathlib import Path
 from typing import Optional
@@ -42,38 +43,18 @@ def build_driver(config: dict) -> uc.Chrome:
 
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-    # [수정] 언어 설정을 고정하지 않고, 사이트가 기대하는 다중 언어 환경을 모방
-    chrome_options.add_argument("--lang=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7")
+    chrome_options.add_argument("--lang=ko-KR")
+    chrome_options.add_argument("--start-maximized")
 
-    user_agent = scraping_settings.get("user_agent")
-    if user_agent:
-        # [수정] --user-agent= 형식이어야 하며, 실제 설치된 크롬 버전과 일치하지 않으면 차단될 가능성이 높습니다.
-        chrome_options.add_argument(f"--user-agent={user_agent}")
-    
-    # [추가] 윈도우 11 환경에서 더 신뢰할 수 있는 핑거프린트를 위해 하드웨어 가속 관련 설정 최적화
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--window-size=1920,1080")
-
-    # undetected-chromedriver 사용
-    # [수정] version_main을 지정하지 않아도 uc가 자동으로 설치된 크롬 버전을 감지하지만,
-    # 명시적으로 관리가 필요할 경우 uc.Chrome(version_main=147, ...) 처럼 사용 가능합니다.
+    # [수정] stealth 라이브러리를 사용하지 않고 uc 본연의 우회 기능만 사용
+    # 최신 Akamai는 stealth의 중복 설정을 감지할 수 있음
     driver = uc.Chrome(options=chrome_options, use_subprocess=True)
 
-    # [수정] stealth 설정 적용: 브라우저 지문을 실제 사용자와 유사하게 설정
-    # 2026년 Akamai는 Client Hints(UA-CH)를 강력히 검사하므로 stealth의 일부 설정이 오히려 역효과를 낼 수 있음
-    stealth(
-        driver,
-        languages=["ko-KR", "ko", "en-US", "en"],
-        vendor="Google Inc.",
-        platform="Win32",
-        webgl_vendor="Intel Inc.",
-        renderer="Intel Iris OpenGL Engine",
-        fix_hairline=True,
-    )
-    # [추가] Akamai는 창 크기 변화 등 동적인 요소도 감지하므로 초기 크기를 명확히 고정
+    # 창 크기 고정
     driver.set_window_size(1920, 1080)
-    driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+    
+    # [추가] 초기 접속 전 쿠키 및 캐시 삭제 효과를 위해 약간 대기
+    time.sleep(random.uniform(1, 2))
 
     return driver
 
@@ -201,7 +182,11 @@ def run_scraping(
                 )
 
             if inter_category_delay_sec > 0 and index < len(categories_to_process):
-                time.sleep(inter_category_delay_sec)
+                # [수정] 고정된 대기 시간 대신 무작위성을 부여하여 봇 탐지 회피 (8~15초 권장)
+                actual_delay = inter_category_delay_sec * random.uniform(0.8, 1.5)
+                with status_container:
+                    st.caption(f"다음 카테고리를 위해 {actual_delay:.1f}초간 대기 중...")
+                time.sleep(actual_delay)
 
         progress_bar.progress(1.0, text="크롤링 완료")
 

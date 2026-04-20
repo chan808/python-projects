@@ -1,5 +1,6 @@
 import json
 import random
+import re
 import time
 from urllib.parse import urljoin
 
@@ -72,11 +73,13 @@ class LvScraper(BaseScraper):
         return products
 
     def extract_products_from_html(self, html: str, category_name: str, category_url: str) -> list[dict]:
-        products = self._extract_products_from_next_data(html, category_name)
+        # [수정] 방금 확인한 셀렉터(HTML 태그) 기반 추출을 최우선으로 시도
+        products = self._extract_products_from_selectors(html, category_name, category_url)
+        
+        if not products:
+            products = self._extract_products_from_next_data(html, category_name)
         if not products:
             products = self._extract_products_from_json_ld(html, category_name)
-        if not products:
-            products = self._extract_products_from_selectors(html, category_name, category_url)
 
         deduplicated = []
         seen_urls = set()
@@ -134,45 +137,59 @@ class LvScraper(BaseScraper):
 
         products = []
         for item in items:
-            # 이름 추출
-            name = item.get("name") or item.get("title") or item.get("titleInt") or "N/A"
+            # [수정] 2026년 LV의 더 복잡해진 데이터 구조 대응
+            # 1) 이름 추출
+            name = item.get("name") or item.get("title") or item.get("titleInt")
+            if not name and "attributes" in item:
+                name = item["attributes"].get("name")
             
-            # SKU/Reference 추출
-            sku = item.get("sku") or item.get("identifier") or item.get("style_color_ref") or ""
-            
-            # 가격 추출
+            # 2) SKU/Reference 추출
+            sku = item.get("sku") or item.get("identifier") or item.get("style_color_ref") or item.get("styleColorRef")
+            if not sku and "attributes" in item:
+                sku = item["attributes"].get("sku") or item["attributes"].get("identifier")
+
+            # 3) 가격 추출
             price_val = None
             price_data = item.get("price")
+            if not price_data and "attributes" in item:
+                price_data = item["attributes"].get("price")
+                
             if isinstance(price_data, list) and price_data:
                 price_data = price_data[0]
             
             if isinstance(price_data, dict):
-                price_val = price_data.get("value") or price_data.get("amount")
+                price_val = price_data.get("value") or price_data.get("amount") or price_data.get("price")
             else:
                 price_val = price_data
 
-            # URL 추출
-            url_path = item.get("url") or item.get("attributes", {}).get("productLink", {}).get("uri") or ""
+            # 4) URL 추출
+            url_path = item.get("url") or item.get("slug")
+            if not url_path and "attributes" in item:
+                url_path = item["attributes"].get("url") or item["attributes"].get("productLink", {}).get("uri")
             full_url = urljoin(LV_BASE_URL, url_path) if url_path else ""
             
-            # 색상 추출
+            # 5) 색상 추출
             colors = ""
-            color_info = item.get("color") or item.get("subtitle") or ""
+            color_info = item.get("color") or item.get("subtitle") or item.get("variantName")
+            if not color_info and "attributes" in item:
+                color_info = item["attributes"].get("color") or item["attributes"].get("subtitle")
+                
             if isinstance(color_info, list):
                 colors = ", ".join(str(c) for c in color_info)
             elif isinstance(color_info, dict):
-                colors = color_info.get("label", "")
+                colors = color_info.get("label", "") or color_info.get("name", "")
             else:
-                colors = str(color_info)
+                colors = str(color_info) if color_info else ""
 
-            products.append({
-                "category": category_name,
-                "name": str(name).strip(),
-                "price": self._parse_price_value(price_val),
-                "url": full_url,
-                "reference": str(sku).strip(),
-                "colors": str(colors).strip(),
-            })
+            if name: # 이름이 있는 경우만 유효한 상품으로 간주
+                products.append({
+                    "category": category_name,
+                    "name": str(name).strip(),
+                    "price": self._parse_price_value(price_val),
+                    "url": full_url,
+                    "reference": str(sku).strip() if sku else "",
+                    "colors": str(colors).strip(),
+                })
         return products
 
     def _extract_products_from_json_ld(self, html: str, category_name: str) -> list[dict]:
@@ -245,10 +262,48 @@ class LvScraper(BaseScraper):
         cards = soup.select(selectors["product_card"])
 
         products = []
+        sku_pattern = re.compile(r"[A-Z][0-9]{5}")
+
         for card in cards:
             name_tag = card.select_one(selectors.get("name", ""))
             price_tag = card.select_one(selectors.get("price", ""))
             link_tag = card.select_one(selectors.get("link", ""))
+
+            # [수정] 모델 번호(예: M26744) 추출 로직 강화
+            sku = ""
+            # 1. 카드 자체의 ID나 속성에서 검색
+            for attr in ["id", "data-sku", "data-id"]:
+                val = card.get(attr, "")
+                match = sku_pattern.search(val)
+                if match:
+                    sku = match.group()
+                    break
+            
+            # 2. 제목 태그(h2 등)의 ID에서 검색
+            if not sku and name_tag:
+                # name_tag 자체가 h2일 수도 있고, h2의 자식일 수도 있음
+                title_tag = name_tag if name_tag.name == "h2" else name_tag.find_parent("h2")
+                if title_tag and title_tag.has_attr("id"):
+                    match = sku_pattern.search(title_tag["id"])
+                    if match:
+                        sku = match.group()
+
+            # 3. 링크 URL이나 ID에서 검색
+            if not sku and link_tag:
+                href = link_tag.get("href", "")
+                link_id = link_tag.get("id", "")
+                match = sku_pattern.search(link_id) or sku_pattern.search(href)
+                if match:
+                    sku = match.group()
+            
+            # 4. 이미지 경로에서 검색 (최후의 보단)
+            if not sku:
+                img_tag = card.select_one("img")
+                if img_tag:
+                    src = img_tag.get("src", "") or img_tag.get("data-src", "")
+                    match = sku_pattern.search(src)
+                    if match:
+                        sku = match.group()
 
             href = ""
             if link_tag and link_tag.has_attr("href"):
@@ -256,18 +311,24 @@ class LvScraper(BaseScraper):
                 if href and not href.startswith("http"):
                     href = urljoin(LV_BASE_URL, href)
 
-            sku = card.get("data-sku", "") or card.get("data-id", "")
+            name = name_tag.get_text(strip=True) if name_tag else ""
+            
+            # [수정] 텍스트가 섞여있는 경우 (예: '750,000원') 가격만 추출
+            price = None
+            if price_tag:
+                price = parse_price(price_tag)
 
-            products.append(
-                {
-                    "category": category_name,
-                    "name": name_tag.get_text(strip=True) if name_tag else "N/A",
-                    "price": parse_price(price_tag) if price_tag else None,
-                    "url": href,
-                    "reference": sku,
-                    "colors": "",
-                }
-            )
+            if name:
+                products.append(
+                    {
+                        "category": category_name,
+                        "name": name,
+                        "price": price,
+                        "url": href,
+                        "reference": sku,
+                        "colors": "",
+                    }
+                )
 
         return products
 

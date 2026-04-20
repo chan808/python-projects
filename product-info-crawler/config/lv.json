@@ -31,11 +31,11 @@
     ]
   },
   "selectors": {
-    "product_card": "li.lv-product-card, li[class*='productCard'], div[class*='product-card']",
-    "lazy_placeholder": "li[class*='skeleton'], li[class*='placeholder']",
-    "name": "p[class*='name'], h3[class*='name'], span[class*='productName']",
-    "price": "span[class*='price'], p[class*='price']",
-    "link": "a[href*='/kor-kr/'], a[href*='/products/']"
+    "product_card": "li.lv-product-card, div.lv-product-card",
+    "lazy_placeholder": "li[class*='skeleton'], div[class*='skeleton'], .lv-skeleton",
+    "name": ".lv-product-card__name",
+    "price": ".lv-product-card__price",
+    "link": "a.lv-product-card__url"
   },
   "categories": {
     "Wallet(Man)": "https://kr.louisvuitton.com/kor-kr/men/wallets-and-small-leather-goods/compact-long-wallets/_/N-to842er",

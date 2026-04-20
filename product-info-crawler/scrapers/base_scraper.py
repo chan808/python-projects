@@ -26,8 +26,13 @@ class BaseScraper:
             if "reference #" in html_lower or "akamai" in html_lower:
                 return "akamai_access_denied"
             return "general_access_denied"
-        if "captcha" in html_lower or "cf-chl" in html_lower or "hcaptcha" in html_lower:
+        
+        # [수정] 단순히 'captcha' 단어만 보지 않고, 봇 차단 전용 요소가 있는지 확인
+        if "g-recaptcha" in html_lower or "cf-turnstile" in html_lower or "hcaptcha" in html_lower:
             return "captcha_challenge"
+        if 'id="challenge-form"' in html_lower or 'id="challenge-running"' in html_lower:
+            return "cloudflare_challenge"
+            
         if "just a moment" in html_lower and "cloudflare" in html_lower:
             return "cloudflare_wait"
         if "page unavailable" in html_lower and "reference id" in html_lower:
