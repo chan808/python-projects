@@ -155,17 +155,6 @@ class BaseScraper:
 
     _DETAIL_DIAG_LIMIT: int = 3
 
-    def _write_diag(self, idx: int, url: str, detail: dict) -> None:
-        project_root = Path(self.config.get("project_root", "."))
-        brand_id = self.config.get("brand", {}).get("id", "unknown")
-        diag_dir = project_root / "tmp_debug" / brand_id
-        diag_dir.mkdir(parents=True, exist_ok=True)
-        diag_path = diag_dir / f"diag_{idx + 1:02d}.json"
-        diag_path.write_text(
-            json.dumps({"url": url, "detail": detail}, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-
     def parse_detail(self, url: str) -> dict:
         if not self.driver:
             return {}
@@ -201,7 +190,52 @@ class BaseScraper:
             label = url.rstrip("/").split("/")[-1][:40]
             self._save_snapshot(f"detail_{label}", html, "detail_empty")
 
+        # 첫 3개 상품에 대해 진단 파일 저장
+        if self._detail_diag_count < self._DETAIL_DIAG_LIMIT:
+            self._detail_diag_count += 1
+            self._save_detail_diagnostic(url, html, result, has_next_data)
+
         return result
+
+    def _save_detail_diagnostic(self, url: str, html: str, result: dict, has_next_data: bool) -> None:
+        import json as _json
+        from bs4 import BeautifulSoup as _BS
+
+        soup = _BS(html, "html.parser")
+
+        # __NEXT_DATA__ 최상위 키만 추출 (크기 때문에 전체 저장 안 함)
+        next_data_keys: list = []
+        page_props_keys: list = []
+        script = soup.find("script", id="__NEXT_DATA__")
+        if script:
+            try:
+                data = _json.loads(script.string)
+                next_data_keys = list(data.keys())
+                page_props_keys = list((data.get("props") or {}).get("pageProps", {}).keys())
+            except Exception:
+                pass
+
+        og_images = [t.get("content", "") for t in soup.find_all("meta", property="og:image")]
+
+        diag = {
+            "url": url,
+            "has_next_data": has_next_data,
+            "next_data_top_keys": next_data_keys,
+            "page_props_keys": page_props_keys,
+            "og_image_tags": og_images,
+            "result": {k: (v[:100] if isinstance(v, str) else v) for k, v in result.items()},
+        }
+
+        project_root = Path(self.config.get("project_root", "."))
+        brand_id = self.config.get("brand", {}).get("id", "unknown")
+        diag_dir = project_root / "tmp_debug" / brand_id
+        diag_dir.mkdir(parents=True, exist_ok=True)
+        label = url.rstrip("/").split("/")[-1][:30]
+        diag_path = diag_dir / f"diag_{self._detail_diag_count:02d}_{label}.json"
+        try:
+            diag_path.write_text(_json.dumps(diag, ensure_ascii=False, indent=2), encoding="utf-8")
+        except Exception:
+            pass
 
     def _detail_wait_range(self) -> tuple[float, float]:
         """상세 페이지 로딩 대기 범위 (초). 브랜드별로 오버라이드 가능."""
@@ -478,8 +512,7 @@ class BaseScraper:
         if "403 forbidden" in html_lower or "error 403" in html_lower:
             return "http_403_forbidden"
         if "access denied" in html_lower:
-            # LV는 "REF #", 일반 Akamai는 "Reference #" 형식을 사용
-            if "ref #" in html_lower or "reference #" in html_lower or "akamai" in html_lower:
+            if "reference #" in html_lower or "akamai" in html_lower:
                 return "akamai_access_denied"
             return "general_access_denied"
         if "g-recaptcha" in html_lower or "cf-turnstile" in html_lower or "hcaptcha" in html_lower:

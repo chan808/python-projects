@@ -1,6 +1,6 @@
 selenium>=4.11,<5
+webdriver-manager
 undetected-chromedriver
-selenium-stealth
 beautifulsoup4>=4.12,<5
 gspread>=6.0,<7
 google-auth>=2.0,<3

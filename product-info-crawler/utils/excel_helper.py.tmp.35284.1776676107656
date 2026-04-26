@@ -4,7 +4,7 @@ from typing import Optional
 
 
 EXCEL_OUTPUT_FOLDER_NAME = "Brand_Product_Data"
-SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "소재", "카테고리", "가격", "사이즈", "설명", "재고매장", "링크"]
+SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "카테고리", "가격", "사이즈", "설명", "이미지URL", "재고매장"]
 WRITE_MODE_APPEND = "append"
 WRITE_MODE_OVERWRITE = "overwrite"
 INVALID_FILE_NAME_CHARS = r'[<>:"/\\|?*]'
@@ -86,32 +86,12 @@ def append_products_to_excel_sheet(
 
     start_row = worksheet.max_row if write_mode == WRITE_MODE_APPEND else 1
     for idx, product in enumerate(products, start=start_row):
-        worksheet.append([
-            idx,
-            product["name"],
-            product["reference"],
-            product.get("colors", ""),
-            product.get("material", ""),
-            product["category"],
-            product["price"],
-            product.get("sizes", ""),
-            product.get("description", ""),
-            product.get("store_inventory", ""),
-            product.get("url", ""),
-        ])
+        worksheet.append(
+            [idx, product["name"], product["reference"], product["colors"], product["category"], product["price"]]
+        )
 
     return len(products)
 
 
 def save_excel_workbook(workbook, file_path: Path) -> None:
-    lock_path = file_path.parent / f".~${file_path.name}"
-    if lock_path.exists():
-        raise PermissionError(
-            f"엑셀 파일이 열려 있습니다. 닫은 후 다시 시도하세요: {file_path.name}"
-        )
-    try:
-        workbook.save(file_path)
-    except PermissionError:
-        raise PermissionError(
-            f"엑셀 파일이 열려 있습니다. 닫은 후 다시 시도하세요: {file_path.name}"
-        )
+    workbook.save(file_path)

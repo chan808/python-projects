@@ -5,6 +5,9 @@ import time
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 from utils.helper import parse_price
 
@@ -58,6 +61,32 @@ class LvScraper(BaseScraper):
             "image_urls": self._extract_image_urls(product),
             "store_inventory": "",
         }
+
+    def _fill_from_selectors(self, html: str, result: dict) -> None:
+        """__NEXT_DATA__에서 못 찾은 필드를 CSS 셀렉터로 보완합니다."""
+        detail_selectors = self.config.get("detail_selectors", {})
+        soup = BeautifulSoup(html, "html.parser")
+
+        if not result.get("description"):
+            selector = detail_selectors.get("description", "")
+            if selector:
+                tag = soup.select_one(selector)
+                if tag:
+                    result["description"] = tag.get_text(separator=" ", strip=True)
+
+        if not result.get("sizes"):
+            selector = detail_selectors.get("sizes", "")
+            if selector:
+                tags = soup.select(selector)
+                sizes = [t.get_text(strip=True) for t in tags if t.get_text(strip=True)]
+                result["sizes"] = ", ".join(dict.fromkeys(sizes))
+
+        if not result.get("image_urls"):
+            selector = detail_selectors.get("images", "")
+            if selector:
+                imgs = soup.select(selector)
+                urls = [img.get("src") or img.get("data-src", "") for img in imgs]
+                result["image_urls"] = ", ".join(u for u in dict.fromkeys(urls) if u.startswith("http"))
 
     # ── 카테고리 목록 추출 ─────────────────────────────────────────────────────
 

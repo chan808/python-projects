@@ -3,7 +3,19 @@
     "allow": [
       "Bash(.venv/Scripts/python.exe *)",
       "Bash(.venv/Scripts/python -m pytest tests/ -v)",
-      "Bash(.venv/Scripts/python *)"
+      "Bash(.venv/Scripts/python *)",
+      "Bash(python -m pytest tests/ -v)",
+      "Bash(python -m unittest discover -s tests -v)",
+      "Bash(pip install *)",
+      "Read(//c/Users/freetime/Desktop/Brand_Product_Images/**)",
+      "Bash(grep -v \".venv\" find \"C:/Users/freetime/Documents\" -name \"*.xlsx\")",
+      "Bash(python -c ' *)",
+      "Bash(rm \"C:/Users/freetime/Desktop/Brand_Product_Data/Louis Vuitton.xlsx\")",
+      "Bash(python -m unittest discover -s tests)",
+      "Bash(Remove-Item *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Google/Chrome/**)",
+      "Bash(python *)"
     ]
   }
 }

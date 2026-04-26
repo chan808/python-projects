@@ -1,0 +1,54 @@
+from pathlib import Path
+
+import requests
+
+
+def download_product_images(
+    urls: list[str],
+    dest_dir: Path,
+    driver=None,
+    timeout: int = 10,
+) -> list[str]:
+    """
+    이미지 URL 목록을 로컬에 다운로드합니다.
+
+    Selenium driver를 넘기면 브라우저 쿠키를 재사용해
+    로그인/세션이 필요한 이미지도 다운로드할 수 있습니다.
+
+    반환: 저장된 로컬 파일 경로 목록
+    """
+    if not urls:
+        return []
+
+    session = requests.Session()
+    session.headers.update({"User-Agent": "Mozilla/5.0"})
+
+    if driver:
+        for cookie in driver.get_cookies():
+            session.cookies.set(cookie["name"], cookie["value"])
+        current_url = driver.current_url
+        if current_url:
+            from urllib.parse import urlparse
+            origin = f"{urlparse(current_url).scheme}://{urlparse(current_url).netloc}"
+            session.headers["Referer"] = origin
+
+    dest_dir.mkdir(parents=True, exist_ok=True)
+
+    local_paths: list[str] = []
+    for i, url in enumerate(urls, start=1):
+        ext = Path(url.split("?")[0]).suffix or ".jpg"
+        dest_file = dest_dir / f"{i:02d}{ext}"
+
+        if dest_file.exists():
+            local_paths.append(str(dest_file))
+            continue
+
+        try:
+            resp = session.get(url, timeout=timeout)
+            if resp.status_code == 200 and resp.content:
+                dest_file.write_bytes(resp.content)
+                local_paths.append(str(dest_file))
+        except Exception:
+            continue
+
+    return local_paths

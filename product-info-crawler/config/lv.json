@@ -16,6 +16,10 @@
     "max_placeholder_retries": 3,
     "initial_wait_sec": 20,
     "inter_category_delay_sec": 5,
+    "fetch_detail": false,
+    "detail_page_delay_sec": 5,
+    "detail_checkpoint_interval": 5,
+    "download_images": false,
     "popup_selectors": [
       "#onetrust-accept-btn-handler",
       "button[aria-label='Close']",
@@ -37,8 +41,33 @@
     "price": ".lv-product-card__price",
     "link": "a.lv-product-card__url"
   },
+  "detail_selectors": {
+    "description": ".lv-product-description__text, .lv-pdp__description",
+    "sizes": ".lv-size-picker__option, .lv-product-size-option",
+    "images": ".lv-product-media__image img[src], .lv-media-gallery img[src]"
+  },
   "categories": {
-    "Wallet(Man)": "https://kr.louisvuitton.com/kor-kr/men/wallets-and-small-leather-goods/compact-long-wallets/_/N-to842er",
-    "Bag(Woman)": "https://kr.louisvuitton.com/kor-kr/women/handbags/lv-icons/_/N-td4mq4v"
+    "Bag(Woman)": "https://kr.louisvuitton.com/kor-kr/women/handbags/_/N-tfr7qdp",
+    "Wallet(Woman)": "https://kr.louisvuitton.com/kor-kr/women/small-leather-goods/all-wallets-and-small-leather-goods/_/N-t164iz3b",
+    "ACC1(Woman)": "https://kr.louisvuitton.com/kor-kr/women/accessories/silk-squares-and-bandeaus/_/N-tte63om",
+    "ACC2(Woman)": "https://kr.louisvuitton.com/kor-kr/women/accessories/key-holders-and-bag-charms/_/N-tui7c0x",
+    "ACC3(Woman)": "https://kr.louisvuitton.com/kor-kr/women/accessories/scarves-and-shawls/_/N-toyetr6",
+    "ACC4(Woman)": "https://kr.louisvuitton.com/kor-kr/women/accessories/sunglasses/_/N-t1peha6j",
+    "Belt(Woman)": "https://kr.louisvuitton.com/kor-kr/women/accessories/belts/_/N-ty346sh",
+    "Shoes(Woman)": "https://kr.louisvuitton.com/kor-kr/women/shoes/all-shoes/_/N-t1mcbujj",
+    "ACC5(Woman)": "https://kr.louisvuitton.com/kor-kr/women/fashion-jewelry/all-fashion-jewelry/_/N-tqnlr03",
+    "Bag(Woman)": "https://kr.louisvuitton.com/kor-kr/women/handbags/lv-icons/_/N-td4mq4v",
+    "Bag(Man)": "https://kr.louisvuitton.com/kor-kr/men/bags/all-bags/_/N-t1uezqf4",
+    "Bag2(Man)": "https://kr.louisvuitton.com/kor-kr/men/travel/all-luggage-and-accessories/_/N-tmo0xt8",
+    "Wallet(Man)": "https://kr.louisvuitton.com/kor-kr/men/wallets-and-small-leather-goods/all-wallets-and-small-leather-goods/_/N-t1iazbp7",
+    "Belt(Man)": "https://kr.louisvuitton.com/kor-kr/men/accessories/belts/_/N-t1g9dx5w",
+    "ACC1(Man)": "https://kr.louisvuitton.com/kor-kr/men/accessories/scarves/_/N-t186w8xz",
+    "ACC2(Man)": "https://kr.louisvuitton.com/kor-kr/men/accessories/silk-and-bandanas/_/N-t1k5yhj",
+    "ACC3(Man)": "https://kr.louisvuitton.com/kor-kr/men/accessories/sunglasses/_/N-t194fv1y",
+    "ACC4(Man)": "https://kr.louisvuitton.com/kor-kr/men/accessories/ties-and-pocket-squares/_/N-tv1f2za",
+    "ACC5(Man)": "https://kr.louisvuitton.com/kor-kr/men/accessories/key-holders-and-bag-charms/_/N-tzumbbt",
+    "ACC6(Man)": "https://kr.louisvuitton.com/kor-kr/men/accessories/tech-accessories/_/N-tjfx2w6",
+    "ACC7(Man)": "https://kr.louisvuitton.com/kor-kr/men/fashion-jewelry/all-fashion-jewelry/_/N-t30c8o8",
+    "Shoes(Man)": "https://kr.louisvuitton.com/kor-kr/men/shoes/all-shoes/_/N-t118ht95"
   }
 }

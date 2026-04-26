@@ -5,6 +5,9 @@ import time
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 from utils.helper import parse_price
 
@@ -22,44 +25,6 @@ class LvScraper(BaseScraper):
         if not products:
             products = self._extract_products_from_json_ld(html, category_name)
         return self._deduplicate_by_url(products)
-
-    # ── 상세 페이지 ────────────────────────────────────────────────────────────
-
-    def _detail_wait_range(self) -> tuple[float, float]:
-        return (2.0, 4.0)
-
-    def _parse_detail_from_next_data(self, html: str) -> dict:
-        soup = BeautifulSoup(html, "html.parser")
-        script = soup.find("script", id="__NEXT_DATA__")
-        if not script:
-            return {}
-
-        try:
-            data = json.loads(script.string)
-            page_props = data.get("props", {}).get("pageProps", {})
-        except (json.JSONDecodeError, AttributeError):
-            return {}
-
-        product = self._find_detail_product(page_props)
-        if not product:
-            return {}
-
-        # LV는 sizes가 skus[].size 패턴이거나 attributes 하위에 있을 수 있음
-        sizes = self._extract_sizes(product)
-        if not sizes:
-            skus = product.get("skus", [])
-            if isinstance(skus, list):
-                labels = [s.get("size") or s.get("sizeLabel") or s.get("displayValue") for s in skus if isinstance(s, dict)]
-                sizes = ", ".join(dict.fromkeys(str(l) for l in labels if l))
-
-        return {
-            "description": self._extract_description(product),
-            "sizes": sizes,
-            "image_urls": self._extract_image_urls(product),
-            "store_inventory": "",
-        }
-
-    # ── 카테고리 목록 추출 ─────────────────────────────────────────────────────
 
     def _extract_products_from_next_data(self, html: str, category_name: str) -> list[dict]:
         soup = BeautifulSoup(html, "html.parser")
@@ -125,7 +90,7 @@ class LvScraper(BaseScraper):
 
             url_path = item.get("url") or item.get("slug")
             if not url_path and "attributes" in item:
-                url_path = item["attributes"].get("url") or (item["attributes"].get("productLink") or {}).get("uri")
+                url_path = item["attributes"].get("url") or item["attributes"].get("productLink", {}).get("uri")
             full_url = urljoin(self.BASE_URL, url_path) if url_path else ""
 
             color_info = item.get("color") or item.get("subtitle") or item.get("variantName")

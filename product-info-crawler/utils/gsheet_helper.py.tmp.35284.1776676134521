@@ -3,7 +3,7 @@ import re
 import gspread
 
 
-SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "소재", "카테고리", "가격", "사이즈", "설명", "재고매장", "링크"]
+SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "카테고리", "가격", "사이즈", "설명", "이미지URL", "재고매장"]
 WRITE_MODE_APPEND = "append"
 WRITE_MODE_OVERWRITE = "overwrite"
 SUPPORTED_WRITE_MODES = {WRITE_MODE_APPEND, WRITE_MODE_OVERWRITE}
@@ -11,21 +11,8 @@ WORKSHEET_INITIAL_ROWS = 5000
 
 
 def get_spreadsheet(json_key_file: str, spreadsheet_name: str):
-    try:
-        gc = gspread.service_account(filename=json_key_file)
-        return gc.open(spreadsheet_name)
-    except gspread.SpreadsheetNotFound:
-        import json
-        with open(json_key_file, 'r', encoding='utf-8') as f:
-            creds = json.load(f)
-            email = creds.get("client_email", "알 수 없는 이메일")
-        
-        raise RuntimeError(
-            f"구글 시트 '{spreadsheet_name}'을(를) 찾을 수 없습니다.\n"
-            f"1. 시트 이름이 정확한지 확인해 주세요.\n"
-            f"2. 아래 서비스 계정 이메일을 해당 구글 시트에 '편집자'로 공유해 주세요:\n"
-            f"   >> {email}"
-        ) from None
+    gc = gspread.service_account(filename=json_key_file)
+    return gc.open(spreadsheet_name)
 
 
 def sanitize_sheet_name(name: str) -> str:
@@ -42,20 +29,15 @@ def get_or_create_worksheet(spreadsheet, sheet_name: str):
         return worksheet, True
 
 
-def _header_range() -> str:
-    end_col = chr(ord("A") + len(SHEET_HEADERS) - 1)
-    return f"A1:{end_col}1"
-
-
 def ensure_headers(worksheet) -> None:
     header_row = worksheet.row_values(1)
     if header_row[: len(SHEET_HEADERS)] != SHEET_HEADERS:
-        worksheet.update(_header_range(), [SHEET_HEADERS])
+        worksheet.update("A1:F1", [SHEET_HEADERS])
 
 
 def clear_worksheet(worksheet) -> None:
     worksheet.clear()
-    worksheet.update(_header_range(), [SHEET_HEADERS])
+    worksheet.update("A1:F1", [SHEET_HEADERS])
 
 
 def append_products_to_sheet(worksheet, products: list[dict], write_mode: str = WRITE_MODE_APPEND) -> int:
@@ -72,19 +54,7 @@ def append_products_to_sheet(worksheet, products: list[dict], write_mode: str = 
         return 0
 
     rows = [
-        [
-            "",
-            product["name"],
-            product["reference"],
-            product.get("colors", ""),
-            product.get("material", ""),
-            product["category"],
-            product["price"],
-            product.get("sizes", ""),
-            product.get("description", ""),
-            product.get("store_inventory", ""),
-            product.get("url", ""),
-        ]
+        ["", product["name"], product["reference"], product["colors"], product["category"], product["price"]]
         for product in products
     ]
     worksheet.append_rows(rows)

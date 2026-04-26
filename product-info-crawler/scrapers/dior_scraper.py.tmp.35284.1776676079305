@@ -4,6 +4,9 @@ import time
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 from utils.helper import parse_price
 
@@ -42,43 +45,19 @@ class DiorScraper(BaseScraper):
 
         products = []
         for key in dictionnary:
-            for hit in (dictionnary[key] or {}).get("hits", []):
+            for hit in dictionnary[key].get("hits", []):
                 name = hit.get("title") or hit.get("titleInt") or "N/A"
                 price_data = hit.get("price", {})
                 price = price_data.get("value") if isinstance(price_data, dict) else None
 
                 sku = hit.get("sku") or hit.get("style_color_ref") or ""
 
-                # color.label_int(영문) 우선, 없으면 color.label(한글), 없으면 subtitle
-                color_data = hit.get("color", {})
-                if isinstance(color_data, dict):
-                    colors = color_data.get("label_int") or color_data.get("label") or ""
-                else:
-                    colors = hit.get("subtitle") or ""
+                colors = hit.get("subtitle") or ""
+                if not colors:
+                    color_data = hit.get("color", {})
+                    colors = color_data.get("label") if isinstance(color_data, dict) else ""
 
-                # 소재
-                material_data = hit.get("material", {})
-                material = ""
-                if isinstance(material_data, dict):
-                    material = material_data.get("label_int") or material_data.get("label") or ""
-
-                # 사이즈 (variants / variantsWithStocks)
-                sizes = self._extract_sizes_from_hit(hit)
-
-                # 카테고리 페이지 리스팅 이미지 URL
-                listing_image = (
-                    (hit.get("views") or {})
-                    .get("listing") or {}
-                )
-                listing_image = (
-                    (listing_image.get("images") or {})
-                    .get("r9x10detail") or {}
-                )
-                listing_image = listing_image.get("uri", "")
-
-                url_path = (
-                    ((hit.get("attributes") or {}).get("productLink") or {}).get("uri", "")
-                )
+                url_path = hit.get("attributes", {}).get("productLink", {}).get("uri", "")
                 full_url = urljoin(self.BASE_URL, url_path) if url_path else ""
 
                 products.append({
@@ -88,35 +67,35 @@ class DiorScraper(BaseScraper):
                     "url": full_url,
                     "reference": str(sku).strip(),
                     "colors": str(colors).strip(),
-                    "material": str(material).strip(),
-                    "sizes": sizes,
-                    "image_urls": listing_image,
                 })
 
         return products
 
-    def _extract_sizes_from_hit(self, hit: dict) -> str:
-        """카테고리 hit 객체의 variants / variantsWithStocks에서 사이즈를 추출합니다."""
-        for key in ("variantsWithStocks", "variants"):
-            items = hit.get(key, [])
-            if not isinstance(items, list) or not items:
-                continue
-            sizes = []
-            for item in items:
-                if not isinstance(item, dict):
-                    continue
-                size = (
-                    item.get("size") or item.get("sizeLabel")
-                    or item.get("value") or item.get("label")
-                    or item.get("name")
-                )
-                if size:
-                    sizes.append(str(size))
-            if sizes:
-                return ", ".join(dict.fromkeys(sizes))
-        return ""
-
     # ── 상세 페이지 ────────────────────────────────────────────────────────────
+
+    def parse_detail(self, url: str) -> dict:
+        self.driver.get(url)
+        try:
+            WebDriverWait(self.driver, 15).until(
+                EC.presence_of_element_located((By.TAG_NAME, "body"))
+            )
+            time.sleep(random.uniform(2.0, 3.0))
+        except Exception:
+            return {}
+
+        html = self.driver.page_source
+        if self._detect_block_reason(html):
+            return {}
+
+        result = self._parse_detail_from_next_data(html)
+
+        if not result.get("image_urls"):
+            result["image_urls"] = self._extract_og_images(html)
+
+        if not result.get("description") or not result.get("sizes"):
+            self._fill_from_selectors(html, result)
+
+        return result
 
     def _parse_detail_from_next_data(self, html: str) -> dict:
         soup = BeautifulSoup(html, "html.parser")
@@ -126,17 +105,19 @@ class DiorScraper(BaseScraper):
 
         try:
             data = json.loads(script.string)
-            page_props = (data.get("props") or {}).get("pageProps") or {}
+            page_props = data.get("props", {}).get("pageProps", {})
         except (json.JSONDecodeError, AttributeError):
             return {}
 
+        # 카테고리 페이지와 달리 상세 페이지는 queriesProductsDictionnary에 1건만 들어있거나
+        # props.pageProps.product 경로로 바로 노출됨
         product = self._find_detail_product(page_props)
 
         if not product:
             # Dior 특화: queriesProductsDictionnary 첫 번째 히트에서 추출
-            dictionnary = page_props.get("queriesProductsDictionnary") or {}
+            dictionnary = page_props.get("queriesProductsDictionnary", {})
             for key in dictionnary:
-                hits = (dictionnary[key] or {}).get("hits", [])
+                hits = dictionnary[key].get("hits", [])
                 if hits:
                     product = hits[0]
                     break
@@ -150,6 +131,32 @@ class DiorScraper(BaseScraper):
             "image_urls": self._extract_image_urls(product),
             "store_inventory": "",
         }
+
+    def _fill_from_selectors(self, html: str, result: dict) -> None:
+        """__NEXT_DATA__에서 못 찾은 필드를 CSS 셀렉터로 보완합니다."""
+        detail_selectors = self.config.get("detail_selectors", {})
+        soup = BeautifulSoup(html, "html.parser")
+
+        if not result.get("description"):
+            selector = detail_selectors.get("description", "")
+            if selector:
+                tag = soup.select_one(selector)
+                if tag:
+                    result["description"] = tag.get_text(separator=" ", strip=True)
+
+        if not result.get("sizes"):
+            selector = detail_selectors.get("sizes", "")
+            if selector:
+                tags = soup.select(selector)
+                sizes = [t.get_text(strip=True) for t in tags if t.get_text(strip=True)]
+                result["sizes"] = ", ".join(dict.fromkeys(sizes))
+
+        if not result.get("image_urls"):
+            selector = detail_selectors.get("images", "")
+            if selector:
+                imgs = soup.select(selector)
+                urls = [img.get("src") or img.get("data-src", "") for img in imgs]
+                result["image_urls"] = ", ".join(u for u in dict.fromkeys(urls) if u.startswith("http"))
 
     # ── 카테고리 목록 추출 ─────────────────────────────────────────────────────
 

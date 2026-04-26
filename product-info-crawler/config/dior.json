@@ -16,6 +16,10 @@
     "max_placeholder_retries": 3,
     "initial_wait_sec": 15,
     "inter_category_delay_sec": 5,
+    "fetch_detail": true,
+    "detail_page_delay_sec": 5,
+    "detail_checkpoint_interval": 5,
+    "download_images": true,
     "popup_selectors": [
       "#onetrust-accept-btn-handler",
       "button[aria-label='Close']",
@@ -34,6 +38,11 @@
     "name": "h2, h3, [data-testid*='product-name']",
     "price": "[content][itemprop='price'], [data-testid*='price'], span[class*='price']",
     "link": "a[href]"
+  },
+  "detail_selectors": {
+    "description": ".product-description__text, [data-testid='product-description']",
+    "sizes": ".size-selector__option, [data-testid*='size-option']",
+    "images": ".DS-Product-Slideshow img[src], .product-images__image img[src]"
   },
   "categories": {
     "Wallet(Man)": "https://www.dior.com/ko_kr/fashion/mens-fashion/small-leather-goods/compact-wallets",

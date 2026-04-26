@@ -80,12 +80,13 @@ class ExcelHelperTest(unittest.TestCase):
         append_products_to_excel_sheet(ws, [SAMPLE_PRODUCTS[0]], write_mode=WRITE_MODE_OVERWRITE)
 
         row = list(ws.iter_rows(min_row=2, max_row=2, values_only=True))[0]
-        # 번호, 상품명, 레퍼런스, 색상, 카테고리, 가격
+        # 번호, 상품명, 레퍼런스, 색상, 소재, 카테고리, 가격
         self.assertEqual(row[1], "Wallet A")
         self.assertEqual(row[2], "REF-001")
         self.assertEqual(row[3], "Black")
-        self.assertEqual(row[4], "Wallet(Man)")
-        self.assertEqual(row[5], 1000000)
+        self.assertEqual(row[4], "")        # 소재 (SAMPLE_PRODUCTS에 없음)
+        self.assertEqual(row[5], "Wallet(Man)")
+        self.assertEqual(row[6], 1000000)
 
 
 if __name__ == "__main__":
