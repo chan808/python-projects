@@ -13,14 +13,18 @@ FieldAction = Literal["fill", "type", "select_option"]
 class ProductInput(BaseModel):
     model_config = ConfigDict(str_strip_whitespace=True)
 
-    category: str
     brand_name: str
-    product_code: str
     product_name: str
+    product_code: str
+    category: str
     price: int = Field(ge=0)
+    color: Optional[str] = None
+    material: Optional[str] = None
+    size: Optional[str] = None
+    description: Optional[str] = None
     submit_mode: SubmitMode = "preview"
 
-    @field_validator("category", "brand_name", "product_code", "product_name")
+    @field_validator("brand_name", "product_name", "product_code", "category")
     @classmethod
     def validate_required_text(cls, value: str) -> str:
         if not value:
@@ -51,7 +55,7 @@ class BrowserConfig(BaseModel):
     user_data_dir: Path
 
 
-class MustitConfig(BaseModel):
+class SiteConfig(BaseModel):
     register_url: str = ""
     login_check_selector: str = ""
     allow_manual_login: bool = True
@@ -62,9 +66,11 @@ class MustitConfig(BaseModel):
 class AppConfig(BaseModel):
     paths: RuntimePaths
     browser: BrowserConfig
-    mustit: MustitConfig
+    mustit: SiteConfig
+    trenbe: SiteConfig
+    fillway: SiteConfig
     brand_aliases: Dict[str, str] = Field(default_factory=dict)
-    last_product: Dict[str, Any] = Field(default_factory=dict)
+    last_ui: Dict[str, Any] = Field(default_factory=dict)
 
 
 class FieldSelectorConfig(BaseModel):
@@ -77,7 +83,7 @@ class UploadSelectorConfig(BaseModel):
     selector: str
 
 
-class MustitSelectors(BaseModel):
+class SiteSelectors(BaseModel):
     fields: Dict[str, FieldSelectorConfig]
     image_upload: UploadSelectorConfig
     submit_button: Optional[UploadSelectorConfig] = None

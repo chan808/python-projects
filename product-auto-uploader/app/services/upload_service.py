@@ -4,10 +4,20 @@ import json
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Callable, Dict, List, Optional, Type
 
 from app.models import AppConfig, ProductInput, UploadResult
-from app.services.image_service import ImageService
+from app.services.image_service import ImageDiscoveryError, ImageService
+from app.uploaders.base import PlaywrightUploader
+from app.uploaders.fillway import FilwayUploader
 from app.uploaders.mustit import MustitUploader
+from app.uploaders.trenbe import TrenbeUploader
+
+UPLOADER_CLASSES: Dict[str, Type[PlaywrightUploader]] = {
+    "mustit": MustitUploader,
+    "trenbe": TrenbeUploader,
+    "fillway": FilwayUploader,
+}
 
 
 class UploadService:
@@ -16,35 +26,50 @@ class UploadService:
         self.logger = logger
         self.image_service = ImageService(config)
 
-    def run(self, product: ProductInput) -> tuple[UploadResult, Path]:
-        started_at = datetime.now(timezone.utc)
+    def run_batch(
+        self,
+        products: List[ProductInput],
+        sites: List[str],
+        submit_mode: str,
+        on_progress: Optional[Callable[[int, int, str, str], None]] = None,
+    ) -> List[UploadResult]:
+        uploaders = {site: UPLOADER_CLASSES[site](self.config, self.logger) for site in sites}
+        results: List[UploadResult] = []
+        total = len(products) * len(sites)
+        done = 0
 
-        try:
-            product_images = self.image_service.collect_product_images(product)
-            self.logger.info("Resolved %s image(s) from %s", len(product_images.files), product_images.directory)
+        for product in products:
+            product = product.model_copy(update={"submit_mode": submit_mode})
+            try:
+                product_images = self.image_service.collect_product_images(product)
+            except ImageDiscoveryError as exc:
+                self.logger.warning("이미지 없음, 건너뜀 (%s): %s", product.product_code, exc)
+                for site in sites:
+                    results.append(self._make_error_result(site, product, str(exc)))
+                done += len(sites)
+                continue
 
-            uploader = MustitUploader(self.config, self.logger)
-            result = uploader.run(product, product_images)
-            result.details.update(
-                {
-                    "image_dir": str(product_images.directory),
-                    "image_count": len(product_images.files),
-                }
-            )
-        except Exception as exc:
-            self.logger.exception("Upload failed before completion.")
-            result = UploadResult(
-                site="mustit",
-                product_code=product.product_code,
-                success=False,
-                submit_mode=product.submit_mode,
-                started_at=started_at,
-                finished_at=datetime.now(timezone.utc),
-                message=str(exc),
-            )
+            for site in sites:
+                if on_progress:
+                    on_progress(done, total, product.product_code, site)
+                result = uploaders[site].run(product, product_images)
+                self._write_result(result)
+                results.append(result)
+                done += 1
 
-        result_path = self._write_result(result)
-        return result, result_path
+        return results
+
+    def _make_error_result(self, site: str, product: ProductInput, message: str) -> UploadResult:
+        now = datetime.now(timezone.utc)
+        return UploadResult(
+            site=site,
+            product_code=product.product_code,
+            success=False,
+            submit_mode=product.submit_mode,
+            started_at=now,
+            finished_at=now,
+            message=message,
+        )
 
     def _write_result(self, result: UploadResult) -> Path:
         timestamp = result.finished_at.strftime("%Y%m%d-%H%M%S")

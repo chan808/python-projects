@@ -1,14 +1,11 @@
 from __future__ import annotations
 
 import argparse
-from typing import Optional
+from pathlib import Path
 
-from pydantic import ValidationError
-
-from app.config import load_config, save_last_product
-from app.models import ProductInput
-from app.services.upload_service import UploadService
-from app.uploaders.mustit import MustitUploader
+from app.config import load_config
+from app.services.excel_service import load_products_from_excel
+from app.services.upload_service import UPLOADER_CLASSES, UploadService
 from app.utils.logging_utils import setup_logger
 
 
@@ -18,67 +15,50 @@ def main() -> int:
     logger = setup_logger(config.paths.logs_dir)
 
     if args.prepare_login:
-        uploader = MustitUploader(config, logger)
-        try:
-            message = uploader.prepare_login_session()
-        except Exception as exc:
-            logger.exception("Failed to prepare login session.")
-            print("success=False")
-            print("message=%s" % exc)
+        site = args.prepare_login
+        if site not in UPLOADER_CLASSES:
+            print(f"알 수 없는 사이트: {site}. 선택 가능: {', '.join(UPLOADER_CLASSES)}")
             return 1
-        print("success=True")
-        print("message=%s" % message)
-        return 0
+        try:
+            message = UPLOADER_CLASSES[site](config, logger).prepare_login_session()
+            print(f"success=True\nmessage={message}")
+            return 0
+        except Exception as exc:
+            logger.exception("로그인 세션 준비 실패")
+            print(f"success=False\nmessage={exc}")
+            return 1
 
-    try:
-        product = ProductInput(
-            category=_read_value(args.category, "카테고리"),
-            brand_name=_read_value(args.brand_name, "브랜드명"),
-            product_code=_read_value(args.product_code, "상품번호"),
-            product_name=_read_value(args.product_name, "제품명"),
-            price=int(_read_value(args.price, "가격")),
-            submit_mode=args.submit_mode,
-        )
-    except (ValidationError, ValueError) as exc:
-        logger.error("Invalid input: %s", exc)
+    excel_path = Path(args.excel)
+    if not excel_path.exists():
+        print(f"엑셀 파일 없음: {excel_path}")
         return 1
 
-    save_last_product(
-        {
-            "category": product.category,
-            "brand_name": product.brand_name,
-            "product_code": product.product_code,
-            "product_name": product.product_name,
-            "price": str(product.price),
-            "submit_mode": product.submit_mode,
-        }
-    )
+    sites = [s.strip() for s in args.sites.split(",") if s.strip()]
+    invalid = [s for s in sites if s not in UPLOADER_CLASSES]
+    if invalid:
+        print(f"알 수 없는 사이트: {invalid}")
+        return 1
+
+    products = load_products_from_excel(excel_path)
+    if not products:
+        print("엑셀에서 유효한 상품을 찾지 못했습니다.")
+        return 1
+
+    if args.submit_mode == "preview":
+        products = products[:1]
 
     service = UploadService(config, logger)
-    result, result_path = service.run(product)
+    results = service.run_batch(products, sites, args.submit_mode)
 
-    print("success=%s" % result.success)
-    print("message=%s" % result.message)
-    print("result_path=%s" % result_path)
-    if result.screenshot_path:
-        print("screenshot_path=%s" % result.screenshot_path)
-
-    return 0 if result.success else 1
+    success = sum(1 for r in results if r.success)
+    print(f"완료: 성공 {success}건 / 실패 {len(results) - success}건")
+    return 0 if all(r.success for r in results) else 1
 
 
 def _parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Mustit product uploader MVP")
-    parser.add_argument("--category")
-    parser.add_argument("--brand-name")
-    parser.add_argument("--product-code")
-    parser.add_argument("--product-name")
-    parser.add_argument("--price")
+    parser = argparse.ArgumentParser(description="Product auto uploader CLI")
+    parser.add_argument("--excel", help="엑셀 파일 경로")
+    parser.add_argument("--sites", default="mustit,trenbe,fillway", help="업로드 사이트 (쉼표 구분)")
     parser.add_argument("--submit-mode", choices=["preview", "submit"], default="preview")
-    parser.add_argument("--prepare-login", action="store_true")
+    parser.add_argument("--prepare-login", metavar="SITE", help="로그인 세션 준비 (mustit/trenbe/fillway)")
     return parser.parse_args()
-
-
-def _read_value(current_value: Optional[str], label: str) -> str:
-    if current_value is not None:
-        return current_value
-    return input("%s: " % label).strip()
