@@ -63,14 +63,21 @@ class SiteConfig(BaseModel):
     selectors_path: Path
 
 
+class SiteCredentials(BaseModel):
+    id: str = ""
+    pw: str = ""
+
+
 class AppConfig(BaseModel):
     paths: RuntimePaths
     browser: BrowserConfig
     mustit: SiteConfig
     trenbe: SiteConfig
     fillway: SiteConfig
+    pricing_path: Path
     brand_aliases: Dict[str, str] = Field(default_factory=dict)
     last_ui: Dict[str, Any] = Field(default_factory=dict)
+    credentials: Dict[str, SiteCredentials] = Field(default_factory=dict)
 
 
 class FieldSelectorConfig(BaseModel):

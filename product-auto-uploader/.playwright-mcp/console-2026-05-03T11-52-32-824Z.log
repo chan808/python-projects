@@ -1,0 +1,60 @@
+[    9472ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz:0
+[   10140ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://cm.g.doubleclick.net/pixel?google_nid=enliple_tw&google_hm=X3xffGRhNWJkY2FhOGRiMzIyODIxNzM5YjFjZDE5ZGVkYWRiYTNmNDlkMQ==&google_tc=:0
+[   40331ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz:0
+[   40436ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://idsync.admixer.co.kr/idsync?pid=115&uid=YROUfvdKBtuhDpY1Czf3aQ:0
+[  100458ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.4.0-min.js.gz:0
+[  101207ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz:0
+[  102740ms] [LOG] %cWelcome Mustit background: linear-gradient(to right, red 20%, orange 20% 40%, yellow 40% 60%, pink 60% 80%, #B8F8FB 80%); color: black; font-size: 20px; border: 1px solid black; border-radius: 10px; margin: 20px; padding: 10px; color: perple; font-weight: bold; @ https://m.web.mustit.co.kr/_nuxt/d018b20.js:0
+[  102741ms] [LOG] >>> https://mustit-recruit.notion.site @ https://m.web.mustit.co.kr/_nuxt/d018b20.js:0
+[  191046ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz:0
+[  204996ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz:0
+[  211056ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz:0
+[  214515ms] [WARNING] Amplitude Logger [Warn]: `options.defaultTracking` is set to undefined. This implicitly configures your Amplitude instance to track Page Views, Sessions, File Downloads, and Form Interactions. You can suppress this warning by explicitly setting a value to `options.defaultTracking`. The value must either be a boolean, to enable and disable all default events, or an object, for advanced configuration. For example:
+
+amplitude.init(<YOUR_API_KEY>, {
+  defaultTracking: true,
+});
+
+Visit https://www.docs.developers.amplitude.com/data/sdks/browser-2/#tracking-default-events for more details. @ https://cdn.amplitude.com/libs/analytics-browser-2.3.8-min.js.gz:0

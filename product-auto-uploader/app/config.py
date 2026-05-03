@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple, Union
 
-from app.models import AppConfig, BrowserConfig, RuntimePaths, SiteConfig
+from app.models import AppConfig, BrowserConfig, RuntimePaths, SiteConfig, SiteCredentials
 
 APP_NAME = "ProductAutoUploader"
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +31,8 @@ DEFAULT_SELECTORS_PATHS = {
     "trenbe": "./selectors/trenbe.json",
     "fillway": "./selectors/fillway.json",
 }
+
+DEFAULT_PRICING_PATH = "./pricing.json"
 
 
 def load_config() -> AppConfig:
@@ -79,17 +81,31 @@ def load_config() -> AppConfig:
             ),
         )
 
+    creds_raw = load_credentials()
+    credentials = {
+        site: SiteCredentials(
+            id=creds_raw.get(site, {}).get("id", ""),
+            pw=creds_raw.get(site, {}).get("pw", ""),
+        )
+        for site in SITES
+    }
+
     config = AppConfig(
         paths=paths,
         browser=browser,
         mustit=site_configs["mustit"],
         trenbe=site_configs["trenbe"],
         fillway=site_configs["fillway"],
+        pricing_path=_resolve_path(
+            user_settings.get("pricing_path") or DEFAULT_PRICING_PATH,
+            base_dir=PROJECT_ROOT,
+        ),
         brand_aliases={
             str(k).lower(): str(v)
             for k, v in user_settings.get("brand_aliases", {}).items()
         },
         last_ui=user_settings.get("ui", {}),
+        credentials=credentials,
     )
     ensure_runtime_dirs(config)
     return config
@@ -117,6 +133,21 @@ def save_user_settings(user_settings: Dict[str, Any]) -> Path:
     normalized = _deep_merge(_build_default_user_settings(), user_settings)
     config_path.write_text(json.dumps(normalized, ensure_ascii=False, indent=2), encoding="utf-8")
     return config_path
+
+
+def load_credentials() -> Dict[str, Any]:
+    settings_dir, _, _ = get_app_directories()
+    path = settings_dir / "credentials.json"
+    if not path.exists():
+        return {}
+    return _read_json(path)
+
+
+def save_credentials(data: Dict[str, Any]) -> None:
+    settings_dir, _, _ = get_app_directories()
+    settings_dir.mkdir(parents=True, exist_ok=True)
+    path = settings_dir / "credentials.json"
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def save_last_ui(ui_payload: Dict[str, Any]) -> Path:
@@ -147,7 +178,7 @@ def ensure_runtime_dirs(config: AppConfig) -> None:
 def _read_json(path: Path) -> Dict[str, Any]:
     if not path.exists():
         return {}
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def _resolve_path(value: Union[str, Path], base_dir: Optional[Path] = None) -> Path:

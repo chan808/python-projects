@@ -7,7 +7,8 @@ from pathlib import Path
 from typing import Callable, Dict, List, Optional, Type
 
 from app.models import AppConfig, ProductInput, UploadResult
-from app.services.image_service import ImageDiscoveryError, ImageService
+from app.services.image_service import ImageDiscoveryError, ImageService, ProductImages
+from app.services.pricing_service import PricingService
 from app.uploaders.base import PlaywrightUploader
 from app.uploaders.fillway import FilwayUploader
 from app.uploaders.mustit import MustitUploader
@@ -25,6 +26,7 @@ class UploadService:
         self.config = config
         self.logger = logger
         self.image_service = ImageService(config)
+        self.pricing_service = PricingService(config.pricing_path)
 
     def run_batch(
         self,
@@ -43,16 +45,15 @@ class UploadService:
             try:
                 product_images = self.image_service.collect_product_images(product)
             except ImageDiscoveryError as exc:
-                self.logger.warning("이미지 없음, 건너뜀 (%s): %s", product.product_code, exc)
-                for site in sites:
-                    results.append(self._make_error_result(site, product, str(exc)))
-                done += len(sites)
-                continue
+                self.logger.warning("이미지 폴더 없음, 이미지 없이 진행 (%s): %s", product.product_code, exc)
+                product_images = ProductImages(directory=Path(), files=[])
 
             for site in sites:
                 if on_progress:
                     on_progress(done, total, product.product_code, site)
-                result = uploaders[site].run(product, product_images)
+                site_price = self.pricing_service.calculate(site, product.price)
+                product_for_site = product.model_copy(update={"price": site_price})
+                result = uploaders[site].run(product_for_site, product_images)
                 self._write_result(result)
                 results.append(result)
                 done += 1

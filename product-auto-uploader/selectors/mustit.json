@@ -1,46 +1,26 @@
 {
   "fields": {
-    "category": {
-      "selector": "TODO_CATEGORY_SELECTOR",
-      "action": "fill"
-    },
-    "brand_name": {
-      "selector": "TODO_BRAND_SELECTOR",
+    "product_name": {
+      "selector": "input[name='product_name']",
       "action": "fill"
     },
     "product_code": {
-      "selector": "TODO_PRODUCT_CODE_SELECTOR",
-      "action": "fill"
-    },
-    "product_name": {
-      "selector": "TODO_PRODUCT_NAME_SELECTOR",
+      "selector": "input[name='serialNo']",
       "action": "fill"
     },
     "price": {
-      "selector": "TODO_PRICE_SELECTOR",
-      "action": "fill"
-    },
-    "color": {
-      "selector": "TODO_COLOR_SELECTOR",
-      "action": "fill"
-    },
-    "material": {
-      "selector": "TODO_MATERIAL_SELECTOR",
-      "action": "fill"
-    },
-    "size": {
-      "selector": "TODO_SIZE_SELECTOR",
+      "selector": "input[name='normal_price']",
       "action": "fill"
     },
     "description": {
-      "selector": "TODO_DESCRIPTION_SELECTOR",
+      "selector": "textarea#ir1",
       "action": "fill"
     }
   },
   "image_upload": {
-    "selector": "TODO_IMAGE_INPUT_SELECTOR"
+    "selector": "input[type='file']"
   },
   "submit_button": {
-    "selector": "TODO_SUBMIT_BUTTON_SELECTOR"
+    "selector": "input#add_btn"
   }
 }

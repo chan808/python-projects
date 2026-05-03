@@ -6,7 +6,12 @@
       "Bash(python -c \"from app.models import ProductInput, SiteConfig, AppConfig, SiteSelectors; from app.config import load_config; from app.services.excel_service import load_products_from_excel; from app.uploaders.mustit import MustitUploader; from app.uploaders.trenbe import TrenbeUploader; from app.uploaders.fillway import FilwayUploader; from app.services.upload_service import UploadService; print\\('imports OK'\\)\")",
       "Bash(del test_out.txt)",
       "Bash(python -c \"import os; os.remove\\('test_out.txt'\\); os.remove\\('excel_inspect.txt'\\)\")",
-      "Bash(python -c \"from app.ui.gui import main; print\\('GUI import OK'\\)\")"
+      "Bash(python -c \"from app.ui.gui import main; print\\('GUI import OK'\\)\")",
+      "WebFetch(domain:mustit.co.kr)",
+      "WebSearch",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_evaluate",
+      "PowerShell(Test-Path *)"
     ]
   }
 }
