@@ -15,7 +15,19 @@
       "Bash(Remove-Item *)",
       "Read(//c/Program Files/Google/Chrome/Application/**)",
       "Read(//c/Program Files \\(x86\\)/Google/Chrome/**)",
-      "Bash(python *)"
+      "Bash(python *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_network_requests",
+      "mcp__playwright__browser_network_request",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\freetime\\\\Desktop\\\\python-projects\\\\product-info-crawler\\\\tmp_debug\" -Recurse)",
+      "Bash(Select-Object FullName, LastWriteTime)",
+      "Bash(Sort-Object LastWriteTime -Descending)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\freetime\\\\Desktop\\\\python-projects\\\\product-info-crawler\\\\tmp_debug\" -Recurse -Force | ForEach-Object { $_.FullName })"
     ]
   }
 }

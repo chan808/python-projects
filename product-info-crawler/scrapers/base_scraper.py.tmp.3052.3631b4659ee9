@@ -154,16 +154,6 @@ class BaseScraper:
             except Exception as exc:
                 fail_count += 1
                 product["_detail_error"] = str(exc)
-                try:
-                    import traceback
-                    project_root = Path(self.config.get("project_root", "."))
-                    err_log = project_root / "tmp_debug" / "detail_errors.log"
-                    err_log.parent.mkdir(parents=True, exist_ok=True)
-                    with open(err_log, "a", encoding="utf-8") as f:
-                        f.write(f"\n=== item {i} | {url} ===\n")
-                        f.write(traceback.format_exc())
-                except Exception:
-                    pass
 
             # 체크포인트: N개마다 중간 저장 (저장 실패해도 크롤링은 계속)
             if on_checkpoint and (i + 1) % checkpoint_interval == 0:
@@ -403,7 +393,7 @@ class BaseScraper:
             except Exception:
                 pass
 
-        return ", ".join(list(dict.fromkeys(u for u in urls if u))[:10])
+        return ", ".join(dict.fromkeys(u for u in urls if u)[:10])
 
     def _collect_json_ld_images(self, data, _depth: int = 0) -> list[str]:
         """JSON-LD에서 이미지 URL을 재귀 탐색합니다 (최대 3단계)."""

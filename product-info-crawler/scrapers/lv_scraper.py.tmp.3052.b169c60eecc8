@@ -105,7 +105,7 @@ class LvScraper(BaseScraper):
                 if bdo_texts:
                     result["sizes"] = " ".join(bdo_texts) + " cm"
 
-        # 색상(엑셀): "소재" 변형 버튼 우선 → 없으면 상세 특징 ul 첫 3개 li
+        # 색상(엑셀): 상세 페이지 "소재" 변형 선택 버튼의 값 → 없으면 skip
         for btn in soup.select("button.lv-product-variations__selector"):
             title_el = btn.select_one("span.lv-product-variation-selector__title")
             if title_el and title_el.get_text(strip=True) == "소재":
@@ -113,13 +113,6 @@ class LvScraper(BaseScraper):
                 if value_el:
                     result["colors"] = value_el.get_text(strip=True)
                 break
-
-        if not result.get("colors"):
-            ul = soup.select_one("div.lv-product-detailed-features__description ul")
-            if ul:
-                items = [li.get_text(strip=True) for li in ul.find_all("li", recursive=False) if li.get_text(strip=True)]
-                if items:
-                    result["colors"] = "\n".join(items[:3])
 
         # 소재(엑셀): 치수 아래 ul > li 첫 MATERIAL_LI_COUNT개를 줄바꿈으로 연결
         if not result.get("material"):

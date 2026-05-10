@@ -1,0 +1,359 @@
+- generic [active] [ref=e1]:
+  - dialog "YOUR COOKIE PREFERENCES" [ref=e2]:
+    - heading "YOUR COOKIE PREFERENCES" [level=1] [ref=e3]
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "YOUR COOKIE PREFERENCES" [level=1] [ref=e9]
+        - paragraph [ref=e10]:
+          - text: WELCOME TO LOUISVUITTON.COM
+          - text: Louis Vuitton Malletier uses cookies, including third-party cookies, for functional reasons, for statistical analysis, to personalise your experience, offer you content that targets your particular interests and analyse the performance of our advertising campaigns.
+          - text: You can either accept these cookies by clicking "Accept and Continue", or click "Set cookie preferences" to set your preferences.
+        - list [ref=e12]:
+          - listitem [ref=e13]:
+            - button "Set Cookie Preferences" [ref=e14] [cursor=pointer]:
+              - generic [ref=e15]: Set Cookie Preferences
+          - listitem [ref=e16]:
+            - button "Accept and Continue" [ref=e17] [cursor=pointer]:
+              - generic [ref=e18]: Accept and Continue
+        - paragraph [ref=e19]:
+          - text: You can change your preferences at any time by going to the "Cookies" module or to the "Privacy Policy" sub-section of the "LEGAL & PRIVACY" section. They are accessible through links at the bottom of any louisvuitton.com website page.
+          - link "See the list of cookies used on our site" [ref=e20] [cursor=pointer]:
+            - /url: https://en.louisvuitton.com/content/dam/lv/online/other/allcountry/legalnotice/cookie_inventory_EN.pdf
+          - text: For more information on our cookie policy, please click
+          - link "here" [ref=e21] [cursor=pointer]:
+            - /url: https://en.louisvuitton.com/eng-nl/legal-privacy#legal-privacy-item-3
+      - link "Continue without accepting" [ref=e22] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e23]: Continue without accepting
+  - generic [ref=e25]:
+    - paragraph [ref=e26]: Alma BB Monogram Canvas - Handbags | LOUIS VUITTON
+    - link "Skip to main content" [ref=e27] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - button "Stop the commercial banner from scrolling" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+        - 'link "Mon Monogram : Personalise your favorite bags or travel pieces" [ref=e37] [cursor=pointer]':
+          - /url: https://en.louisvuitton.com/eng-nl/gifts/personalization/mon-monogram/_/N-tvx3u8y
+        - button "Close" [ref=e38] [cursor=pointer]:
+          - img [ref=e39]
+      - banner [ref=e42]:
+        - generic [ref=e44]:
+          - navigation "Main Navigation":
+            - button "Navigation Menu" [ref=e45] [cursor=pointer]:
+              - generic [ref=e47]:
+                - generic [ref=e48]: Menu
+                - generic [ref=e49]: Close
+          - search [ref=e50]:
+            - button "Search" [ref=e51] [cursor=pointer]:
+              - img [ref=e52]
+              - generic [ref=e54]: Search
+          - link "LOUIS VUITTON Official International Website" [ref=e56] [cursor=pointer]:
+            - /url: /eng-nl/homepage
+            - generic [ref=e57]:
+              - img [ref=e58]
+              - generic [ref=e60]: Louis Vuitton
+          - navigation "Utility navigation" [ref=e61]:
+            - list [ref=e62]:
+              - listitem [ref=e63]:
+                - button "Contact us" [ref=e65] [cursor=pointer]:
+                  - generic [ref=e66]: Contact us
+              - listitem [ref=e67]:
+                - link "Wishlist (There is item in your wishlist)" [ref=e68] [cursor=pointer]:
+                  - /url: /eng-nl/mylv/wishlist
+                  - generic [ref=e69]:
+                    - img [ref=e70]
+                    - generic [ref=e72]: Wishlist (There is item in your wishlist)
+              - listitem [ref=e73]:
+                - button "MyLV" [disabled] [ref=e74]:
+                  - img [ref=e75]
+                  - generic [ref=e77]: MyLV
+              - listitem [ref=e78]:
+                - button "Shopping Bag, null item" [disabled] [ref=e79]:
+                  - img [ref=e81]
+    - main [ref=e83]:
+      - status [ref=e84]: Alma BB Monogram Canvas - Handbags | LOUIS VUITTON
+      - generic [ref=e85]:
+        - generic [ref=e87]:
+          - generic [ref=e89]:
+            - link "All Handbags" [ref=e90] [cursor=pointer]:
+              - /url: /eng-nl/women/handbags/_/N-tfr7qdp
+              - img [ref=e91]
+              - generic [ref=e93]: All Handbags
+            - list "Images of decorative carousel" [ref=e95]:
+              - listitem [ref=e96]:
+                - button "Product zoom" [ref=e97] [cursor=pointer]
+              - listitem [ref=e100]:
+                - button "Product zoom" [ref=e101] [cursor=pointer]
+              - listitem [ref=e104]:
+                - button "Product zoom" [ref=e105] [cursor=pointer]
+              - listitem [ref=e109]:
+                - button "Product zoom" [ref=e110] [cursor=pointer]
+              - listitem [ref=e114]:
+                - button "Product zoom" [ref=e115] [cursor=pointer]
+              - listitem [ref=e119]:
+                - button "Product zoom" [ref=e120] [cursor=pointer]
+              - listitem [ref=e124]:
+                - button "Product zoom" [ref=e125] [cursor=pointer]
+              - listitem [ref=e129]:
+                - button "Product zoom" [ref=e130] [cursor=pointer]
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - strong [ref=e139]: M46990
+              - generic [ref=e140]: Customizable
+              - heading "Alma BB" [level=1] [ref=e141]
+              - button "Add the item Alma BB to your wishlist" [ref=e144] [cursor=pointer]:
+                - img [ref=e145]
+            - generic [ref=e147]: 1 600,00€
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - button "Materials Monogram Canvas Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton currently selected" [ref=e150] [cursor=pointer]:
+                  - generic [ref=e151]: Materials
+                  - generic [ref=e152]: Monogram Canvas
+                  - img "Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton" [ref=e155]
+                  - generic [ref=e156]: currently selected
+                  - img [ref=e157]
+                - button "Other Sizes Alma BB currently selected" [ref=e159] [cursor=pointer]:
+                  - generic [ref=e160]: Other Sizes
+                  - generic [ref=e161]: Alma BB
+                  - generic [ref=e162]: currently selected
+                  - img [ref=e163]
+              - generic [ref=e165]:
+                - button "Find your perfect bag size" [ref=e166] [cursor=pointer]
+                - generic [ref=e167]: Compare the different styles
+            - list [ref=e169]:
+              - listitem [ref=e170]:
+                - link "Mon Monogram Personalize with your initials, patches, or classic stripes." [ref=e171] [cursor=pointer]:
+                  - /url: /eng-nl/products/alma-bb-mon-monogram-monogram-nvprod6140112v/P01917
+                  - generic [ref=e176]:
+                    - generic [ref=e177]: Mon Monogram
+                    - paragraph [ref=e178]: Personalize with your initials, patches, or classic stripes.
+            - generic [ref=e179]:
+              - button:
+                - generic:
+                  - img
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - generic [ref=e182]:
+                  - generic [ref=e183]:
+                    - paragraph [ref=e184]: "The Alma BB handbag traces its pedigree to an Art Deco original, introduced in 1934. Signature details impart a timeless elegance to this model crafted from iconic Monogram canvas: note the golden padlock and keys, two Toron handles and smart leather key bell. Fitted with a detachable and adjustable strap, this charming small bag is perfect for cross-body wear."
+                    - generic [ref=e186]:
+                      - generic [ref=e187]:
+                        - text: 23.5 x 17.5 x 11.5 cm
+                        - text: (Length x Height x Width)
+                      - generic [ref=e188]:
+                        - list [ref=e189]:
+                          - listitem [ref=e190]: Monogram coated canvas
+                          - listitem [ref=e191]: Natural cowhide leather trim
+                          - listitem [ref=e192]: Textile lining
+                          - listitem [ref=e193]: Gold-color hardware
+                          - listitem [ref=e194]: Double zip closure
+                          - listitem [ref=e195]: Padlock
+                          - listitem [ref=e196]: Key bell
+                          - listitem [ref=e197]: Inside flat pocket
+                          - listitem [ref=e198]: 4 protective metal bottom studs
+                          - listitem [ref=e199]: "Fits: 6.7-inches smartphone, earphones, lipstick, tissues, keys, sunglasses"
+                          - listitem [ref=e200]: "Weight: 0.5 kg"
+                          - listitem [ref=e201]: "Strap: Removable, adjustable"
+                          - listitem [ref=e202]: "Strap Drop: 50.0 cm"
+                          - listitem [ref=e203]: "Strap drop max: 62.0 cm"
+                          - listitem [ref=e204]: "Handle: Single x2"
+                        - paragraph [ref=e205]: This reference is either Made in France, Spain or Italy.
+                  - button "See More" [ref=e206] [cursor=pointer]
+                - generic [ref=e208]:
+                  - button "Sustainability" [ref=e210] [cursor=pointer]:
+                    - generic [ref=e211]:
+                      - generic [ref=e213]: Sustainability
+                      - img [ref=e214]
+                  - button "Product Care" [ref=e217] [cursor=pointer]:
+                    - generic [ref=e218]:
+                      - generic [ref=e220]: Product Care
+                      - img [ref=e221]
+                  - button "In-store service" [ref=e224] [cursor=pointer]:
+                    - generic [ref=e225]:
+                      - generic [ref=e227]: In-store service
+                      - img [ref=e228]
+              - button "Delivery & Returns" [ref=e231] [cursor=pointer]:
+                - generic [ref=e232]:
+                  - generic [ref=e233]: Delivery & Returns
+                  - img [ref=e234]
+              - button "Gifting" [ref=e237] [cursor=pointer]:
+                - generic [ref=e238]: Gifting
+                - img [ref=e239]
+        - generic [ref=e241]:
+          - generic [ref=e242]:
+            - heading "Get the set" [level=2] [ref=e243]
+            - button "Zoom on look" [ref=e245] [cursor=pointer]:
+              - img "Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton" [ref=e249]
+            - list [ref=e251]:
+              - listitem [ref=e252]:
+                - generic [ref=e254] [cursor=pointer]:
+                  - generic [ref=e255]:
+                    - generic [ref=e256]:
+                      - generic [ref=e257]:
+                        - link "Spring Street Chain Bag Charm" [ref=e260]:
+                          - /url: /eng-nl/products/spring-street-chain-bag-charm-s00-nvprod4490036v/M01188
+                        - generic [ref=e261]: 480,00€
+                      - button "Shop" [ref=e263]:
+                        - img [ref=e264]
+                        - generic [ref=e266]: Shop
+                    - img "Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton" [ref=e271]
+                  - button "Add the item Spring Street Chain Bag Charm to your wishlist" [ref=e274]:
+                    - img [ref=e275]
+          - generic [ref=e279]:
+            - tablist [ref=e283]:
+              - tab "You May Also Like" [selected] [ref=e284]:
+                - generic [ref=e285]: You May Also Like
+            - tabpanel "You May Also Like" [ref=e288]:
+              - list [ref=e289]:
+                - listitem [ref=e290]:
+                  - generic [ref=e291] [cursor=pointer]:
+                    - generic [ref=e292]:
+                      - generic [ref=e294]:
+                        - link "Alma BB Mon Monogram" [ref=e297]:
+                          - /url: /eng-nl/products/alma-bb-mon-monogram-monogram-nvprod6140112v/P01917?personalizationId=MWFZ3C6X
+                        - generic [ref=e298]: 1 800,00€
+                      - img "Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton" [ref=e303]
+                    - generic [ref=e304]:
+                      - img "Customizable" [ref=e307]
+                      - button "Add the item Alma BB Mon Monogram to your wishlist" [ref=e311]:
+                        - img [ref=e312]
+                - listitem [ref=e314]:
+                  - generic [ref=e315] [cursor=pointer]:
+                    - generic [ref=e316]:
+                      - generic [ref=e318]:
+                        - link "LV Charms Card Holder" [ref=e321]:
+                          - /url: /eng-nl/products/lv-charms-card-holder-monogram-nvprod4630081v/M82739
+                        - generic [ref=e322]: 295,00€
+                      - img "Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton" [ref=e327]
+                    - button "Add the item LV Charms Card Holder to your wishlist" [ref=e330]:
+                      - img [ref=e331]
+                - listitem [ref=e333]:
+                  - generic [ref=e334] [cursor=pointer]:
+                    - generic [ref=e335]:
+                      - generic [ref=e337]:
+                        - link "Rosalie Coin Purse" [ref=e340]:
+                          - /url: /eng-nl/products/rosalie-coin-purse-monogram-013220/M62361
+                        - generic [ref=e341]: 340,00€
+                      - img "Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton" [ref=e346]
+                    - generic [ref=e347]:
+                      - img "Customizable" [ref=e350]
+                      - button "Add the item Rosalie Coin Purse to your wishlist" [ref=e354]:
+                        - img [ref=e355]
+                - listitem [ref=e357]:
+                  - generic [ref=e358] [cursor=pointer]:
+                    - generic [ref=e359]:
+                      - generic [ref=e361]:
+                        - link "Fleur de Monogram Bag Charm Chain" [ref=e364]:
+                          - /url: /eng-nl/products/fleur-de-monogram-bag-charm-chain-s00-nvprod4480138v/M01413
+                        - generic [ref=e365]: 480,00€
+                      - img "Alma BB Monogram Canvas in Women's Handbags Handbags collections by Louis Vuitton" [ref=e370]
+                    - button "Add the item Fleur de Monogram Bag Charm Chain to your wishlist" [ref=e373]:
+                      - img [ref=e374]
+    - contentinfo [ref=e376]:
+      - navigation "Breadcrumb" [ref=e378]:
+        - list [ref=e379]:
+          - listitem [ref=e380]:
+            - link "Louis Vuitton" [ref=e381] [cursor=pointer]:
+              - /url: /eng-nl/homepage
+            - text: "-"
+          - listitem [ref=e382]: Women - Handbags-
+          - listitem [ref=e383]:
+            - link "All Handbags" [ref=e384] [cursor=pointer]:
+              - /url: /eng-nl/women/handbags/_/N-tfr7qdp
+            - text: "-"
+          - listitem [ref=e385]: Alma BB
+      - generic [ref=e386]:
+        - region "Help" [ref=e387]:
+          - generic [ref=e388]: Help
+          - list [ref=e390]:
+            - listitem [ref=e391]:
+              - generic [ref=e392]:
+                - text: A Client Advisor is available at
+                - link "+31 207 219 441" [ref=e393] [cursor=pointer]:
+                  - /url: tel:+31 207 219 441
+                - text: .
+                - text: You can also
+                - link "chat" [ref=e394] [cursor=pointer]:
+                  - /url: https://en.louisvuitton.com/eng-nl/contact-us
+                - text: .
+            - listitem [ref=e395]:
+              - link "FAQ's" [ref=e396] [cursor=pointer]:
+                - /url: /eng-nl/faq
+            - listitem [ref=e397]:
+              - link "Product Care" [ref=e398] [cursor=pointer]:
+                - /url: /eng-nl/care-service
+            - listitem [ref=e399]:
+              - link "Stores" [ref=e400] [cursor=pointer]:
+                - /url: /eng-nl/stores
+        - region "Services" [ref=e401]:
+          - generic [ref=e402]: Services
+          - list [ref=e404]:
+            - listitem [ref=e405]:
+              - link "Repairs" [ref=e406] [cursor=pointer]:
+                - /url: /eng-nl/stories/louis-vuitton-repairs
+            - listitem [ref=e407]:
+              - link "Personalization" [ref=e408] [cursor=pointer]:
+                - /url: /eng-nl/gifts/personalization/all-personalization/_/N-t1jlwphf
+            - listitem [ref=e409]:
+              - link "Art of Gifting" [ref=e410] [cursor=pointer]:
+                - /url: /eng-nl/stories/gifting
+            - listitem [ref=e411]:
+              - link "Download our Apps" [ref=e412] [cursor=pointer]:
+                - /url: /eng-nl/apps
+        - region "About Louis Vuitton" [ref=e413]:
+          - generic [ref=e414]: About Louis Vuitton
+          - list [ref=e416]:
+            - listitem [ref=e417]:
+              - link "Fashion Shows" [ref=e418] [cursor=pointer]:
+                - /url: /eng-nl/magazine/fashion-shows
+            - listitem [ref=e419]:
+              - link "Arts & Culture" [ref=e420] [cursor=pointer]:
+                - /url: /eng-nl/magazine/arts-and-culture
+            - listitem [ref=e421]:
+              - link "La Maison" [ref=e422] [cursor=pointer]:
+                - /url: /eng-nl/magazine/la-maison
+            - listitem [ref=e423]:
+              - link "Sustainability" [ref=e424] [cursor=pointer]:
+                - /url: /eng-nl/magazine/sustainability
+            - listitem [ref=e425]:
+              - link "Latest News" [ref=e426] [cursor=pointer]:
+                - /url: /eng-nl/magazine
+            - listitem [ref=e427]:
+              - link "Ethics & Compliance" [ref=e428] [cursor=pointer]:
+                - /url: https://www.lvmh.com/en/ethics-and-compliance
+            - listitem [ref=e429]:
+              - link "Careers" [ref=e430] [cursor=pointer]:
+                - /url: https://jobs.louisvuitton.com/en
+            - listitem [ref=e431]:
+              - link "Foundation Louis Vuitton" [ref=e432] [cursor=pointer]:
+                - /url: https://www.fondationlouisvuitton.fr/en
+        - region "Connect" [ref=e433]:
+          - generic [ref=e434]: Connect
+          - list [ref=e436]:
+            - listitem [ref=e437]:
+              - generic [ref=e438]:
+                - link "Sign up" [ref=e439] [cursor=pointer]:
+                  - /url: "#newslettersubscription"
+                - text: for Louis Vuitton emails and receive the latest news from the Maison, including exclusive online pre-launches and new collections.
+            - listitem [ref=e440]:
+              - button "Follow Us" [ref=e441] [cursor=pointer]
+            - listitem
+      - generic [ref=e442]:
+        - generic [ref=e443]:
+          - list [ref=e444]:
+            - listitem [ref=e445]:
+              - button "Sitemap" [ref=e446] [cursor=pointer]
+            - listitem [ref=e447]:
+              - link "Legal & privacy" [ref=e448] [cursor=pointer]:
+                - /url: /eng-nl/legal-privacy
+            - listitem [ref=e449]:
+              - button "Cookies" [ref=e450] [cursor=pointer]
+          - list [ref=e451]:
+            - listitem [ref=e452]:
+              - 'link "Ship to : Netherlands - Change Country/Region" [ref=e453] [cursor=pointer]': Ship to :Netherlands
+        - link "LOUIS VUITTON Official International Website" [ref=e456] [cursor=pointer]:
+          - /url: /eng-nl/homepage
+          - generic [ref=e457]:
+            - img [ref=e458]
+            - generic [ref=e460]: Louis Vuitton

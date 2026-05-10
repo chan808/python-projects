@@ -57,29 +57,6 @@ class LvScraper(BaseScraper):
     def _detail_wait_range(self) -> tuple[float, float]:
         return (2.0, 4.0)
 
-    def _wait_for_detail_content(self) -> None:
-        try:
-            WebDriverWait(self.driver, 10).until(
-                lambda d: (
-                    d.find_elements(By.CSS_SELECTOR, "p.lv-product__description")
-                    or d.find_elements(By.CSS_SELECTOR, "div.lv-product-detailed-features")
-                )
-            )
-        except Exception:
-            pass
-
-    def parse_detail(self, url: str) -> dict:
-        result = super().parse_detail(url)
-        # URL 끝 세그먼트가 SKU (예: .../M46990)
-        sku = url.rstrip("/").split("/")[-1]
-        if sku and self.driver:
-            try:
-                stores = fetch_stores_with_stock_via_driver(self.driver, sku)
-                result["store_inventory"] = ", ".join(stores)
-            except Exception:
-                pass
-        return result
-
     def _parse_detail_from_next_data(self, html: str) -> dict:
         # LV는 __NEXT_DATA__가 아닌 window.__NUXT__를 사용하므로 항상 빈 dict 반환
         # 실제 파싱은 _fill_from_selectors에서 처리
@@ -105,7 +82,7 @@ class LvScraper(BaseScraper):
                 if bdo_texts:
                     result["sizes"] = " ".join(bdo_texts) + " cm"
 
-        # 색상(엑셀): "소재" 변형 버튼 우선 → 없으면 상세 특징 ul 첫 3개 li
+        # 색상(엑셀): 상세 페이지 "소재" 변형 선택 버튼의 값 → 없으면 skip
         for btn in soup.select("button.lv-product-variations__selector"):
             title_el = btn.select_one("span.lv-product-variation-selector__title")
             if title_el and title_el.get_text(strip=True) == "소재":
@@ -113,13 +90,6 @@ class LvScraper(BaseScraper):
                 if value_el:
                     result["colors"] = value_el.get_text(strip=True)
                 break
-
-        if not result.get("colors"):
-            ul = soup.select_one("div.lv-product-detailed-features__description ul")
-            if ul:
-                items = [li.get_text(strip=True) for li in ul.find_all("li", recursive=False) if li.get_text(strip=True)]
-                if items:
-                    result["colors"] = "\n".join(items[:3])
 
         # 소재(엑셀): 치수 아래 ul > li 첫 MATERIAL_LI_COUNT개를 줄바꿈으로 연결
         if not result.get("material"):
@@ -240,7 +210,7 @@ class LvScraper(BaseScraper):
         soup = BeautifulSoup(html, "html.parser")
         cards = soup.select(product_card_selector)
 
-        sku_pattern = re.compile(r"[A-Z][0-9]{4}[0-9A-Z]")
+        sku_pattern = re.compile(r"[A-Z][0-9]{5}")
         products = []
 
         for card in cards:

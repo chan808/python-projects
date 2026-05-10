@@ -1,0 +1,277 @@
+- generic [ref=e3]:
+  - paragraph [ref=e4]: 마이 모노그램 페임 렉탱글 선글라스 S00 - 액세서리 | 루이 비통
+  - link "메인으로 가기" [ref=e5] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - button "커머셜 배너 그만 보기" [ref=e9] [cursor=pointer]:
+        - img [ref=e10]
+      - link "가정의 달, 루이 비통이 엄선한 선물 추천 셀렉션" [ref=e15] [cursor=pointer]:
+        - /url: https://kr.louisvuitton.com/kor-kr/gifts/family-month-gift-guide/_/N-twd02lg
+      - button "닫기" [ref=e16] [cursor=pointer]:
+        - img [ref=e17]
+    - banner [ref=e20]:
+      - generic [ref=e22]:
+        - navigation "메인":
+          - button "메뉴 네비게이션" [ref=e23] [cursor=pointer]:
+            - generic [ref=e25]:
+              - generic [ref=e26]: 메뉴
+              - generic [ref=e27]: 닫기
+        - search [ref=e28]:
+          - button "검색" [ref=e29] [cursor=pointer]:
+            - img [ref=e30]
+            - generic [ref=e32]: 검색
+        - link "루이 비통 공식 인터네셔널 웹사이트" [ref=e34] [cursor=pointer]:
+          - /url: /kor-kr/homepage
+          - generic [ref=e35]:
+            - img [ref=e36]
+            - generic [ref=e38]: 루이 비통
+        - navigation "유틸리티" [ref=e39]:
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - button "클라이언트 서비스" [ref=e43] [cursor=pointer]:
+                - generic [ref=e44]: 클라이언트 서비스
+            - listitem [ref=e45]:
+              - link "위시리스트 (위시리스트에 0 제품이 있습니다.)" [ref=e46] [cursor=pointer]:
+                - /url: /kor-kr/mylv/wishlist
+                - generic [ref=e47]:
+                  - img [ref=e48]
+                  - generic [ref=e50]: 위시리스트 (위시리스트에 0 제품이 있습니다.)
+            - listitem [ref=e51]:
+              - button "My LV" [ref=e52] [cursor=pointer]:
+                - img [ref=e53]
+                - generic [ref=e55]: My LV
+            - listitem [ref=e56]:
+              - button "쇼핑백, 0 개의 아이템" [disabled] [ref=e57]:
+                - generic [ref=e58]:
+                  - img [ref=e59]
+                  - generic [ref=e61]: "0"
+  - main [ref=e62]:
+    - status [ref=e63]: 마이 모노그램 페임 렉탱글 선글라스 S00 - 액세서리 | 루이 비통
+    - generic [ref=e64]:
+      - generic [ref=e66]:
+        - generic [ref=e68]:
+          - link "선글라스" [ref=e69] [cursor=pointer]:
+            - /url: /kor-kr/women/accessories/sunglasses/_/N-t1peha6j
+            - img [ref=e70]
+            - generic [ref=e72]: 선글라스
+          - list "캐러셀 이미지" [ref=e74]:
+            - listitem [ref=e75]:
+              - button "크게 보기" [ref=e76] [cursor=pointer]
+            - listitem [ref=e79]:
+              - button "크게 보기" [ref=e80] [cursor=pointer]
+            - listitem [ref=e83]:
+              - button "크게 보기" [ref=e84] [cursor=pointer]
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - strong [ref=e93]: Z3445U
+            - heading "마이 모노그램 페임 렉탱글 선글라스" [level=1] [ref=e94]
+            - button "마이 모노그램 페임 렉탱글 선글라스 제품을 위시리스트에 추가" [ref=e97] [cursor=pointer]:
+              - img [ref=e98]
+          - generic [ref=e100]: ₩730,000
+          - generic [ref=e102]:
+            - generic [ref=e104]:
+              - generic [ref=e105]:
+                - heading "색상" [level=2] [ref=e106]
+                - generic [ref=e107]: 옐로우
+              - list [ref=e108]:
+                - listitem [ref=e109]:
+                  - link [ref=e110] [cursor=pointer]:
+                    - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z2136U
+                - listitem [ref=e113]:
+                  - link [ref=e114] [cursor=pointer]:
+                    - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z2500U
+                - listitem [ref=e117]:
+                  - link [ref=e118] [cursor=pointer]:
+                    - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z3474U
+                - listitem [ref=e121]:
+                  - link [ref=e122] [cursor=pointer]:
+                    - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z3509U
+                - listitem [ref=e125]:
+                  - link [ref=e126] [cursor=pointer]:
+                    - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z3445U
+            - button "다른 사이즈 마이 모노그램 페임 렉탱글 선글라스 선택된 색상, 소재" [ref=e129] [cursor=pointer]:
+              - generic [ref=e130]: 다른 사이즈
+              - generic [ref=e131]: 마이 모노그램 페임 렉탱글 선글라스
+              - generic [ref=e132]: 선택된 색상, 소재
+              - img [ref=e133]
+          - generic [ref=e135]:
+            - button "쇼핑백에 추가" [ref=e136] [cursor=pointer]:
+              - generic [ref=e137]: 쇼핑백에 추가
+            - button "전화로 주문" [ref=e139] [cursor=pointer]
+          - generic [ref=e143]: 여성 핸드백 구매 시, LV 립밤 & 향수 트라이얼 키트 증정 (소진 시까지, 일부 제품 제외)
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - paragraph [ref=e148]: 루이 비통의 베스트셀러인 마이 모노그램 시그니처를 트렌디하게 재해석해 선보이는 마이 모노그램 페임 렉탱글 선글라스. 하우스의 아이코닉한 플라워와 이니셜을 담아낸 세련되고 감각적인 디자인. 렌즈가 프레임 전면을 뒤덮는 독특한 스타일. 가볍고 편안한 착용감으로 어떠한 룩에도 완벽하게 어울리며 클래식한 룩에 현대적인 감각을 더해줄 아이템.
+                  - generic [ref=e150]:
+                    - list [ref=e153]:
+                      - listitem [ref=e154]: 톨토이즈 아세테이트 프레임
+                      - listitem [ref=e155]: 옐로우 렌즈
+                      - listitem [ref=e156]: 템플 부분의 마이 모노그램 시그니처
+                      - listitem [ref=e157]: 엔드 피스 부분의 모노그램 플라워
+                      - listitem [ref=e158]: 엔드 팁 부분의 모노그램 플라워 시그니처
+                    - generic [ref=e159]:
+                      - text: 자외선 차단 지수 관련 자세한 정보를 확인하시기 바랍니다
+                      - link "보기" [ref=e160] [cursor=pointer]:
+                        - /url: https://www.louisvuitton.com/documents/LensCategories/TechnicalFocus_KR
+                - button "더보기" [ref=e161] [cursor=pointer]
+              - button "매장에서 찾기" [ref=e165] [cursor=pointer]:
+                - generic [ref=e166]:
+                  - generic [ref=e168]: 매장에서 찾기
+                  - img [ref=e169]
+            - button "배송 & 교환" [ref=e172] [cursor=pointer]:
+              - generic [ref=e173]:
+                - generic [ref=e174]: 배송 & 교환
+                - img [ref=e175]
+            - button "온라인 단독 혜택" [ref=e178] [cursor=pointer]:
+              - generic [ref=e179]: 온라인 단독 혜택
+              - img [ref=e180]
+      - generic [ref=e185]:
+        - tablist [ref=e189]:
+          - tab "최근 확인 제품" [selected] [ref=e190]:
+            - generic [ref=e191]: 최근 확인 제품
+        - tabpanel "최근 확인 제품" [ref=e194]:
+          - list [ref=e195]:
+            - listitem [ref=e196]:
+              - generic [ref=e197] [cursor=pointer]:
+                - generic [ref=e198]:
+                  - generic [ref=e200]:
+                    - link "알마 BB (Alma BB)" [ref=e203]:
+                      - /url: /kor-kr/products/alma-bb-monogram-nvprod5190086v/M46990
+                    - generic [ref=e204]: ₩2,770,000
+                  - img "S00 액세서리 선글라스 마이 모노그램 페임 렉탱글 선글라스 | 루이비통 공식 온라인 스토어®" [ref=e209]
+                - generic [ref=e210]:
+                  - img "개인 맞춤" [ref=e213]
+                  - button "알마 BB (Alma BB) 제품을 위시리스트에 추가" [ref=e217]:
+                    - img [ref=e218]
+  - contentinfo [ref=e220]:
+    - navigation "브레드 크럼" [ref=e222]:
+      - list [ref=e223]:
+        - listitem [ref=e224]:
+          - link "루이 비통" [ref=e225] [cursor=pointer]:
+            - /url: /kor-kr/homepage
+          - text: "-"
+        - listitem [ref=e226]: 여성 - 액세서리-
+        - listitem [ref=e227]:
+          - link "선글라스" [ref=e228] [cursor=pointer]:
+            - /url: /kor-kr/women/accessories/sunglasses/_/N-t1peha6j
+          - text: "-"
+        - listitem [ref=e229]: 마이 모노그램 페임 렉탱글 선글라스
+    - generic [ref=e230]:
+      - region "도움" [ref=e231]:
+        - generic [ref=e232]: 도움
+        - list [ref=e234]:
+          - listitem [ref=e235]:
+            - generic [ref=e236]:
+              - text: 클라이언트 어드바이저는
+              - link "+ 82 2 3432 1854" [ref=e237] [cursor=pointer]:
+                - /url: "tel:{{+ 82 2 3432 1854}}"
+              - text: 를 통해 이용할 수 있습니다.
+              - link "여기" [ref=e238] [cursor=pointer]:
+                - /url: https://kr.louisvuitton.com/kor-kr/contact-us
+              - text: 를 클릭하여 더 많은 정보를 얻을 수 있습니다.
+          - listitem [ref=e239]:
+            - link "자주 묻는 질문" [ref=e240] [cursor=pointer]:
+              - /url: /kor-kr/faq
+          - listitem [ref=e241]:
+            - link "제품 관리" [ref=e242] [cursor=pointer]:
+              - /url: /kor-kr/care-service
+          - listitem [ref=e243]:
+            - link "매장정보" [ref=e244] [cursor=pointer]:
+              - /url: /kor-kr/stores
+      - region "서비스" [ref=e245]:
+        - generic [ref=e246]: 서비스
+        - list [ref=e248]:
+          - listitem [ref=e249]:
+            - link "수리" [ref=e250] [cursor=pointer]:
+              - /url: /kor-kr/stories/louis-vuitton-repairs
+          - listitem [ref=e251]:
+            - link "루이 비통 기프트" [ref=e252] [cursor=pointer]:
+              - /url: /kor-kr/stories/gifting
+          - listitem [ref=e253]:
+            - link "커스터마이징" [ref=e254] [cursor=pointer]:
+              - /url: /kor-kr/gifts/personalization/all-personalization/_/N-t1jlwphf
+          - listitem [ref=e255]:
+            - link "앱" [ref=e256] [cursor=pointer]:
+              - /url: /kor-kr/apps
+          - listitem [ref=e257]:
+            - link "카카오 채널" [ref=e258] [cursor=pointer]:
+              - /url: http://pf.kakao.com/_gDpbC
+      - region "루이비통 소개" [ref=e259]:
+        - generic [ref=e260]: 루이비통 소개
+        - list [ref=e262]:
+          - listitem [ref=e263]:
+            - link "패션쇼" [ref=e264] [cursor=pointer]:
+              - /url: /kor-kr/magazine/fashion-shows
+          - listitem [ref=e265]:
+            - link "예술 & 문화" [ref=e266] [cursor=pointer]:
+              - /url: /kor-kr/magazine/arts-and-culture
+          - listitem [ref=e267]:
+            - link "메종" [ref=e268] [cursor=pointer]:
+              - /url: /kor-kr/magazine/la-maison
+          - listitem [ref=e269]:
+            - link "지속가능성" [ref=e270] [cursor=pointer]:
+              - /url: /kor-kr/magazine/sustainability
+          - listitem [ref=e271]:
+            - link "최근 뉴스" [ref=e272] [cursor=pointer]:
+              - /url: /kor-kr/magazine
+          - listitem [ref=e273]:
+            - link "윤리 및 준법경영" [ref=e274] [cursor=pointer]:
+              - /url: https://www.lvmh.com/en/ethics-and-compliance
+          - listitem [ref=e275]:
+            - link "채용정보" [ref=e276] [cursor=pointer]:
+              - /url: https://jobs.louisvuitton.com/en
+          - listitem [ref=e277]:
+            - link "루이 비통 재단" [ref=e278] [cursor=pointer]:
+              - /url: https://www.fondationlouisvuitton.fr/en
+      - region "연결" [ref=e279]:
+        - generic [ref=e280]: 연결
+        - list [ref=e282]:
+          - listitem [ref=e283]:
+            - generic [ref=e284]:
+              - text: 최신 컬렉션, 캠페인을 가장 먼저 받아보고 싶다면, 뉴스레터를
+              - link "구독" [ref=e285] [cursor=pointer]:
+                - /url: https://kr.louisvuitton.com/kor-kr/mylv/newsletter
+              - text: 하세요.
+          - listitem [ref=e286]:
+            - button "소셜 미디어" [ref=e287] [cursor=pointer]
+          - listitem
+    - generic [ref=e288]:
+      - generic [ref=e289]:
+        - list [ref=e290]:
+          - listitem [ref=e291]:
+            - button "사이트맵" [ref=e292] [cursor=pointer]
+          - listitem [ref=e293]:
+            - link "법적고지" [ref=e294] [cursor=pointer]:
+              - /url: /kor-kr/legal-notice
+          - listitem [ref=e295]:
+            - link "개인정보처리방침" [ref=e296] [cursor=pointer]:
+              - /url: /kor-kr/legal-notice#privacy-policy
+              - generic [ref=e298]: 개인정보처리방침
+        - list [ref=e299]:
+          - listitem [ref=e300]:
+            - 'link "배송지 : 대한민국 - 국가 · 지역 선택" [ref=e301] [cursor=pointer]': 배송지 :대한민국
+      - generic [ref=e302]:
+        - paragraph [ref=e304]:
+          - text: "루이비통코리아(유)｜대표이사: 위그 앙리 피에르 보네 마심베르"
+          - text: "서울 중구 청계천로 100 시그니쳐타워 서관 16층｜사업자등록번호: 102-81-29113"
+          - link "사업자정보확인" [ref=e305] [cursor=pointer]:
+            - /url: http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1028129113&apv_perm_no=null
+          - text: "통신판매신고번호: 2023-서울중구-0101｜호스팅 서비스:"
+          - generic [ref=e306]: Salesforce
+          - text: "고객센터: 02-3432-1854｜Email:"
+          - link "korea@contact.louisvuitton.com" [ref=e307] [cursor=pointer]:
+            - /url: mailto:korea@contact.louisvuitton.com
+        - paragraph [ref=e309]:
+          - text: 씨티은행 구매안전 서비스(채무지급보증)
+          - text: 고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 씨티은행 구매안전서비스(
+          - link "지급보증서" [ref=e311] [cursor=pointer]:
+            - /url: /content/dam/lv/online/other/korea/지급보증서%202026.pdf
+          - text: )를 이용하실 수 있습니다.
+      - link "루이 비통 공식 인터네셔널 웹사이트" [ref=e314] [cursor=pointer]:
+        - /url: /kor-kr/homepage
+        - generic [ref=e315]:
+          - img [ref=e316]
+          - generic [ref=e318]: 루이 비통

@@ -1,0 +1,700 @@
+- generic [ref=e3]:
+  - paragraph [ref=e4]: 여성 선글라스 | 루이 비통
+  - link "메인으로 가기" [ref=e5] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - button "커머셜 배너 그만 보기" [ref=e9] [cursor=pointer]:
+        - img [ref=e10]
+      - link "여성 2026 리조트 컬렉션" [ref=e1201] [cursor=pointer]:
+        - /url: https://kr.louisvuitton.com/kor-kr/new/for-women/lv-resort-collection/_/N-t1h80en2
+      - button "닫기" [ref=e16] [cursor=pointer]:
+        - img [ref=e17]
+    - banner [ref=e20]:
+      - generic [ref=e22]:
+        - navigation "메인":
+          - button "메뉴 네비게이션" [ref=e23] [cursor=pointer]:
+            - generic [ref=e25]:
+              - generic [ref=e26]: 메뉴
+              - generic [ref=e27]: 닫기
+        - search [ref=e28]:
+          - button "검색" [ref=e29] [cursor=pointer]:
+            - img [ref=e30]
+            - generic [ref=e32]: 검색
+        - link "루이 비통 공식 인터네셔널 웹사이트" [ref=e34] [cursor=pointer]:
+          - /url: /kor-kr/homepage
+          - generic [ref=e35]:
+            - img [ref=e36]
+            - generic [ref=e38]: 루이 비통
+        - navigation "유틸리티" [ref=e39]:
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - button "클라이언트 서비스" [ref=e43] [cursor=pointer]:
+                - generic [ref=e44]: 클라이언트 서비스
+            - listitem [ref=e45]:
+              - link "위시리스트 (위시리스트에 0 제품이 있습니다.)" [ref=e1202] [cursor=pointer]:
+                - /url: /kor-kr/mylv/wishlist
+                - generic [ref=e47]:
+                  - img [ref=e48]
+                  - generic [ref=e50]: 위시리스트 (위시리스트에 0 제품이 있습니다.)
+            - listitem [ref=e51]:
+              - button "My LV" [ref=e52] [cursor=pointer]:
+                - img [ref=e53]
+                - generic [ref=e55]: My LV
+            - listitem [ref=e56]:
+              - button "쇼핑백, 0 개의 아이템" [disabled] [ref=e1203]:
+                - generic [ref=e58]:
+                  - img [ref=e59]
+                  - generic [ref=e1204]: "0"
+  - main [ref=e61]:
+    - status [ref=e62]: 여성 선글라스 | 루이 비통
+    - generic [ref=e63]:
+      - generic [ref=e66]:
+        - navigation "빠른 탐색" [ref=e68]:
+          - button "선글라스" [ref=e72] [cursor=pointer]:
+            - heading "선글라스" [level=1] [ref=e73]
+            - img [ref=e74]
+        - button "필터" [ref=e79] [cursor=pointer]:
+          - generic [ref=e80]: 필터
+          - img [ref=e81]
+      - list [ref=e87]:
+        - listitem [ref=e88]:
+          - link "스퀘어" [ref=e89] [cursor=pointer]:
+            - /url: /kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bs1tbobbl
+            - paragraph [ref=e93]: 스퀘어
+        - listitem [ref=e94]:
+          - link "라운드" [ref=e95] [cursor=pointer]:
+            - /url: /kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bs14cg944
+            - paragraph [ref=e99]: 라운드
+        - listitem [ref=e100]:
+          - link "캣 아이" [ref=e101] [cursor=pointer]:
+            - /url: /kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bs1u01urp
+            - paragraph [ref=e105]: 캣 아이
+        - listitem [ref=e106]:
+          - link "파일럿" [ref=e107] [cursor=pointer]:
+            - /url: /kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bs1odhgle
+            - paragraph [ref=e111]: 파일럿
+        - listitem [ref=e112]:
+          - link "마스크" [ref=e113] [cursor=pointer]:
+            - /url: /kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bsva6dft
+            - paragraph [ref=e117]: 마스크
+      - generic [ref=e118]:
+        - list [ref=e119]:
+          - listitem [ref=e120]:
+            - generic [ref=e121]:
+              - heading "신제품" [level=2] [ref=e122]
+              - list [ref=e123]:
+                - listitem [ref=e124]:
+                  - generic [ref=e125] [cursor=pointer]:
+                    - generic [ref=e126]:
+                      - generic [ref=e127]:
+                        - generic [ref=e128]:
+                          - heading "마이 모노그램 페임 렉탱글 선글라스" [level=2] [ref=e130]:
+                            - link "마이 모노그램 페임 렉탱글 선글라스" [ref=e131]:
+                              - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z3445U
+                          - generic [ref=e132]: ₩730,000
+                        - generic [ref=e134]:
+                          - list "사용 가능한 색상" [ref=e135]:
+                            - listitem [ref=e136]:
+                              - button [ref=e137]
+                            - listitem [ref=e140]:
+                              - button [ref=e141]
+                            - listitem [ref=e144]:
+                              - button [ref=e145]
+                          - generic [ref=e148]:
+                            - text: + 2
+                            - generic [ref=e149]: 색상
+                      - group "마이 모노그램 페임 렉탱글 선글라스" [ref=e151]
+                      - generic:
+                        - button "이전" [ref=e174]:
+                          - img [ref=e175]
+                        - button "다음" [ref=e177]:
+                          - img [ref=e178]
+                    - button "마이 모노그램 페임 렉탱글 선글라스 제품을 위시리스트에 추가" [ref=e182]:
+                      - img [ref=e183]
+                - listitem [ref=e185]:
+                  - generic [ref=e186] [cursor=pointer]:
+                    - generic [ref=e187]:
+                      - generic [ref=e188]:
+                        - generic [ref=e189]:
+                          - heading "마이 모노그램 페임 렉탱글 선글라스" [level=2] [ref=e191]:
+                            - link "마이 모노그램 페임 렉탱글 선글라스" [ref=e192]:
+                              - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z3474U
+                          - generic [ref=e193]: ₩730,000
+                        - generic [ref=e195]:
+                          - list "사용 가능한 색상" [ref=e196]:
+                            - listitem [ref=e197]:
+                              - button [ref=e198]
+                            - listitem [ref=e201]:
+                              - button [ref=e202]
+                            - listitem [ref=e205]:
+                              - button [ref=e206]
+                          - generic [ref=e209]:
+                            - text: + 2
+                            - generic [ref=e210]: 색상
+                      - group "마이 모노그램 페임 렉탱글 선글라스" [ref=e212]
+                      - generic:
+                        - button "이전" [ref=e235]:
+                          - img [ref=e236]
+                        - button "다음" [ref=e238]:
+                          - img [ref=e239]
+                    - button "마이 모노그램 페임 렉탱글 선글라스 제품을 위시리스트에 추가" [ref=e243]:
+                      - img [ref=e244]
+                - listitem [ref=e246]:
+                  - generic [ref=e247] [cursor=pointer]:
+                    - generic [ref=e248]:
+                      - generic [ref=e249]:
+                        - generic [ref=e250]:
+                          - heading "마이 모노그램 페임 렉탱글 선글라스" [level=2] [ref=e252]:
+                            - link "마이 모노그램 페임 렉탱글 선글라스" [ref=e253]:
+                              - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z3509U
+                          - generic [ref=e254]: ₩730,000
+                        - generic [ref=e256]:
+                          - list "사용 가능한 색상" [ref=e257]:
+                            - listitem [ref=e258]:
+                              - button [ref=e259]
+                            - listitem [ref=e262]:
+                              - button [ref=e263]
+                            - listitem [ref=e266]:
+                              - button [ref=e267]
+                          - generic [ref=e270]:
+                            - text: + 2
+                            - generic [ref=e271]: 색상
+                      - group "마이 모노그램 페임 렉탱글 선글라스" [ref=e273]
+                      - generic:
+                        - button "이전" [ref=e296]:
+                          - img [ref=e297]
+                        - button "다음" [ref=e299]:
+                          - img [ref=e300]
+                    - button "마이 모노그램 페임 렉탱글 선글라스 제품을 위시리스트에 추가" [ref=e304]:
+                      - img [ref=e305]
+                - listitem [ref=e307]:
+                  - generic [ref=e308] [cursor=pointer]:
+                    - generic [ref=e309]:
+                      - generic [ref=e310]:
+                        - generic [ref=e311]:
+                          - generic [ref=e313]: SS26 RESORT
+                          - heading "LV 코멧 스퀘어 선글라스" [level=2] [ref=e315]:
+                            - link "LV 코멧 스퀘어 선글라스" [ref=e316]:
+                              - /url: /kor-kr/products/lv-comet-square-sunglasses-s00-nvprod7690003v/Z3396U
+                          - generic [ref=e317]: ₩1,170,000
+                        - list "사용 가능한 색상" [ref=e320]:
+                          - listitem [ref=e321]:
+                            - button [ref=e322]
+                          - listitem [ref=e325]:
+                            - button [ref=e326]
+                      - group "LV 코멧 스퀘어 선글라스" [ref=e330]
+                      - generic:
+                        - button "이전" [ref=e353]:
+                          - img [ref=e354]
+                        - button "다음" [ref=e356]:
+                          - img [ref=e357]
+                    - button "LV 코멧 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e361]:
+                      - img [ref=e362]
+                - listitem [ref=e364]:
+                  - generic [ref=e365] [cursor=pointer]:
+                    - generic [ref=e366]:
+                      - generic [ref=e368]:
+                        - heading "마이 모노그램 페임 스퀘어 선글라스" [level=2] [ref=e370]:
+                          - link "마이 모노그램 페임 스퀘어 선글라스" [ref=e371]:
+                            - /url: /kor-kr/products/my-monogram-fame-square-sunglasses-s00-nvprod7670014v/Z3357E
+                        - generic [ref=e372]: ₩730,000
+                      - group "마이 모노그램 페임 스퀘어 선글라스" [ref=e374]
+                      - generic:
+                        - button "이전" [ref=e397]:
+                          - img [ref=e398]
+                        - button "다음" [ref=e400]:
+                          - img [ref=e401]
+                    - button "마이 모노그램 페임 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e405]:
+                      - img [ref=e406]
+                - listitem [ref=e408]:
+                  - generic [ref=e409] [cursor=pointer]:
+                    - generic [ref=e410]:
+                      - generic [ref=e412]:
+                        - heading "LV 아우라 캣아이 선글라스" [level=2] [ref=e414]:
+                          - link "LV 아우라 캣아이 선글라스" [ref=e415]:
+                            - /url: /kor-kr/products/lv-aura-cat-eye-sunglasses-s00-nvprod7520018v/Z3391E
+                        - generic [ref=e416]: ₩640,000
+                      - group "LV 아우라 캣아이 선글라스" [ref=e418]
+                    - button "LV 아우라 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e425]:
+                      - img [ref=e426]
+                - listitem [ref=e428]:
+                  - generic [ref=e429] [cursor=pointer]:
+                    - generic [ref=e430]:
+                      - generic [ref=e431]:
+                        - generic [ref=e432]:
+                          - heading "LV 아우라 스퀘어 선글라스" [level=2] [ref=e434]:
+                            - link "LV 아우라 스퀘어 선글라스" [ref=e435]:
+                              - /url: /kor-kr/products/lv-aura-square-sunglasses-s00-nvprod6160003v/Z3412E
+                          - generic [ref=e436]: ₩640,000
+                        - list "사용 가능한 색상" [ref=e439]:
+                          - listitem [ref=e440]:
+                            - button [ref=e441]
+                          - listitem [ref=e444]:
+                            - button [ref=e445]
+                      - group "LV 아우라 스퀘어 선글라스" [ref=e449]
+                      - generic:
+                        - button "이전" [ref=e472]:
+                          - img [ref=e473]
+                        - button "다음" [ref=e475]:
+                          - img [ref=e476]
+                    - button "LV 아우라 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e480]:
+                      - img [ref=e481]
+                - listitem [ref=e483]:
+                  - generic [ref=e484] [cursor=pointer]:
+                    - generic [ref=e485]:
+                      - generic [ref=e487]:
+                        - heading "LV 아우라 안티 블루 레이 캣아이 선글라스" [level=2] [ref=e489]:
+                          - link "LV 아우라 안티 블루 레이 캣아이 선글라스" [ref=e490]:
+                            - /url: /kor-kr/products/lv-aura-anti-blue-ray-cat-eye-sunglasses-s00-nvprod7520017v/Z3307E
+                        - generic [ref=e491]: ₩640,000
+                      - group "LV 아우라 안티 블루 레이 캣아이 선글라스" [ref=e493]
+                      - generic:
+                        - button "이전" [ref=e516]:
+                          - img [ref=e517]
+                        - button "다음" [ref=e519]:
+                          - img [ref=e520]
+                    - button "LV 아우라 안티 블루 레이 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e524]:
+                      - img [ref=e525]
+              - button "더보기" [ref=e528] [cursor=pointer]
+          - listitem [ref=e529]:
+            - generic [ref=e530]:
+              - heading "아이콘" [level=2] [ref=e531]
+              - list [ref=e532]:
+                - listitem [ref=e533]:
+                  - generic [ref=e534] [cursor=pointer]:
+                    - generic [ref=e537]:
+                      - heading "마이 모노그램 페임 렉탱글 선글라스" [level=2] [ref=e539]:
+                        - link "마이 모노그램 페임 렉탱글 선글라스" [ref=e540]:
+                          - /url: /kor-kr/products/my-monogram-fame-rectangle-sunglasses-s00-nvprod5380042v/Z2136U
+                      - generic [ref=e541]: ₩730,000
+                    - button "마이 모노그램 페임 렉탱글 선글라스 제품을 위시리스트에 추가" [ref=e548]:
+                      - img [ref=e549]
+                - listitem [ref=e551]:
+                  - generic [ref=e552] [cursor=pointer]:
+                    - generic [ref=e555]:
+                      - heading "마이 모노그램 스퀘어 선글라스" [level=2] [ref=e557]:
+                        - link "마이 모노그램 스퀘어 선글라스" [ref=e558]:
+                          - /url: /kor-kr/products/my-monogram-square-sunglasses-s00-nvprod2880233v/Z1523E
+                      - generic [ref=e559]: ₩760,000
+                    - generic [ref=e564]:
+                      - generic [ref=e566]:
+                        - img "TRY ON!" [ref=e567]
+                        - generic [ref=e570]: TRY ON!
+                      - button "마이 모노그램 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e572]:
+                        - img [ref=e573]
+                - listitem [ref=e575]:
+                  - generic [ref=e576] [cursor=pointer]:
+                    - generic [ref=e579]:
+                      - heading "LV 주얼 캣아이 선글라스" [level=2] [ref=e581]:
+                        - link "LV 주얼 캣아이 선글라스" [ref=e582]:
+                          - /url: /kor-kr/products/lv-jewel-cat-eye-sunglasses-s00-nvprod5020009v/Z2142U
+                      - generic [ref=e583]: ₩1,110,000
+                    - button "LV 주얼 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e590]:
+                      - img [ref=e591]
+                - listitem [ref=e593]:
+                  - generic [ref=e594] [cursor=pointer]:
+                    - generic [ref=e597]:
+                      - heading "마이 LV 체인 투 클라시크 스퀘어 선글라스" [level=2] [ref=e599]:
+                        - link "마이 LV 체인 투 클라시크 스퀘어 선글라스" [ref=e600]:
+                          - /url: /kor-kr/products/my-lv-chain-two-classique-square-sunglasses-s00-nvprod4330008v/Z1911U
+                      - generic [ref=e601]: ₩870,000
+                    - generic [ref=e606]:
+                      - generic [ref=e608]:
+                        - img "TRY ON!" [ref=e609]
+                        - generic [ref=e612]: TRY ON!
+                      - button "마이 LV 체인 투 클라시크 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e614]:
+                        - img [ref=e615]
+                - listitem [ref=e617]:
+                  - generic [ref=e618] [cursor=pointer]:
+                    - generic [ref=e621]:
+                      - heading "LV-GO14 스퀘어 선글라스" [level=2] [ref=e623]:
+                        - link "LV-GO14 스퀘어 선글라스" [ref=e624]:
+                          - /url: /kor-kr/products/lv-twist-square-sunglasses-s00-nvprod4970099v/Z2120E
+                      - generic [ref=e625]: ₩880,000
+                    - generic [ref=e630]:
+                      - generic [ref=e632]:
+                        - img "TRY ON!" [ref=e633]
+                        - generic [ref=e636]: TRY ON!
+                      - button "LV-GO14 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e638]:
+                        - img [ref=e639]
+                - listitem [ref=e641]:
+                  - generic [ref=e642] [cursor=pointer]:
+                    - generic [ref=e645]:
+                      - heading "마이 모노그램 페임 캣아이 선글라스" [level=2] [ref=e647]:
+                        - link "마이 모노그램 페임 캣아이 선글라스" [ref=e648]:
+                          - /url: /kor-kr/products/my-monogram-fame-cat-eye-sunglasses-s00-nvprod5380040v/Z2130U
+                      - generic [ref=e649]: ₩730,000
+                    - button "마이 모노그램 페임 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e656]:
+                      - img [ref=e657]
+                - listitem [ref=e659]:
+                  - generic [ref=e660] [cursor=pointer]:
+                    - generic [ref=e663]:
+                      - heading "LV 아이콘 캣아이 선글라스" [level=2] [ref=e665]:
+                        - link "LV 아이콘 캣아이 선글라스" [ref=e666]:
+                          - /url: /kor-kr/products/lv-iconic-cat-eye-sunglasses-s00-nvprod3920030v/Z1733E
+                      - generic [ref=e667]: ₩860,000
+                    - generic [ref=e672]:
+                      - generic [ref=e674]:
+                        - img "TRY ON!" [ref=e675]
+                        - generic [ref=e678]: TRY ON!
+                      - button "LV 아이콘 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e680]:
+                        - img [ref=e681]
+                - listitem [ref=e683]:
+                  - generic [ref=e684] [cursor=pointer]:
+                    - generic [ref=e687]:
+                      - heading "LV 주얼 캣아이 선글라스" [level=2] [ref=e689]:
+                        - link "LV 주얼 캣아이 선글라스" [ref=e690]:
+                          - /url: /kor-kr/products/lv-jewel-cat-eye-sunglasses-s00-nvprod5020009v/Z1626U
+                      - generic [ref=e691]: ₩1,110,000
+                    - generic [ref=e696]:
+                      - generic [ref=e698]:
+                        - img "TRY ON!" [ref=e699]
+                        - generic [ref=e702]: TRY ON!
+                      - button "LV 주얼 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e704]:
+                        - img [ref=e705]
+                - listitem [ref=e707]:
+                  - generic [ref=e708] [cursor=pointer]:
+                    - generic [ref=e711]:
+                      - heading "LV 퍼스트 스퀘어 선글라스" [level=2] [ref=e713]:
+                        - link "LV 퍼스트 스퀘어 선글라스" [ref=e714]:
+                          - /url: /kor-kr/products/lv-first-square-sunglasses-s00-nvprod3630043v/Z1708E
+                      - generic [ref=e715]: ₩970,000
+                    - generic [ref=e720]:
+                      - generic [ref=e722]:
+                        - img "TRY ON!" [ref=e723]
+                        - generic [ref=e726]: TRY ON!
+                      - button "LV 퍼스트 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e728]:
+                        - img [ref=e729]
+                - listitem [ref=e731]:
+                  - generic [ref=e732] [cursor=pointer]:
+                    - generic [ref=e735]:
+                      - heading "마이 모노그램 라이트 캣아이 선글라스" [level=2] [ref=e737]:
+                        - link "마이 모노그램 라이트 캣아이 선글라스" [ref=e738]:
+                          - /url: /kor-kr/products/my-monogram-light-cat-eye-sunglasses-s00-nvprod3490034v/Z1657E
+                      - generic [ref=e739]: ₩780,000
+                    - generic [ref=e744]:
+                      - generic [ref=e746]:
+                        - img "TRY ON!" [ref=e747]
+                        - generic [ref=e750]: TRY ON!
+                      - button "마이 모노그램 라이트 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e752]:
+                        - img [ref=e753]
+                - listitem [ref=e755]:
+                  - generic [ref=e756] [cursor=pointer]:
+                    - generic [ref=e759]:
+                      - heading "LV Go-14 오벌 선글라스" [level=2] [ref=e761]:
+                        - link "LV Go-14 오벌 선글라스" [ref=e762]:
+                          - /url: /kor-kr/products/lv-go-14-oval-sunglasses-s00-nvprod6600007v/Z3013U
+                      - generic [ref=e763]: ₩880,000
+                    - generic [ref=e768]:
+                      - generic [ref=e770]:
+                        - img "TRY ON!" [ref=e771]
+                        - generic [ref=e774]: TRY ON!
+                      - button "LV Go-14 오벌 선글라스 제품을 위시리스트에 추가" [ref=e776]:
+                        - img [ref=e777]
+                - listitem [ref=e779]:
+                  - generic [ref=e780] [cursor=pointer]:
+                    - generic [ref=e783]:
+                      - heading "LV 주얼 스퀘어 선글라스" [level=2] [ref=e785]:
+                        - link "LV 주얼 스퀘어 선글라스" [ref=e786]:
+                          - /url: /kor-kr/products/lv-jewel-square-sunglasses-s00-nvprod4140019v/Z2161U
+                      - generic [ref=e787]: ₩1,110,000
+                    - button "LV 주얼 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e794]:
+                      - img [ref=e795]
+              - button "더보기" [ref=e798] [cursor=pointer]
+          - listitem [ref=e799]:
+            - generic [ref=e800]:
+              - heading "선글라스 더 보기" [level=2] [ref=e801]
+              - list [ref=e802]:
+                - listitem [ref=e803]:
+                  - generic [ref=e804] [cursor=pointer]:
+                    - generic [ref=e807]:
+                      - heading "LV 스크립트 메탈 라운드 선글라스" [level=2] [ref=e809]:
+                        - link "LV 스크립트 메탈 라운드 선글라스" [ref=e810]:
+                          - /url: /kor-kr/products/lv-script-metal-round-sunglasses-s00-nvprod7170010v/Z3171U
+                      - generic [ref=e811]: ₩890,000
+                    - button "LV 스크립트 메탈 라운드 선글라스 제품을 위시리스트에 추가" [ref=e818]:
+                      - img [ref=e819]
+                - listitem [ref=e821]:
+                  - generic [ref=e822] [cursor=pointer]:
+                    - generic [ref=e825]:
+                      - generic [ref=e827]: NAUTICAL
+                      - heading "LV비전 파일럿 선글라스" [level=2] [ref=e829]:
+                        - link "LV비전 파일럿 선글라스" [ref=e830]:
+                          - /url: /kor-kr/products/lvision-pilot-sunglasses-s00-nvprod7520019v/Z3399U
+                      - generic [ref=e831]: ₩1,100,000
+                    - button "LV비전 파일럿 선글라스 제품을 위시리스트에 추가" [ref=e838]:
+                      - img [ref=e839]
+                - listitem [ref=e841]:
+                  - generic [ref=e842] [cursor=pointer]:
+                    - generic [ref=e845]:
+                      - generic [ref=e847]: NAUTICAL
+                      - heading "LV비전 파일럿 선글라스" [level=2] [ref=e849]:
+                        - link "LV비전 파일럿 선글라스" [ref=e850]:
+                          - /url: /kor-kr/products/lvision-pilot-sunglasses-s00-nvprod7520019v/Z3333U
+                      - generic [ref=e851]: ₩1,100,000
+                    - button "LV비전 파일럿 선글라스 제품을 위시리스트에 추가" [ref=e858]:
+                      - img [ref=e859]
+                - listitem [ref=e861]:
+                  - generic [ref=e862] [cursor=pointer]:
+                    - generic [ref=e865]:
+                      - heading "펄 트월 파일럿 선글라스" [level=2] [ref=e867]:
+                        - link "펄 트월 파일럿 선글라스" [ref=e868]:
+                          - /url: /kor-kr/products/pearl-twirl-pilot-sunglasses-s00-nvprod6600004v/Z2995U
+                      - generic [ref=e869]: ₩1,000,000
+                    - generic [ref=e874]:
+                      - generic [ref=e876]:
+                        - img "TRY ON!" [ref=e877]
+                        - generic [ref=e880]: TRY ON!
+                      - button "펄 트월 파일럿 선글라스 제품을 위시리스트에 추가" [ref=e882]:
+                        - img [ref=e883]
+                - listitem [ref=e885]:
+                  - link [ref=e886] [cursor=pointer]:
+                    - /url: /kor-kr/products/s-lock-cat-eye-sunglasses-s00-nvprod6220015v/Z3007E
+                - listitem [ref=e890]:
+                  - generic [ref=e891] [cursor=pointer]:
+                    - generic [ref=e894]:
+                      - heading "S락 캣아이 선글라스" [level=2] [ref=e896]:
+                        - link "S락 캣아이 선글라스" [ref=e897]:
+                          - /url: /kor-kr/products/s-lock-cat-eye-sunglasses-s00-nvprod6220015v/Z3007E
+                      - generic [ref=e898]: ₩840,000
+                    - button "S락 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e905]:
+                      - img [ref=e906]
+                - listitem [ref=e908]:
+                  - generic [ref=e909] [cursor=pointer]:
+                    - generic [ref=e912]:
+                      - heading "펄 트월 스퀘어 선글라스" [level=2] [ref=e914]:
+                        - link "펄 트월 스퀘어 선글라스" [ref=e915]:
+                          - /url: /kor-kr/products/pearl-twirl-square-sunglasses-s00-nvprod6600006v/Z2994U
+                      - generic [ref=e916]: ₩1,000,000
+                    - generic [ref=e921]:
+                      - generic [ref=e923]:
+                        - img "TRY ON!" [ref=e924]
+                        - generic [ref=e927]: TRY ON!
+                      - button "펄 트월 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e929]:
+                        - img [ref=e930]
+                - listitem [ref=e932]:
+                  - generic [ref=e933] [cursor=pointer]:
+                    - generic [ref=e936]:
+                      - heading "LV 문 메탈 스퀘어 선글라스" [level=2] [ref=e938]:
+                        - link "LV 문 메탈 스퀘어 선글라스" [ref=e939]:
+                          - /url: /kor-kr/products/lv-moon-metal-square-sunglasses-s00-nvprod4450075v/Z1994U
+                      - generic [ref=e940]: ₩1,060,000
+                    - button "LV 문 메탈 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e947]:
+                      - img [ref=e948]
+                - listitem [ref=e950]:
+                  - generic [ref=e951] [cursor=pointer]:
+                    - generic [ref=e954]:
+                      - heading "S락 캣아이 선글라스" [level=2] [ref=e956]:
+                        - link "S락 캣아이 선글라스" [ref=e957]:
+                          - /url: /kor-kr/products/s-lock-cat-eye-sunglasses-s00-nvprod6220015v/Z3004E
+                      - generic [ref=e958]: ₩840,000
+                    - button "S락 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e965]:
+                      - img [ref=e966]
+                - listitem [ref=e968]:
+                  - generic [ref=e969] [cursor=pointer]:
+                    - generic [ref=e972]:
+                      - heading "LV 스크립트 렉탱글 선글라스" [level=2] [ref=e974]:
+                        - link "LV 스크립트 렉탱글 선글라스" [ref=e975]:
+                          - /url: /kor-kr/products/lv-script-rectangle-sunglasses-s00-nvprod6490119v/Z3143U
+                      - generic [ref=e976]: ₩1,020,000
+                    - button "LV 스크립트 렉탱글 선글라스 제품을 위시리스트에 추가" [ref=e983]:
+                      - img [ref=e984]
+                - listitem [ref=e986]:
+                  - generic [ref=e987] [cursor=pointer]:
+                    - generic [ref=e990]:
+                      - heading "LV 참 스퀘어 선글라스" [level=2] [ref=e992]:
+                        - link "LV 참 스퀘어 선글라스" [ref=e993]:
+                          - /url: /kor-kr/products/lv-charm-square-sunglasses-s00-nvprod3630041v/Z1718U
+                      - generic [ref=e994]: ₩890,000
+                    - generic [ref=e999]:
+                      - generic [ref=e1001]:
+                        - img "TRY ON!" [ref=e1002]
+                        - generic [ref=e1005]: TRY ON!
+                      - button "LV 참 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e1007]:
+                        - img [ref=e1008]
+                - listitem [ref=e1010]:
+                  - generic [ref=e1011] [cursor=pointer]:
+                    - generic [ref=e1014]:
+                      - heading "LV 미드나잇 캣아이 선글라스" [level=2] [ref=e1016]:
+                        - link "LV 미드나잇 캣아이 선글라스" [ref=e1017]:
+                          - /url: /kor-kr/products/lv-legacy-cat-eye-sunglasses-s00-nvprod6220003v/Z2927U
+                      - generic [ref=e1018]: ₩810,000
+                    - generic [ref=e1023]:
+                      - generic [ref=e1025]:
+                        - img "TRY ON!" [ref=e1026]
+                        - generic [ref=e1029]: TRY ON!
+                      - button "LV 미드나잇 캣아이 선글라스 제품을 위시리스트에 추가" [ref=e1031]:
+                        - img [ref=e1032]
+                - listitem [ref=e1034]:
+                  - generic [ref=e1035] [cursor=pointer]:
+                    - generic [ref=e1038]:
+                      - heading "LV 아우라 스퀘어 선글라스" [level=2] [ref=e1040]:
+                        - link "LV 아우라 스퀘어 선글라스" [ref=e1041]:
+                          - /url: /kor-kr/products/lv-aura-square-sunglasses-s00-nvprod6160003v/Z3412E
+                      - generic [ref=e1042]: ₩640,000
+                    - button "LV 아우라 스퀘어 선글라스 제품을 위시리스트에 추가" [ref=e1049]:
+                      - img [ref=e1050]
+              - button "더보기" [ref=e1053] [cursor=pointer]
+          - listitem [ref=e1054]:
+            - generic [ref=e1055]:
+              - heading "블루 레이 차단 선글라스" [level=2] [ref=e1056]
+              - list [ref=e1057]:
+                - listitem [ref=e1058]:
+                  - generic [ref=e1059] [cursor=pointer]:
+                    - generic [ref=e1062]:
+                      - heading "LV 코멧 렉탱글 선글라스" [level=2] [ref=e1064]:
+                        - link "LV 코멧 렉탱글 선글라스" [ref=e1065]:
+                          - /url: /kor-kr/products/lv-comet-rectangle-sunglasses-s00-nvprod7300140v/Z3377U
+                      - generic [ref=e1066]: ₩910,000
+                    - button "LV 코멧 렉탱글 선글라스 제품을 위시리스트에 추가" [ref=e1073]:
+                      - img [ref=e1074]
+                - listitem [ref=e1076]:
+                  - generic [ref=e1077] [cursor=pointer]:
+                    - generic [ref=e1080]:
+                      - heading "LV 위스퍼 스퀘어드 선글라스" [level=2] [ref=e1082]:
+                        - link "LV 위스퍼 스퀘어드 선글라스" [ref=e1083]:
+                          - /url: /kor-kr/products/lv-whisper-squared-sunglasses-s00-nvprod7300141v/Z3388U
+                      - generic [ref=e1084]: ₩840,000
+                    - button "LV 위스퍼 스퀘어드 선글라스 제품을 위시리스트에 추가" [ref=e1091]:
+                      - img [ref=e1092]
+        - button "더 보기" [ref=e1094] [cursor=pointer]:
+          - generic [ref=e1095]: 더 보기
+      - generic [ref=e1097]:
+        - text: 스타일리시하고 매력적인 프레임을 다양하게 만나볼 수 있는 루이 비통의 여성 선글라스 컬렉션입니다. 에비에이터형, 세련된
+        - link "캣아이형" [ref=e1098] [cursor=pointer]:
+          - /url: https://kr.louisvuitton.com/kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bs1u01urp
+        - text: ", 시대를 초월하는"
+        - link "스퀘어형" [ref=e1099] [cursor=pointer]:
+          - /url: https://kr.louisvuitton.com/kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bs1tbobbl
+        - text: ", 여성스러운"
+        - link "라운드형" [ref=e1100] [cursor=pointer]:
+          - /url: https://kr.louisvuitton.com/kor-kr/women/accessories/sunglasses/_/N-t1peha6j-bs14cg944
+        - text: ", 오버사이즈 실루엣 등 과감한 스타일과 절제된 스타일을 아우르는 루이 비통의 우아한 디자인이 특징입니다. 명품 선글라스는 정교한 하우스 장인의 기술과 시그니처 디테일이 엿보이는 다채로운 컬렉션으로 만나보실 수 있습니다."
+  - contentinfo [ref=e1101]:
+    - generic [ref=e1102]:
+      - navigation "브레드 크럼" [ref=e1103]:
+        - list [ref=e1104]:
+          - listitem [ref=e1105]:
+            - link "루이 비통" [ref=e1106] [cursor=pointer]:
+              - /url: /kor-kr/homepage
+            - text: "-"
+          - listitem [ref=e1107]: 여성 - 액세서리-
+          - listitem [ref=e1108]: 선글라스
+      - button "추천 제품" [ref=e1109] [cursor=pointer]
+    - generic [ref=e1110]:
+      - region "도움" [ref=e1111]:
+        - generic [ref=e1112]: 도움
+        - list [ref=e1114]:
+          - listitem [ref=e1115]:
+            - generic [ref=e1116]:
+              - text: 클라이언트 어드바이저는
+              - link "+ 82 2 3432 1854" [ref=e1117] [cursor=pointer]:
+                - /url: "tel:{{+ 82 2 3432 1854}}"
+              - text: 를 통해 이용할 수 있습니다.
+              - link "여기" [ref=e1118] [cursor=pointer]:
+                - /url: https://kr.louisvuitton.com/kor-kr/contact-us
+              - text: 를 클릭하여 더 많은 정보를 얻을 수 있습니다.
+          - listitem [ref=e1119]:
+            - link "자주 묻는 질문" [ref=e1120] [cursor=pointer]:
+              - /url: /kor-kr/faq
+          - listitem [ref=e1121]:
+            - link "제품 관리" [ref=e1122] [cursor=pointer]:
+              - /url: /kor-kr/care-service
+          - listitem [ref=e1123]:
+            - link "매장정보" [ref=e1124] [cursor=pointer]:
+              - /url: /kor-kr/stores
+      - region "서비스" [ref=e1125]:
+        - generic [ref=e1126]: 서비스
+        - list [ref=e1128]:
+          - listitem [ref=e1129]:
+            - link "수리" [ref=e1130] [cursor=pointer]:
+              - /url: /kor-kr/stories/louis-vuitton-repairs
+          - listitem [ref=e1131]:
+            - link "루이 비통 기프트" [ref=e1132] [cursor=pointer]:
+              - /url: /kor-kr/stories/gifting
+          - listitem [ref=e1133]:
+            - link "커스터마이징" [ref=e1134] [cursor=pointer]:
+              - /url: /kor-kr/gifts/personalization/all-personalization/_/N-t1jlwphf
+          - listitem [ref=e1135]:
+            - link "앱" [ref=e1136] [cursor=pointer]:
+              - /url: /kor-kr/apps
+          - listitem [ref=e1137]:
+            - link "카카오 채널" [ref=e1138] [cursor=pointer]:
+              - /url: http://pf.kakao.com/_gDpbC
+      - region "루이비통 소개" [ref=e1139]:
+        - generic [ref=e1140]: 루이비통 소개
+        - list [ref=e1142]:
+          - listitem [ref=e1143]:
+            - link "패션쇼" [ref=e1144] [cursor=pointer]:
+              - /url: /kor-kr/magazine/fashion-shows
+          - listitem [ref=e1145]:
+            - link "예술 & 문화" [ref=e1146] [cursor=pointer]:
+              - /url: /kor-kr/magazine/arts-and-culture
+          - listitem [ref=e1147]:
+            - link "메종" [ref=e1148] [cursor=pointer]:
+              - /url: /kor-kr/magazine/la-maison
+          - listitem [ref=e1149]:
+            - link "지속가능성" [ref=e1150] [cursor=pointer]:
+              - /url: /kor-kr/magazine/sustainability
+          - listitem [ref=e1151]:
+            - link "최근 뉴스" [ref=e1152] [cursor=pointer]:
+              - /url: /kor-kr/magazine
+          - listitem [ref=e1153]:
+            - link "윤리 및 준법경영" [ref=e1154] [cursor=pointer]:
+              - /url: https://www.lvmh.com/en/ethics-and-compliance
+          - listitem [ref=e1155]:
+            - link "채용정보" [ref=e1156] [cursor=pointer]:
+              - /url: https://jobs.louisvuitton.com/en
+          - listitem [ref=e1157]:
+            - link "루이 비통 재단" [ref=e1158] [cursor=pointer]:
+              - /url: https://www.fondationlouisvuitton.fr/en
+      - region "연결" [ref=e1159]:
+        - generic [ref=e1160]: 연결
+        - list [ref=e1162]:
+          - listitem [ref=e1163]:
+            - generic [ref=e1164]:
+              - text: 최신 컬렉션, 캠페인을 가장 먼저 받아보고 싶다면, 뉴스레터를
+              - link "구독" [ref=e1165] [cursor=pointer]:
+                - /url: https://kr.louisvuitton.com/kor-kr/mylv/newsletter
+              - text: 하세요.
+          - listitem [ref=e1166]:
+            - button "소셜 미디어" [ref=e1167] [cursor=pointer]
+          - listitem
+    - generic [ref=e1168]:
+      - generic [ref=e1169]:
+        - list [ref=e1170]:
+          - listitem [ref=e1171]:
+            - button "사이트맵" [ref=e1172] [cursor=pointer]
+          - listitem [ref=e1173]:
+            - link "법적고지" [ref=e1174] [cursor=pointer]:
+              - /url: /kor-kr/legal-notice
+          - listitem [ref=e1175]:
+            - link "개인정보처리방침" [ref=e1176] [cursor=pointer]:
+              - /url: /kor-kr/legal-notice#privacy-policy
+              - generic [ref=e1178]: 개인정보처리방침
+        - list [ref=e1179]:
+          - listitem [ref=e1180]:
+            - 'link "배송지 : 대한민국 - 국가 · 지역 선택" [ref=e1181] [cursor=pointer]': 배송지 :대한민국
+      - generic [ref=e1182]:
+        - paragraph [ref=e1184]:
+          - text: "루이비통코리아(유)｜대표이사: 위그 앙리 피에르 보네 마심베르"
+          - text: "서울 중구 청계천로 100 시그니쳐타워 서관 16층｜사업자등록번호: 102-81-29113"
+          - link "사업자정보확인" [ref=e1185] [cursor=pointer]:
+            - /url: http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1028129113&apv_perm_no=null
+          - text: "통신판매신고번호: 2023-서울중구-0101｜호스팅 서비스:"
+          - generic [ref=e1186]: Salesforce
+          - text: "고객센터: 02-3432-1854｜Email:"
+          - link "korea@contact.louisvuitton.com" [ref=e1187] [cursor=pointer]:
+            - /url: mailto:korea@contact.louisvuitton.com
+        - paragraph [ref=e1189]:
+          - text: 씨티은행 구매안전 서비스(채무지급보증)
+          - text: 고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 씨티은행 구매안전서비스(
+          - link "지급보증서" [ref=e1191] [cursor=pointer]:
+            - /url: /content/dam/lv/online/other/korea/지급보증서%202026.pdf
+          - text: )를 이용하실 수 있습니다.
+      - link "루이 비통 공식 인터네셔널 웹사이트" [ref=e1194] [cursor=pointer]:
+        - /url: /kor-kr/homepage
+        - generic [ref=e1195]:
+          - img [ref=e1196]
+          - generic [ref=e1198]: 루이 비통

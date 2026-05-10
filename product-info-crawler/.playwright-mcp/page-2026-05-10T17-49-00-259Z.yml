@@ -1,0 +1,403 @@
+- generic [ref=e25]:
+  - paragraph [ref=e26]: Alma BB Monogram Canvas - Handbags | LOUIS VUITTON
+  - link [ref=e461] [cursor=pointer]:
+    - /url: "#main"
+    - text: Skip to main content
+  - banner [ref=e42]:
+    - generic [ref=e44]:
+      - button [ref=e463] [cursor=pointer]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: Menu
+          - generic [ref=e49]: Close
+      - search [ref=e50]:
+        - button [ref=e464] [cursor=pointer]:
+          - img [ref=e52]
+          - generic [ref=e54]: Search
+      - link [ref=e465] [cursor=pointer]:
+        - /url: /eng-nl/homepage
+        - generic [ref=e57]:
+          - img [ref=e58]
+          - generic [ref=e60]: Louis Vuitton
+      - navigation [ref=e466]:
+        - list [ref=e62]:
+          - listitem [ref=e63]:
+            - button [ref=e467] [cursor=pointer]:
+              - generic [ref=e66]: Contact us
+          - listitem [ref=e67]:
+            - link [ref=e468] [cursor=pointer]:
+              - /url: /eng-nl/mylv/wishlist
+              - generic [ref=e69]:
+                - img [ref=e70]
+                - generic [ref=e72]: Wishlist (There is 0 item in your wishlist)
+          - listitem [ref=e73]:
+            - button [ref=e469] [cursor=pointer]:
+              - img [ref=e75]
+              - generic [ref=e77]: MyLV
+          - listitem [ref=e78]:
+            - button [disabled] [ref=e470]:
+              - generic [ref=e80]:
+                - img [ref=e81]
+                - generic [ref=e471]: "0"
+  - main [ref=e83]:
+    - status [ref=e84]: Alma BB Monogram Canvas - Handbags | LOUIS VUITTON
+    - generic [ref=e85]:
+      - generic [ref=e87]:
+        - generic [ref=e89]:
+          - link [ref=e472] [cursor=pointer]:
+            - /url: /eng-nl/women/handbags/_/N-tfr7qdp
+            - img [ref=e91]
+            - generic [ref=e93]: All Handbags
+          - list [ref=e473]:
+            - listitem [ref=e96]:
+              - button [ref=e474] [cursor=pointer]
+            - listitem [ref=e100]:
+              - button [ref=e475] [cursor=pointer]
+            - listitem [ref=e104]:
+              - button [ref=e476] [cursor=pointer]
+            - listitem [ref=e109]:
+              - button [ref=e477] [cursor=pointer]
+            - listitem [ref=e114]:
+              - button [ref=e478] [cursor=pointer]
+            - listitem [ref=e119]:
+              - button [ref=e479] [cursor=pointer]
+            - listitem [ref=e124]:
+              - button [ref=e480] [cursor=pointer]
+            - listitem [ref=e129]:
+              - button [ref=e481] [cursor=pointer]
+        - generic [ref=e136]:
+          - generic [ref=e137]:
+            - strong [ref=e139]: M46990
+            - generic [ref=e140]: Customizable
+            - heading [level=1] [ref=e482]: Alma BB
+            - button [ref=e483] [cursor=pointer]:
+              - img [ref=e145]
+          - generic [ref=e147]: 1 600,00€
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - button [ref=e484] [cursor=pointer]:
+                - generic [ref=e151]: Materials
+                - generic [ref=e152]: Monogram Canvas
+                - img [ref=e485]
+                - generic [ref=e156]: currently selected
+                - img [ref=e157]
+              - button [ref=e486] [cursor=pointer]:
+                - generic [ref=e160]: Other Sizes
+                - generic [ref=e161]: Alma BB
+                - generic [ref=e162]: currently selected
+                - img [ref=e163]
+            - generic [ref=e165]:
+              - button [ref=e487] [cursor=pointer]: Find your perfect bag size
+              - generic [ref=e167]: Compare the different styles
+          - list [ref=e169]:
+            - listitem [ref=e170]:
+              - link [ref=e488] [cursor=pointer]:
+                - /url: /eng-nl/products/alma-bb-mon-monogram-monogram-nvprod6140112v/P01917
+                - generic [ref=e176]:
+                  - generic [ref=e177]: Mon Monogram
+                  - paragraph [ref=e178]: Personalize with your initials, patches, or classic stripes.
+          - generic [ref=e179]:
+            - button [ref=e489] [cursor=pointer]:
+              - generic [ref=e490]: Add to shopping bag
+            - button [ref=e492] [cursor=pointer]: Contact an Advisor
+          - generic [ref=e496]: Complimentary delivery & returns.
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - generic [ref=e182]:
+                - generic [ref=e183]:
+                  - paragraph [ref=e184]: "The Alma BB handbag traces its pedigree to an Art Deco original, introduced in 1934. Signature details impart a timeless elegance to this model crafted from iconic Monogram canvas: note the golden padlock and keys, two Toron handles and smart leather key bell. Fitted with a detachable and adjustable strap, this charming small bag is perfect for cross-body wear."
+                  - generic [ref=e186]:
+                    - generic [ref=e187]: 23.5 x 17.5 x 11.5 cm (Length x Height x Width)
+                    - generic [ref=e188]:
+                      - list [ref=e189]:
+                        - listitem [ref=e190]: Monogram coated canvas
+                        - listitem [ref=e191]: Natural cowhide leather trim
+                        - listitem [ref=e192]: Textile lining
+                        - listitem [ref=e193]: Gold-color hardware
+                        - listitem [ref=e194]: Double zip closure
+                        - listitem [ref=e195]: Padlock
+                        - listitem [ref=e196]: Key bell
+                        - listitem [ref=e197]: Inside flat pocket
+                        - listitem [ref=e198]: 4 protective metal bottom studs
+                        - listitem [ref=e199]: "Fits: 6.7-inches smartphone, earphones, lipstick, tissues, keys, sunglasses"
+                        - listitem [ref=e200]: "Weight: 0.5 kg"
+                        - listitem [ref=e201]: "Strap: Removable, adjustable"
+                        - listitem [ref=e202]: "Strap Drop: 50.0 cm"
+                        - listitem [ref=e203]: "Strap drop max: 62.0 cm"
+                        - listitem [ref=e204]: "Handle: Single x2"
+                      - paragraph [ref=e205]: This reference is either Made in France, Spain or Italy.
+                - button [ref=e497] [cursor=pointer]: See More
+              - generic [ref=e208]:
+                - button [ref=e498] [cursor=pointer]:
+                  - generic [ref=e211]:
+                    - generic [ref=e213]: Sustainability
+                    - img [ref=e214]
+                - button [ref=e499] [cursor=pointer]:
+                  - generic [ref=e218]:
+                    - generic [ref=e220]: Product Care
+                    - img [ref=e221]
+                - generic [ref=e223]:
+                  - button [expanded] [ref=e500] [cursor=pointer]:
+                    - generic [ref=e225]:
+                      - generic [ref=e227]: In-store service
+                      - img [ref=e586]
+                  - generic [ref=e589]:
+                    - generic [ref=e590]: Discover this item in store with an advisor.
+                    - button [ref=e592] [cursor=pointer]:
+                      - img [ref=e593]
+                      - generic [ref=e595]: Check in-store availability
+            - button [ref=e501] [cursor=pointer]:
+              - generic [ref=e232]:
+                - generic [ref=e233]: Delivery & Returns
+                - img [ref=e234]
+            - button [ref=e502] [cursor=pointer]:
+              - generic [ref=e238]: Gifting
+              - img [ref=e239]
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - heading [level=2] [ref=e503]: Get the set
+          - button [ref=e504] [cursor=pointer]:
+            - img [ref=e505]
+          - list [ref=e251]:
+            - listitem [ref=e252]:
+              - generic [ref=e254] [cursor=pointer]:
+                - generic [ref=e255]:
+                  - generic [ref=e256]:
+                    - generic [ref=e257]:
+                      - link [ref=e506]:
+                        - /url: /eng-nl/products/spring-street-chain-bag-charm-s00-nvprod4490036v/M01188
+                        - text: Spring Street Chain Bag Charm
+                      - generic [ref=e261]: 480,00€
+                    - button [ref=e507]:
+                      - img [ref=e264]
+                      - generic [ref=e266]: Shop
+                  - img [ref=e508]
+                - button [ref=e509]:
+                  - img [ref=e275]
+        - generic [ref=e279]:
+          - tablist [ref=e283]:
+            - tab [selected] [ref=e510]:
+              - generic [ref=e285]: You May Also Like
+          - tabpanel [ref=e511]:
+            - list [ref=e289]:
+              - listitem [ref=e290]:
+                - generic [ref=e291] [cursor=pointer]:
+                  - generic [ref=e292]:
+                    - generic [ref=e294]:
+                      - link [ref=e512]:
+                        - /url: /eng-nl/products/alma-bb-mon-monogram-monogram-nvprod6140112v/P01917?personalizationId=MWFZ3C6X
+                        - text: Alma BB Mon Monogram
+                      - generic [ref=e298]: 1 800,00€
+                    - img [ref=e513]
+                  - generic [ref=e304]:
+                    - img [ref=e514]
+                    - button [ref=e515]:
+                      - img [ref=e312]
+              - listitem [ref=e314]:
+                - generic [ref=e315] [cursor=pointer]:
+                  - generic [ref=e316]:
+                    - generic [ref=e318]:
+                      - link [ref=e516]:
+                        - /url: /eng-nl/products/lv-charms-card-holder-monogram-nvprod4630081v/M82739
+                        - text: LV Charms Card Holder
+                      - generic [ref=e322]: 295,00€
+                    - img [ref=e517]
+                  - button [ref=e518]:
+                    - img [ref=e331]
+              - listitem [ref=e333]:
+                - generic [ref=e334] [cursor=pointer]:
+                  - generic [ref=e335]:
+                    - generic [ref=e337]:
+                      - link [ref=e519]:
+                        - /url: /eng-nl/products/rosalie-coin-purse-monogram-013220/M62361
+                        - text: Rosalie Coin Purse
+                      - generic [ref=e341]: 340,00€
+                    - img [ref=e520]
+                  - generic [ref=e347]:
+                    - img [ref=e521]
+                    - button [ref=e522]:
+                      - img [ref=e355]
+              - listitem [ref=e357]:
+                - generic [ref=e358] [cursor=pointer]:
+                  - generic [ref=e359]:
+                    - generic [ref=e361]:
+                      - link [ref=e523]:
+                        - /url: /eng-nl/products/fleur-de-monogram-bag-charm-chain-s00-nvprod4480138v/M01413
+                        - text: Fleur de Monogram Bag Charm Chain
+                      - generic [ref=e365]: 480,00€
+                    - img [ref=e524]
+                  - button [ref=e525]:
+                    - img [ref=e374]
+  - contentinfo [ref=e376]:
+    - navigation [ref=e526]:
+      - list [ref=e379]:
+        - listitem [ref=e380]:
+          - link [ref=e527] [cursor=pointer]:
+            - /url: /eng-nl/homepage
+            - text: Louis Vuitton
+          - text: "-"
+        - listitem [ref=e382]: Women - Handbags-
+        - listitem [ref=e383]:
+          - link [ref=e528] [cursor=pointer]:
+            - /url: /eng-nl/women/handbags/_/N-tfr7qdp
+            - text: All Handbags
+          - text: "-"
+        - listitem [ref=e385]: Alma BB
+    - generic [ref=e386]:
+      - region [ref=e529]:
+        - generic [ref=e388]: Help
+        - list [ref=e390]:
+          - listitem [ref=e391]:
+            - generic [ref=e392]:
+              - text: A Client Advisor is available at
+              - link [ref=e530] [cursor=pointer]:
+                - /url: tel:+31 207 219 441
+                - text: +31 207 219 441
+              - text: . You can also
+              - link [ref=e531] [cursor=pointer]:
+                - /url: https://en.louisvuitton.com/eng-nl/contact-us
+                - text: chat
+              - text: .
+          - listitem [ref=e395]:
+            - link [ref=e532] [cursor=pointer]:
+              - /url: /eng-nl/faq
+              - text: FAQ's
+          - listitem [ref=e397]:
+            - link [ref=e533] [cursor=pointer]:
+              - /url: /eng-nl/care-service
+              - text: Product Care
+          - listitem [ref=e399]:
+            - link [ref=e534] [cursor=pointer]:
+              - /url: /eng-nl/stores
+              - text: Stores
+      - region [ref=e535]:
+        - generic [ref=e402]: Services
+        - list [ref=e404]:
+          - listitem [ref=e405]:
+            - link [ref=e536] [cursor=pointer]:
+              - /url: /eng-nl/stories/louis-vuitton-repairs
+              - text: Repairs
+          - listitem [ref=e407]:
+            - link [ref=e537] [cursor=pointer]:
+              - /url: /eng-nl/gifts/personalization/all-personalization/_/N-t1jlwphf
+              - text: Personalization
+          - listitem [ref=e409]:
+            - link [ref=e538] [cursor=pointer]:
+              - /url: /eng-nl/stories/gifting
+              - text: Art of Gifting
+          - listitem [ref=e411]:
+            - link [ref=e539] [cursor=pointer]:
+              - /url: /eng-nl/apps
+              - text: Download our Apps
+      - region [ref=e540]:
+        - generic [ref=e414]: About Louis Vuitton
+        - list [ref=e416]:
+          - listitem [ref=e417]:
+            - link [ref=e541] [cursor=pointer]:
+              - /url: /eng-nl/magazine/fashion-shows
+              - text: Fashion Shows
+          - listitem [ref=e419]:
+            - link [ref=e542] [cursor=pointer]:
+              - /url: /eng-nl/magazine/arts-and-culture
+              - text: Arts & Culture
+          - listitem [ref=e421]:
+            - link [ref=e543] [cursor=pointer]:
+              - /url: /eng-nl/magazine/la-maison
+              - text: La Maison
+          - listitem [ref=e423]:
+            - link [ref=e544] [cursor=pointer]:
+              - /url: /eng-nl/magazine/sustainability
+              - text: Sustainability
+          - listitem [ref=e425]:
+            - link [ref=e545] [cursor=pointer]:
+              - /url: /eng-nl/magazine
+              - text: Latest News
+          - listitem [ref=e427]:
+            - link [ref=e546] [cursor=pointer]:
+              - /url: https://www.lvmh.com/en/ethics-and-compliance
+              - text: Ethics & Compliance
+          - listitem [ref=e429]:
+            - link [ref=e547] [cursor=pointer]:
+              - /url: https://jobs.louisvuitton.com/en
+              - text: Careers
+          - listitem [ref=e431]:
+            - link [ref=e548] [cursor=pointer]:
+              - /url: https://www.fondationlouisvuitton.fr/en
+              - text: Foundation Louis Vuitton
+      - region [ref=e549]:
+        - generic [ref=e434]: Connect
+        - list [ref=e436]:
+          - listitem [ref=e437]:
+            - generic [ref=e438]:
+              - link [ref=e550] [cursor=pointer]:
+                - /url: "#newslettersubscription"
+                - text: Sign up
+              - text: for Louis Vuitton emails and receive the latest news from the Maison, including exclusive online pre-launches and new collections.
+          - listitem [ref=e440]:
+            - button [ref=e551] [cursor=pointer]: Follow Us
+    - generic [ref=e442]:
+      - generic [ref=e443]:
+        - list [ref=e444]:
+          - listitem [ref=e445]:
+            - button [ref=e552] [cursor=pointer]: Sitemap
+          - listitem [ref=e447]:
+            - link [ref=e553] [cursor=pointer]:
+              - /url: /eng-nl/legal-privacy
+              - text: Legal & privacy
+          - listitem [ref=e449]:
+            - button [ref=e554] [cursor=pointer]: Cookies
+        - list [ref=e451]:
+          - listitem [ref=e452]:
+            - link [ref=e555] [cursor=pointer]: Ship to :Netherlands
+      - link [ref=e556] [cursor=pointer]:
+        - /url: /eng-nl/homepage
+        - generic [ref=e457]:
+          - img [ref=e458]
+          - generic [ref=e460]: Louis Vuitton
+  - generic:
+    - alertdialog [ref=e599]:
+      - generic [ref=e562]:
+        - heading [level=1] [ref=e600]:
+          - generic [ref=e564]: Change shipping country?
+        - button [ref=e601] [cursor=pointer]:
+          - img [ref=e566]
+        - generic [ref=e568]:
+          - paragraph [ref=e569]: You are visiting from Korea. Would you like to update your shipping country?
+          - generic [ref=e570]:
+            - generic [ref=e571]: Country/Region
+            - generic [ref=e573]:
+              - img [ref=e574]
+              - combobox [ref=e602]
+          - link [ref=e603] [cursor=pointer]:
+            - /url: https://kr.louisvuitton.com/kor-kr/products/alma-bb-monogram-nvprod5190086v/M46990
+            - text: Confirm
+    - dialog "Locate in store" [ref=e605]:
+      - generic [ref=e609]:
+        - button "Back" [ref=e610] [cursor=pointer]:
+          - img [ref=e611]
+        - heading "Locate in store" [level=1] [ref=e613]:
+          - generic [ref=e614]: Locate in store
+        - generic [ref=e616]:
+          - generic [ref=e617]:
+            - generic [ref=e621]:
+              - generic [ref=e622]: M46990
+              - generic [ref=e624]: Alma BB
+              - generic [ref=e625]: 1 600,00€
+            - generic [ref=e630]:
+              - generic [ref=e631]: "Size:"
+              - generic [ref=e632]:
+                - img [ref=e633]
+                - combobox "Size:" [ref=e635]:
+                  - option "Select your size" [disabled]
+                  - option "Alma BB" [selected]
+                  - option "Nano Alma"
+                  - option "Alma PM"
+                  - option "Alma MM"
+          - generic [ref=e638]:
+            - searchbox "Country/Region, state, city, street" [active] [ref=e639]: South Korea
+            - button "Use my current location" [ref=e640] [cursor=pointer]:
+              - img [ref=e641]
+              - generic [ref=e643]: Use my current location
+          - generic [ref=e644]:
+            - img [ref=e645]
+            - generic [ref=e648]: Due to frequent store inventory changes, an item’s availability cannot be guaranteed.
+        - button "See availability" [ref=e650] [cursor=pointer]
