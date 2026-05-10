@@ -151,6 +151,12 @@ class BaseScraper:
                         local_paths = download_product_images(image_urls, dest, self.driver)
                         if local_paths:
                             product["image_local_paths"] = ", ".join(local_paths)
+                        process_images = scraping_settings.get("process_images", False)
+                        if process_images and local_paths:
+                            from utils.image_processor import process_downloaded_images
+                            processed = process_downloaded_images(local_paths)
+                            if processed:
+                                product["image_processed_paths"] = ", ".join(processed)
             except Exception as exc:
                 fail_count += 1
                 product["_detail_error"] = str(exc)

@@ -19,7 +19,8 @@
     "fetch_detail": true,
     "detail_page_delay_sec": 5,
     "detail_checkpoint_interval": 5,
-    "download_images": false,
+    "download_images": true,
+    "process_images": true,
     "popup_selectors": [
       "#onetrust-accept-btn-handler",
       "button[aria-label='Close']",
