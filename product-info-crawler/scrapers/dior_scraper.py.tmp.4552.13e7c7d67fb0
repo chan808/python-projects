@@ -1,5 +1,4 @@
 import json
-import re
 import random
 import time
 from urllib.parse import urljoin
@@ -14,8 +13,6 @@ from .base_scraper import BaseScraper
 
 class DiorScraper(BaseScraper):
     BASE_URL = "https://www.dior.com"
-    # 제품 코드 패턴: "2LLBH095MAR_H00N" — 영숫자 + 언더스코어, 언더스코어 포함 5자 이상
-    _CODE_RE = re.compile(r"^[A-Z0-9]{3,}_[A-Z0-9_]+$")
 
     def _before_navigate(self, scraping_settings: dict) -> None:
         time.sleep(random.uniform(1.0, 3.0))
@@ -68,8 +65,11 @@ class DiorScraper(BaseScraper):
                 # 사이즈: 카테고리 hits는 대부분 빈 배열 — fetch_detail 시 sizeAndFit으로 채움
                 sizes = self._extract_sizes_from_hit(hit)
 
-                # 이미지: 메인 listing + 대체 앵글 all 수집 (full CDN URL)
-                listing_image = self._collect_hit_images(hit)
+                # 리스팅 이미지: views.listing.images.r9x10listing.uri
+                listing_image = (
+                    ((hit.get("views") or {}).get("listing") or {}).get("images") or {}
+                ).get("r9x10listing") or {}
+                listing_image = listing_image.get("uri", "")
 
                 # URL: hit.productLink.uri (hit.attributes.productLink은 존재하지 않음)
                 url_path = (hit.get("productLink") or {}).get("uri", "")
@@ -110,30 +110,12 @@ class DiorScraper(BaseScraper):
                 return ", ".join(dict.fromkeys(sizes))
         return ""
 
-    def _collect_hit_images(self, hit: dict) -> str:
-        """카테고리 hit의 views에서 메인 + 대체 앵글 이미지 URL을 전부 수집합니다.
-        쿼리파라미터(crop=0,0,...)의 쉼표가 image_urls 구분자와 충돌하므로 제거합니다."""
-        views = hit.get("views") or {}
-        uris: list[str] = []
-
-        def _add(view_section):
-            img = ((view_section or {}).get("images") or {}).get("r9x10listing") or {}
-            raw = img.get("uri", "") if isinstance(img, dict) else ""
-            # 쿼리파라미터 제거: CDN 기본 이미지 URL만 사용
-            u = raw.split("?")[0] if raw else ""
-            if u and u.startswith("http") and u not in uris:
-                uris.append(u)
-
-        _add(views.get("listing"))
-        for alt in (views.get("alternatives") or []):
-            _add(alt)
-
-        return ", ".join(uris)
-
     # ── 상세 페이지 ────────────────────────────────────────────────────────────
 
     def parse_detail(self, url: str) -> dict:
-        code = self._extract_code_from_url(url)
+        # Dior URL 마지막 세그먼트 형식: "bifold-wallet--2LLBH095MAR_H00N"
+        last = url.rstrip("/").split("/")[-1]
+        code = last.split("--")[-1] if "--" in last else ""
         if not code:
             return super().parse_detail(url)
         try:
@@ -144,19 +126,6 @@ class DiorScraper(BaseScraper):
             result = super().parse_detail(url)
             result.setdefault("store_inventory", f"[API_ERROR] {exc}")
             return result
-
-    def _extract_code_from_url(self, url: str) -> str:
-        """
-        Dior URL에서 제품 코드를 추출합니다.
-        - /ko_kr/fashion/products/2LLBH095MAR_H00N  → "2LLBH095MAR_H00N"
-        - /ko_kr/.../bifold-wallet--2LLBH095MAR_H00N → "2LLBH095MAR_H00N"
-        """
-        last = url.rstrip("/").split("/")[-1]
-        if "--" in last:
-            candidate = last.split("--")[-1]
-        else:
-            candidate = last
-        return candidate if self._CODE_RE.match(candidate) else ""
 
     def _parse_detail_from_next_data(self, html: str) -> dict:
         soup = BeautifulSoup(html, "html.parser")

@@ -1,0 +1,350 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - status [ref=e3]
+    - generic [ref=e4]:
+      - list:
+        - listitem:
+          - link "aria_goToMenu" [ref=e5] [cursor=pointer]:
+            - /url: "#nav"
+        - listitem:
+          - link "aria_goToContent" [ref=e6] [cursor=pointer]:
+            - /url: "#main"
+      - main [ref=e7]:
+        - banner [ref=e9]:
+          - button "메뉴 열기" [ref=e10] [cursor=pointer]:
+            - img [ref=e12]
+          - menu:
+            - tabpanel "패션 & 액세서리 패션 & 액세서리":
+              - list [ref=e15]:
+                - listitem [ref=e16]
+                - listitem [ref=e17]
+                - listitem [ref=e18]
+                - listitem [ref=e19]
+              - list [ref=e20]:
+                - listitem [ref=e21]
+                - listitem [ref=e22]
+                - listitem [ref=e23]
+                - listitem [ref=e24]
+              - list [ref=e25]:
+                - listitem [ref=e26]
+                - listitem [ref=e27]
+              - list [ref=e28]:
+                - listitem [ref=e29]
+                - listitem [ref=e30]
+                - listitem [ref=e31]
+                - listitem [ref=e32]
+                - listitem [ref=e33]
+                - listitem [ref=e34]
+              - list [ref=e35]:
+                - listitem [ref=e36]
+                - listitem [ref=e37]
+              - list [ref=e38]:
+                - listitem [ref=e39]
+                - listitem [ref=e40]
+              - list [ref=e41]:
+                - listitem [ref=e42]
+                - listitem [ref=e43]
+              - list [ref=e44]:
+                - listitem [ref=e45]
+                - listitem [ref=e46]
+                - listitem [ref=e47]
+                - listitem [ref=e48]
+              - list [ref=e49]:
+                - listitem [ref=e50]
+                - listitem [ref=e51]
+                - listitem [ref=e52]
+                - listitem [ref=e53]
+              - list [ref=e54]:
+                - listitem [ref=e55]
+                - listitem [ref=e56]
+              - list [ref=e57]:
+                - listitem [ref=e58]
+                - listitem [ref=e59]
+              - list [ref=e60]:
+                - listitem [ref=e61]
+                - listitem [ref=e62]
+              - list [ref=e63]:
+                - listitem [ref=e64]
+                - listitem [ref=e65]
+                - listitem [ref=e66]
+                - listitem [ref=e67]
+              - list [ref=e68]:
+                - listitem [ref=e69]
+                - listitem [ref=e70]
+                - listitem [ref=e71]
+                - listitem [ref=e72]
+                - listitem [ref=e73]
+                - listitem [ref=e74]
+              - list [ref=e75]:
+                - listitem [ref=e76]
+                - listitem [ref=e77]
+                - listitem [ref=e78]
+                - listitem [ref=e79]
+              - list [ref=e80]:
+                - listitem [ref=e81]
+              - list [ref=e82]:
+                - listitem [ref=e83]
+                - listitem [ref=e84]
+                - listitem [ref=e85]
+                - listitem [ref=e86]
+                - listitem [ref=e87]
+                - listitem [ref=e88]
+              - list [ref=e89]:
+                - listitem [ref=e90]
+              - list [ref=e91]:
+                - listitem [ref=e92]
+                - listitem [ref=e93]
+                - listitem [ref=e94]
+                - listitem [ref=e95]
+              - list [ref=e96]:
+                - listitem [ref=e97]
+                - listitem [ref=e98]
+              - list [ref=e99]:
+                - listitem [ref=e100]
+                - listitem [ref=e101]
+                - listitem [ref=e102]
+                - listitem [ref=e103]
+                - listitem [ref=e104]
+                - listitem [ref=e105]
+              - list [ref=e106]:
+                - listitem [ref=e107]
+                - listitem [ref=e108]
+                - listitem [ref=e109]
+              - list [ref=e110]:
+                - listitem [ref=e111]
+                - listitem [ref=e112]
+                - listitem [ref=e113]
+                - listitem [ref=e114]
+              - list [ref=e115]:
+                - listitem [ref=e116]
+                - listitem [ref=e117]
+              - list [ref=e118]:
+                - listitem [ref=e119]
+                - listitem [ref=e120]
+              - list [ref=e121]:
+                - listitem [ref=e122]
+              - list [ref=e123]:
+                - listitem [ref=e124]
+                - listitem [ref=e125]
+              - list [ref=e126]:
+                - listitem [ref=e127]
+                - listitem [ref=e128]
+                - listitem [ref=e129]
+                - listitem [ref=e130]
+                - listitem [ref=e131]
+                - listitem [ref=e132]
+              - list [ref=e133]:
+                - listitem [ref=e134]
+                - listitem [ref=e135]
+                - listitem [ref=e136]
+                - listitem [ref=e137]
+                - listitem [ref=e138]
+                - listitem [ref=e139]
+              - list [ref=e140]:
+                - listitem [ref=e141]
+              - list [ref=e142]:
+                - listitem [ref=e143]
+                - listitem [ref=e144]
+                - listitem [ref=e145]
+                - listitem [ref=e146]
+            - tabpanel "향수 & 뷰티 향수 & 뷰티"
+            - tablist [ref=e147]:
+              - tab "패션 & 액세서리 패션 & 액세서리" [selected] [ref=e149] [cursor=pointer]
+              - tab "향수 & 뷰티 향수 & 뷰티" [ref=e150] [cursor=pointer]
+          - navigation [ref=e151]:
+            - generic [ref=e152]:
+              - generic [ref=e153]:
+                - link "홈페이지로 이동" [ref=e154] [cursor=pointer]:
+                  - /url: /ko_kr/fashion
+                  - img "Christian Dior Couture" [ref=e156]
+                - list [ref=e164]:
+                  - listitem [ref=e165] [cursor=pointer]:
+                    - button "aria_searchButtonOpen" [ref=e166]:
+                      - img [ref=e167]
+                  - listitem [ref=e169] [cursor=pointer]:
+                    - button "위시리스트" [ref=e170]:
+                      - status [ref=e171]
+                      - img [ref=e172]
+                  - listitem [ref=e174] [cursor=pointer]:
+                    - button "내 계정" [ref=e175]:
+                      - img [ref=e176]
+                  - listitem [ref=e178] [cursor=pointer]:
+                    - link "aria_cart_total_items" [ref=e179]:
+                      - /url: /ko_kr/couture/basket
+                      - img [ref=e180]
+              - status [ref=e182]
+        - generic [ref=e184]:
+          - heading "죄송합니다. 요청하신 페이지를 찾을 수 없습니다." [level=1] [ref=e185]
+          - generic [ref=e188]:
+            - textbox "상품을 검색해보세요" [ref=e189]
+            - button "Search" [ref=e191] [cursor=pointer]:
+              - img [ref=e192]
+        - contentinfo [ref=e194]:
+          - generic [ref=e195]:
+            - list [ref=e197]:
+              - listitem [ref=e198]:
+                - link "메시지 커스터마이즈 맞춤 메시지 제작으로 나만의 특별한 선물을 주문하세요." [ref=e199] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/gifts-personalization/gifts/the-art-of-gifting
+                  - generic [ref=e200]:
+                    - paragraph [ref=e201]: 메시지 커스터마이즈
+                    - paragraph [ref=e202]: 맞춤 메시지 제작으로 나만의 특별한 선물을 주문하세요.
+                  - img [ref=e203]
+              - listitem [ref=e205]:
+                - link "Dior 시그니처 패키지 디올 하우스의 노하우를 고스란히 반영합니다." [ref=e206] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/gifts-personalization/gifts/the-art-of-gifting
+                  - generic [ref=e207]:
+                    - paragraph [ref=e208]: Dior 시그니처 패키지
+                    - paragraph [ref=e209]: 디올 하우스의 노하우를 고스란히 반영합니다.
+                  - img [ref=e210]
+              - listitem [ref=e212]:
+                - link "무료 배송 및 반품 무료배송 및 7일 이내 무료반품 및 30일 이내 무료 교환" [ref=e213] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/couture-boutique-advantages
+                  - generic [ref=e214]:
+                    - paragraph [ref=e215]: 무료 배송 및 반품
+                    - paragraph [ref=e216]: 무료배송 및 7일 이내 무료반품 및 30일 이내 무료 교환
+                  - img [ref=e217]
+            - generic [ref=e219]:
+              - generic [ref=e221]:
+                - paragraph [ref=e222]: Dior의 최신 소식 받고 영감 얻기
+                - generic [ref=e223]:
+                  - text: 입력해 주신 귀하의 이메일 주소는 동의 철회 시까지
+                  - text: 이메일을 통한 뉴스레터, 제품정보, 전시 및 행사 안내 등
+                  - text: 영리목적 광고성 정보 전달에 활용되거나,
+                  - text: 영업 및 마케팅 목적으로 활용될 수 있습니다.
+                  - text: 귀하는 이에 동의하지 않으실 수 있으나,
+                  - text: 이 경우 Dior이 제공하는 뉴스레터를 제공받지
+                  - text: 못할 수 있습니다.
+                - generic [ref=e224]:
+                  - generic [ref=e225]:
+                    - generic: 이메일 *
+                    - generic [ref=e226]:
+                      - textbox "이메일" [ref=e227]
+                      - group:
+                        - generic: 이메일 *
+                  - button "확인" [ref=e228] [cursor=pointer]:
+                    - paragraph [ref=e229]: 확인
+              - generic [ref=e231]:
+                - generic [ref=e232]:
+                  - heading "dior 부티크" [level=2] [ref=e233]
+                  - list [ref=e234]:
+                    - listitem [ref=e235]:
+                      - link "크리스챤 디올 꾸뛰르" [ref=e237] [cursor=pointer]:
+                        - /url: https://www.dior.com/fashion/stores/ko_kr/search
+                    - listitem [ref=e238]:
+                      - link "크리스챤 디올 코스메틱" [ref=e240] [cursor=pointer]:
+                        - /url: https://www.dior.com/ko_kr/beauty/find-your-dior-store
+                - generic [ref=e241]:
+                  - heading "고객 지원" [level=2] [ref=e242]
+                  - list [ref=e243]:
+                    - listitem [ref=e244]:
+                      - button "고객센터" [ref=e247] [cursor=pointer]:
+                        - heading "고객센터" [level=3] [ref=e249]
+                        - img [ref=e251]
+                    - listitem [ref=e253]:
+                      - link "배송 및 반품" [ref=e255] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/couture-boutique-advantages
+                    - listitem [ref=e256]:
+                      - button "FAQ" [ref=e259] [cursor=pointer]:
+                        - heading "FAQ" [level=3] [ref=e261]
+                        - img [ref=e263]
+                - generic [ref=e265]:
+                  - heading "디올 하우스" [level=2] [ref=e266]
+                  - list [ref=e267]:
+                    - listitem [ref=e268]:
+                      - button "디올 지속가능성" [ref=e271] [cursor=pointer]:
+                        - heading "디올 지속가능성" [level=3] [ref=e273]
+                        - img [ref=e275]
+                    - listitem [ref=e277]:
+                      - link "윤리 및 규정 준수" [ref=e279] [cursor=pointer]:
+                        - /url: https://www.lvmh.com/en/ethics-and-compliance
+                    - listitem [ref=e280]:
+                      - link "채용 정보" [ref=e282] [cursor=pointer]:
+                        - /url: https://www.dior.com/carrieres/index.html?languageSelect=KO
+                - generic [ref=e283]:
+                  - heading "법률" [level=2] [ref=e284]
+                  - list [ref=e285]:
+                    - listitem [ref=e286]:
+                      - link "접근성" [ref=e288] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/accessibility
+                    - listitem [ref=e289]:
+                      - button "법적 고지" [ref=e292] [cursor=pointer]:
+                        - heading "법적 고지" [level=3] [ref=e294]
+                        - img [ref=e296]
+                    - listitem [ref=e298]:
+                      - button "일반 판매 조건" [ref=e301] [cursor=pointer]:
+                        - heading "일반 판매 조건" [level=3] [ref=e303]
+                        - img [ref=e305]
+                    - listitem [ref=e307]:
+                      - button "사이트맵" [ref=e308] [cursor=pointer]:
+                        - heading "사이트맵" [level=3] [ref=e309]
+                        - img [ref=e310]
+                - generic [ref=e312]:
+                  - heading "개인정보 처리방침" [level=2] [ref=e313]
+                  - list [ref=e314]:
+                    - listitem [ref=e315]:
+                      - link "크리스챤 디올 꾸뛰르" [ref=e317] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/personal-data
+                    - listitem [ref=e318]:
+                      - link "크리스챤 디올 코스메틱" [ref=e320] [cursor=pointer]:
+                        - /url: https://www.dior.com/ko_kr/beauty/folder?fid=personal-data#content-detail-privacy-statement
+            - generic [ref=e321]:
+              - generic [ref=e323] [cursor=pointer]:
+                - generic [ref=e324]:
+                  - paragraph [ref=e325]: 국가/지역
+                  - paragraph [ref=e326]: 한국 (한국어)
+                - img [ref=e327]
+              - generic [ref=e330]:
+                - paragraph [ref=e331]: 디올 소셜미디어
+                - list [ref=e332]:
+                  - listitem [ref=e333]:
+                    - link "Twitter" [ref=e334] [cursor=pointer]:
+                      - /url: https://pf.kakao.com/_dyBaT
+                      - text: Kakaotalk
+                  - listitem [ref=e335]:
+                    - link "Instagram" [ref=e336] [cursor=pointer]:
+                      - /url: https://www.instagram.com/dior/
+                  - listitem [ref=e337]:
+                    - link "Twitter" [ref=e338] [cursor=pointer]:
+                      - /url: https://twitter.com/DIOR
+                      - text: X
+                  - listitem [ref=e339]:
+                    - link "Facebook" [ref=e340] [cursor=pointer]:
+                      - /url: https://www.facebook.com/Dior
+                  - listitem [ref=e341]:
+                    - link "Pinterest" [ref=e342] [cursor=pointer]:
+                      - /url: https://www.pinterest.fr/dior/
+                  - listitem [ref=e343]:
+                    - link "Snapchat" [ref=e344] [cursor=pointer]:
+                      - /url: https://www.snapchat.com/add/dior
+                  - listitem [ref=e345]:
+                    - link "LinkedIn" [ref=e346] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/christian-dior-couture/
+                  - listitem [ref=e347]:
+                    - link "TikTok" [ref=e348] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@dior
+                  - listitem [ref=e349]:
+                    - link "YouTube" [ref=e350] [cursor=pointer]:
+                      - /url: https://www.youtube.com/channel/UC6xD-jKli-_qIYXDTsNv4dw
+              - img "Dior" [ref=e352]
+            - list [ref=e355]:
+              - listitem [ref=e356]:
+                - paragraph [ref=e357]: "크리스챤디올꾸뛰르코리아주식회사 | 04539 서울특별시 중구 을지로5길 19, 26층(수하동) | 사업자등록번호: 120-81-74197"
+              - listitem [ref=e358]:
+                - 'link "대표자: 캐롤 셰브론, 콩 메이 완 샤론 | 통신판매업" [ref=e359] [cursor=pointer]':
+                  - /url: https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1208174197
+              - listitem [ref=e360]:
+                - 'link "신고번호: 2021-서울중구-01116 | 사업자정보확인" [ref=e361] [cursor=pointer]':
+                  - /url: https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1208174197
+              - listitem [ref=e362]:
+                - paragraph [ref=e363]: "고객 센터 : 02-3280-0104 (contactdiorkr@christiandior.com) | 호스팅 서비스: Smile Hosting"
+              - listitem [ref=e364]:
+                - paragraph [ref=e365]: COPYRIGHT © CHRISTIAN DIOR COUTURE KOREA ALL RIGHTS RESERVED.
+              - listitem [ref=e366]:
+                - link "토스페이먼츠 구매안전서비스 이용 확인증 확인하기" [ref=e367] [cursor=pointer]:
+                  - /url: https://www.dior.com/couture/en_int/folder-media/folder-fichiers/%EC%82%AC%EC%97%85%EC%9E%90%EC%A0%95%EB%B3%B4%ED%99%95%EC%9D%B8
+              - listitem [ref=e368]:
+                - paragraph [ref=e369]: 크리스챤디올꾸뛰르코리아㈜는 통신판매중개자로서 본 웹사이트와 연결된 사이트에서 엘브이엠에치코스메틱스(유)가 판매하는 뷰티 제품의 거래당사자가 아니며,
+              - listitem [ref=e370]:
+                - paragraph [ref=e371]: 엘브이엠에치코스메틱스(유)가 등록한 상품, 거래정보 및 거래에 대해 크리스챤디올꾸뛰르코리아㈜는 일체 책임을 지지 않습니다.
+        - status [ref=e372]
+  - alert [ref=e373]
