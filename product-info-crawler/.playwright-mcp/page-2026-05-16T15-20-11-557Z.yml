@@ -1,0 +1,1415 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - status [ref=e3]
+    - generic [ref=e4]:
+      - list:
+        - listitem:
+          - link "aria_goToMenu" [ref=e5] [cursor=pointer]:
+            - /url: "#nav"
+        - listitem:
+          - link "aria_goToContent" [ref=e6] [cursor=pointer]:
+            - /url: "#main"
+      - banner [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - button "aria_messageAdvantageBanner" [ref=e10] [cursor=pointer]
+          - listitem [ref=e11]:
+            - button "aria_messageAdvantageBanner" [ref=e12] [cursor=pointer]
+        - status [ref=e13]:
+          - link "봄을 완성하는 디올 남성 컬렉션을 만나보세요." [ref=e15] [cursor=pointer]:
+            - /url: /ko_kr/fashion/mens-fashion/ready-to-wear/all-ready-to-wear
+            - paragraph [ref=e17]: 봄을 완성하는 디올 남성 컬렉션을 만나보세요.
+          - link "새로운 디올 남성 슈즈 컬렉션을 만나보세요." [ref=e19] [cursor=pointer]:
+            - /url: /ko_kr/fashion/mens-fashion/shoes/all-shoes
+            - paragraph [ref=e21]: 새로운 디올 남성 슈즈 컬렉션을 만나보세요.
+        - button "aria_closeAdvantageBanner" [ref=e22] [cursor=pointer]:
+          - img [ref=e23]
+      - main [ref=e25]:
+        - banner [ref=e26]:
+          - button "메뉴 열기" [ref=e27] [cursor=pointer]:
+            - img [ref=e29]
+          - list [ref=e32]:
+            - listitem [ref=e33]
+            - listitem [ref=e34]
+            - listitem [ref=e35]
+            - listitem [ref=e36]
+          - list [ref=e37]:
+            - listitem [ref=e38]
+            - listitem [ref=e39]
+            - listitem [ref=e40]
+            - listitem [ref=e41]
+          - list [ref=e42]:
+            - listitem [ref=e43]
+            - listitem [ref=e44]
+          - list [ref=e45]:
+            - listitem [ref=e46]
+            - listitem [ref=e47]
+            - listitem [ref=e48]
+            - listitem [ref=e49]
+            - listitem [ref=e50]
+            - listitem [ref=e51]
+          - list [ref=e52]:
+            - listitem [ref=e53]
+            - listitem [ref=e54]
+          - list [ref=e55]:
+            - listitem [ref=e56]
+            - listitem [ref=e57]
+          - list [ref=e58]:
+            - listitem [ref=e59]
+            - listitem [ref=e60]
+          - list [ref=e61]:
+            - listitem [ref=e62]
+            - listitem [ref=e63]
+            - listitem [ref=e64]
+            - listitem [ref=e65]
+          - list [ref=e66]:
+            - listitem [ref=e67]
+            - listitem [ref=e68]
+            - listitem [ref=e69]
+            - listitem [ref=e70]
+          - generic [ref=e72]:
+            - list [ref=e73]:
+              - listitem [ref=e74]:
+                - menuitem "남성 패션 살펴보기" [ref=e75] [cursor=pointer]:
+                  - generic [ref=e76]: 남성 패션 살펴보기
+              - listitem [ref=e77]:
+                - menuitem "의류" [ref=e78] [cursor=pointer]:
+                  - generic [ref=e79]: 의류
+                  - img [ref=e80]
+                - list [ref=e82]:
+                  - listitem [ref=e83]
+                  - listitem [ref=e84]
+              - listitem [ref=e85]:
+                - menuitem "가방" [ref=e86] [cursor=pointer]:
+                  - generic [ref=e87]: 가방
+                  - img [ref=e88]
+                - list [ref=e90]:
+                  - listitem [ref=e91]
+                  - listitem [ref=e92]
+              - listitem [ref=e93]:
+                - menuitem "나만의 가방을 꾸며보세요" [ref=e94] [cursor=pointer]:
+                  - generic [ref=e95]: 나만의 가방을 꾸며보세요
+              - listitem [ref=e96]:
+                - menuitem "가죽 소품" [expanded] [ref=e97] [cursor=pointer]:
+                  - generic [ref=e98]: 가죽 소품
+                  - img [ref=e99]
+                - generic [ref=e103]:
+                  - list [ref=e104]:
+                    - listitem [ref=e105]:
+                      - menuitem "가죽 소품 전체 보기" [ref=e106] [cursor=pointer]:
+                        - generic [ref=e107]: 가죽 소품 전체 보기
+                    - listitem [ref=e108]:
+                      - menuitem "카드 지갑" [ref=e109] [cursor=pointer]:
+                        - generic [ref=e110]: 카드 지갑
+                    - listitem [ref=e111]:
+                      - menuitem "반지갑" [ref=e112] [cursor=pointer]:
+                        - generic [ref=e113]: 반지갑
+                        - img [ref=e114]
+                    - listitem [ref=e116]:
+                      - menuitem "장지갑" [ref=e117] [cursor=pointer]:
+                        - generic [ref=e118]: 장지갑
+                    - listitem [ref=e119]:
+                      - menuitem "파우치" [ref=e120] [cursor=pointer]:
+                        - generic [ref=e121]: 파우치
+                    - listitem [ref=e122]:
+                      - menuitem "스몰 백" [ref=e123] [cursor=pointer]:
+                        - generic [ref=e124]: 스몰 백
+                    - listitem [ref=e125]:
+                      - menuitem "키링 & 백 참" [ref=e126] [cursor=pointer]:
+                        - generic [ref=e127]: 키링 & 백 참
+                    - listitem [ref=e128]:
+                      - menuitem "테크 액세서리" [ref=e129] [cursor=pointer]:
+                        - generic [ref=e130]: 테크 액세서리
+                  - list [ref=e131]:
+                    - listitem [ref=e132]:
+                      - menuitem "2026 가을 컬렉션" [ref=e133] [cursor=pointer]
+                    - listitem [ref=e134]:
+                      - menuitem "가죽 소품 전체 보기" [ref=e135] [cursor=pointer]
+              - listitem [ref=e136]:
+                - menuitem "액세서리" [ref=e137] [cursor=pointer]:
+                  - generic [ref=e138]: 액세서리
+                  - img [ref=e139]
+                - list [ref=e141]:
+                  - listitem [ref=e142]
+                  - listitem [ref=e143]
+                  - listitem [ref=e144]
+                  - listitem [ref=e145]
+              - listitem [ref=e146]:
+                - menuitem "슈즈" [ref=e147] [cursor=pointer]:
+                  - generic [ref=e148]: 슈즈
+                  - img [ref=e149]
+                - list [ref=e151]:
+                  - listitem [ref=e152]
+                  - listitem [ref=e153]
+                  - listitem [ref=e154]
+                  - listitem [ref=e155]
+                  - listitem [ref=e156]
+                  - listitem [ref=e157]
+              - listitem [ref=e158]:
+                - menuitem "디올 테일러링" [ref=e159] [cursor=pointer]:
+                  - generic [ref=e160]: 디올 테일러링
+            - generic [ref=e161]:
+              - generic [ref=e162]: 하이라이트
+              - list [ref=e163]:
+                - listitem [ref=e164]:
+                  - menuitem "2026 가을 컬렉션" [ref=e165] [cursor=pointer]:
+                    - generic [ref=e166]: 2026 가을 컬렉션
+                - listitem [ref=e167]:
+                  - menuitem "디올리비에라" [ref=e168] [cursor=pointer]:
+                    - generic [ref=e169]: 디올리비에라
+                - listitem [ref=e170]:
+                  - menuitem "북 커버 컬렉션" [ref=e171] [cursor=pointer]:
+                    - generic [ref=e172]: 북 커버 컬렉션
+                - listitem [ref=e173]:
+                  - menuitem "Dior Icons" [ref=e174] [cursor=pointer]:
+                    - generic [ref=e175]: Dior Icons
+            - list [ref=e176]:
+              - listitem [ref=e177]
+              - listitem [ref=e178]
+              - listitem [ref=e179]
+              - listitem [ref=e180]
+          - list [ref=e181]:
+            - listitem [ref=e182]
+          - list [ref=e183]:
+            - listitem [ref=e184]
+            - listitem [ref=e185]
+            - listitem [ref=e186]
+            - listitem [ref=e187]
+            - listitem [ref=e188]
+            - listitem [ref=e189]
+          - list [ref=e190]:
+            - listitem [ref=e191]
+          - list [ref=e192]:
+            - listitem [ref=e193]
+            - listitem [ref=e194]
+            - listitem [ref=e195]
+            - listitem [ref=e196]
+          - list [ref=e197]:
+            - listitem [ref=e198]
+            - listitem [ref=e199]
+          - list [ref=e200]:
+            - listitem [ref=e201]
+            - listitem [ref=e202]
+            - listitem [ref=e203]
+            - listitem [ref=e204]
+            - listitem [ref=e205]
+            - listitem [ref=e206]
+          - list [ref=e207]:
+            - listitem [ref=e208]
+            - listitem [ref=e209]
+            - listitem [ref=e210]
+          - list [ref=e211]:
+            - listitem [ref=e212]
+            - listitem [ref=e213]
+            - listitem [ref=e214]
+            - listitem [ref=e215]
+          - list [ref=e216]:
+            - listitem [ref=e217]
+            - listitem [ref=e218]
+          - list [ref=e219]:
+            - listitem [ref=e220]
+            - listitem [ref=e221]
+          - list [ref=e222]:
+            - listitem [ref=e223]
+          - list [ref=e224]:
+            - listitem [ref=e225]
+            - listitem [ref=e226]
+          - list [ref=e227]:
+            - listitem [ref=e228]
+            - listitem [ref=e229]
+            - listitem [ref=e230]
+            - listitem [ref=e231]
+            - listitem [ref=e232]
+            - listitem [ref=e233]
+          - list [ref=e234]:
+            - listitem [ref=e235]
+            - listitem [ref=e236]
+            - listitem [ref=e237]
+            - listitem [ref=e238]
+            - listitem [ref=e239]
+            - listitem [ref=e240]
+          - list [ref=e241]:
+            - listitem [ref=e242]
+          - list [ref=e243]:
+            - listitem [ref=e244]
+            - listitem [ref=e245]
+            - listitem [ref=e246]
+            - listitem [ref=e247]
+          - navigation [ref=e248]:
+            - generic [ref=e249]:
+              - generic [ref=e250]:
+                - link "홈페이지로 이동" [ref=e251] [cursor=pointer]:
+                  - /url: /ko_kr/fashion
+                  - img "Christian Dior Couture" [ref=e253]
+                - list [ref=e261]:
+                  - listitem [ref=e262] [cursor=pointer]:
+                    - button "aria_searchButtonOpen" [ref=e263]:
+                      - img [ref=e264]
+                  - listitem [ref=e266] [cursor=pointer]:
+                    - button "위시리스트" [ref=e267]:
+                      - status [ref=e268]
+                      - img [ref=e269]
+                  - listitem [ref=e271] [cursor=pointer]:
+                    - button "내 계정" [ref=e272]:
+                      - img [ref=e273]
+                  - listitem [ref=e275] [cursor=pointer]:
+                    - link "aria_cart_total_items" [ref=e276]:
+                      - /url: /ko_kr/couture/basket
+                      - img [ref=e277]
+              - status [ref=e279]
+        - generic [ref=e282]:
+          - generic [ref=e285]:
+            - heading "반지갑" [level=1] [ref=e286]
+            - paragraph [ref=e287]: 모던함을 구현한 컴팩트한 남성 지갑은 디올 하우스의 아이코닉한 액세서리 라인을 더욱 돋보이게 합니다.
+          - generic:
+            - button "반지갑":
+              - paragraph: 반지갑
+              - generic:
+                - img
+            - generic:
+              - menu "반지갑":
+                - menuitem "카드 지갑":
+                  - link "카드 지갑":
+                    - /url: /ko_kr/fashion/mens-fashion/small-leather-goods/card-holders
+                    - generic:
+                      - generic: 카드 지갑
+                - menuitem "장지갑":
+                  - link "장지갑":
+                    - /url: /ko_kr/fashion/mens-fashion/small-leather-goods/long-wallets
+                    - generic:
+                      - generic: 장지갑
+                - menuitem "파우치":
+                  - link "파우치":
+                    - /url: /ko_kr/fashion/mens-fashion/small-leather-goods/pouches-wearable-wallets
+                    - generic:
+                      - generic: 파우치
+                - menuitem "스몰 백":
+                  - link "스몰 백":
+                    - /url: /ko_kr/fashion/mens-fashion/bags/belt-bags
+                    - generic:
+                      - generic: 스몰 백
+                - menuitem "테크 액세서리":
+                  - link "테크 액세서리":
+                    - /url: /ko_kr/fashion/mens-fashion/small-leather-goods/tech
+                    - generic:
+                      - generic: 테크 액세서리
+                - menuitem "가죽 소품 전체 보기":
+                  - link "가죽 소품 전체 보기":
+                    - /url: /ko_kr/fashion/mens-fashion/small-leather-goods/all-small-leather-goods
+                    - generic:
+                      - generic: 가죽 소품 전체 보기
+          - generic [ref=e288]:
+            - paragraph [ref=e289]: 57 아이템
+            - generic:
+              - button "필터 및 정렬":
+                - generic:
+                  - img
+                - generic:
+                  - paragraph: 필터 및 정렬
+            - alert [ref=e290]: 새 필터 추가됨
+            - alert [ref=e291]: 새 필터 추가됨
+          - list [ref=e295]:
+            - listitem [ref=e296]:
+              - generic [ref=e297]:
+                - generic [ref=e298]:
+                  - link "디올 아치 반지갑 블랙 그레인 카프스킨 E01" [ref=e299] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2LLBH095MAR_H00N
+                    - img "디올 아치 반지갑 블랙 그레인 카프스킨 E01" [ref=e303]
+                  - generic [ref=e305]:
+                    - list
+                  - button "위시리스트에 디올 아치 반지갑 추가 및 위시리스트 패널 열기" [ref=e309] [cursor=pointer]:
+                    - button "위시리스트에 디올 아치 반지갑 추가 및 위시리스트 패널 열기" [ref=e310]:
+                      - img [ref=e311]
+                - link "디올 아치 반지갑 블랙 그레인 카프스킨 ₩890,000" [ref=e314] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2LLBH095MAR_H00N
+                  - generic [ref=e315]:
+                    - generic [ref=e316]:
+                      - generic [ref=e318]: 디올 아치 반지갑
+                      - generic [ref=e320]: 블랙 그레인 카프스킨
+                    - generic [ref=e323]: ₩890,000
+            - listitem [ref=e324]:
+              - generic [ref=e325]:
+                - generic [ref=e326]:
+                  - link "[동전수납] 디올 아치 지갑 블랙 그레인 카프스킨 E01" [ref=e327] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2LLBC350MAR_H00N
+                    - img "[동전수납] 디올 아치 지갑 블랙 그레인 카프스킨 E01" [ref=e331]
+                  - generic [ref=e333]:
+                    - list
+                  - button "위시리스트에 [동전수납] 디올 아치 지갑 추가 및 위시리스트 패널 열기" [ref=e337] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 디올 아치 지갑 추가 및 위시리스트 패널 열기" [ref=e338]:
+                      - img [ref=e339]
+                - link "[동전수납] 디올 아치 지갑 블랙 그레인 카프스킨 ₩930,000" [ref=e342] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2LLBC350MAR_H00N
+                  - generic [ref=e343]:
+                    - generic [ref=e344]:
+                      - generic [ref=e346]: "[동전수납] 디올 아치 지갑"
+                      - generic [ref=e348]: 블랙 그레인 카프스킨
+                    - generic [ref=e351]: ₩930,000
+            - listitem [ref=e352]:
+              - generic [ref=e353]:
+                - generic [ref=e354]:
+                  - link "CD 아이콘 반지갑 그리 플란넬 그레인 카프스킨 E01" [ref=e355] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ICBH096IDC_H08G
+                    - img "CD 아이콘 반지갑 그리 플란넬 그레인 카프스킨 E01" [ref=e359]
+                  - generic [ref=e361]:
+                    - list
+                  - button "위시리스트에 CD 아이콘 반지갑 추가 및 위시리스트 패널 열기" [ref=e365] [cursor=pointer]:
+                    - button "위시리스트에 CD 아이콘 반지갑 추가 및 위시리스트 패널 열기" [ref=e366]:
+                      - img [ref=e367]
+                - link "CD 아이콘 반지갑 그리 플란넬 그레인 카프스킨 ₩790,000" [ref=e370] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ICBH096IDC_H08G
+                  - generic [ref=e371]:
+                    - generic [ref=e372]:
+                      - generic [ref=e374]: CD 아이콘 반지갑
+                      - generic [ref=e376]: 그리 플란넬 그레인 카프스킨
+                    - generic [ref=e379]: ₩790,000
+            - listitem [ref=e380]:
+              - generic [ref=e381]:
+                - generic [ref=e382]:
+                  - link "[동전수납] CD 아이콘 지갑 그리 플란넬 그레인 카프스킨 E01" [ref=e383] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ICBC347IDC_H08G
+                    - img "[동전수납] CD 아이콘 지갑 그리 플란넬 그레인 카프스킨 E01" [ref=e387]
+                  - generic [ref=e389]:
+                    - list
+                  - button "위시리스트에 [동전수납] CD 아이콘 지갑 추가 및 위시리스트 패널 열기" [ref=e393] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] CD 아이콘 지갑 추가 및 위시리스트 패널 열기" [ref=e394]:
+                      - img [ref=e395]
+                - link "[동전수납] CD 아이콘 지갑 그리 플란넬 그레인 카프스킨 ₩840,000" [ref=e398] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ICBC347IDC_H08G
+                  - generic [ref=e399]:
+                    - generic [ref=e400]:
+                      - generic [ref=e402]: "[동전수납] CD 아이콘 지갑"
+                      - generic [ref=e404]: 그리 플란넬 그레인 카프스킨
+                    - generic [ref=e407]: ₩840,000
+            - listitem [ref=e408]:
+              - generic [ref=e409]:
+                - generic [ref=e410]:
+                  - link "바이폴드 지갑 브라운 디올 오블리크 자카드 E01" [ref=e411] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027YYE_H45E
+                    - img "바이폴드 지갑 브라운 디올 오블리크 자카드 E01" [ref=e415]
+                  - generic [ref=e419]:
+                    - list
+                  - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e423] [cursor=pointer]:
+                    - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e424]:
+                      - img [ref=e425]
+                - link "바이폴드 지갑 브라운 디올 오블리크 자카드 ₩790,000" [ref=e428] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027YYE_H45E
+                  - generic [ref=e429]:
+                    - generic [ref=e430]:
+                      - generic [ref=e432]: 바이폴드 지갑
+                      - generic [ref=e434]: 브라운 디올 오블리크 자카드
+                    - generic [ref=e437]: ₩790,000
+            - listitem [ref=e438]:
+              - generic [ref=e439]:
+                - generic [ref=e440]:
+                  - link "[동전수납] 지갑 브라운 디올 오블리크 자카드 E01" [ref=e441] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC027YYE_H45E
+                    - img "[동전수납] 지갑 브라운 디올 오블리크 자카드 E01" [ref=e445]
+                  - generic [ref=e449]:
+                    - list
+                  - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e453] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e454]:
+                      - img [ref=e455]
+                - link "[동전수납] 지갑 브라운 디올 오블리크 자카드 ₩840,000" [ref=e458] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC027YYE_H45E
+                  - generic [ref=e459]:
+                    - generic [ref=e460]:
+                      - generic [ref=e462]: "[동전수납] 지갑"
+                      - generic [ref=e464]: 브라운 디올 오블리크 자카드
+                    - generic [ref=e467]: ₩840,000
+            - listitem [ref=e468]:
+              - generic [ref=e469]:
+                - generic [ref=e470]:
+                  - link "반지갑 트리아농 그레이 디올 그래비티 가죽 E01" [ref=e471] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH096MLM_H00G
+                    - img "반지갑 트리아농 그레이 디올 그래비티 가죽 E01" [ref=e475]
+                  - generic [ref=e479]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e483] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e484]:
+                      - img [ref=e485]
+                - link "반지갑 트리아농 그레이 디올 그래비티 가죽 ₩910,000" [ref=e488] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH096MLM_H00G
+                  - generic [ref=e489]:
+                    - generic [ref=e490]:
+                      - generic [ref=e492]: 반지갑
+                      - generic [ref=e494]: 트리아농 그레이 디올 그래비티 가죽
+                    - generic [ref=e497]: ₩910,000
+            - listitem [ref=e498]:
+              - generic [ref=e499]:
+                - generic [ref=e500]:
+                  - link "[동전수납] 지갑 트리아농 그레이 디올 그래비티 가죽 E01" [ref=e501] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC347MLM_H00G
+                    - img "[동전수납] 지갑 트리아농 그레이 디올 그래비티 가죽 E01" [ref=e505]
+                  - generic [ref=e509]:
+                    - list
+                  - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e513] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e514]:
+                      - img [ref=e515]
+                - link "[동전수납] 지갑 트리아농 그레이 디올 그래비티 가죽 ₩940,000" [ref=e518] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC347MLM_H00G
+                  - generic [ref=e519]:
+                    - generic [ref=e520]:
+                      - generic [ref=e522]: "[동전수납] 지갑"
+                      - generic [ref=e524]: 트리아농 그레이 디올 그래비티 가죽
+                    - generic [ref=e527]: ₩940,000
+            - listitem [ref=e528]:
+              - group [ref=e536]:
+                - generic [ref=e537]:
+                  - link "그를 위한 기프트" [ref=e545] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/gifts/gifts-for-him
+                  - generic "이전" [ref=e546] [cursor=pointer]
+                  - generic "다음" [ref=e547] [cursor=pointer]
+            - listitem [ref=e548]:
+              - generic [ref=e549]:
+                - generic [ref=e550]:
+                  - link "바이폴드 지갑 그리 트리아농 디올 그래비티 스무스 가죽 E01" [ref=e551] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027GVM_H00G
+                    - img "바이폴드 지갑 그리 트리아농 디올 그래비티 스무스 가죽 E01" [ref=e555]
+                  - generic [ref=e559]:
+                    - list
+                  - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e563] [cursor=pointer]:
+                    - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e564]:
+                      - img [ref=e565]
+                - link "바이폴드 지갑 그리 트리아농 디올 그래비티 스무스 가죽 ₩910,000" [ref=e568] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027GVM_H00G
+                  - generic [ref=e569]:
+                    - generic [ref=e570]:
+                      - generic [ref=e572]: 바이폴드 지갑
+                      - generic [ref=e574]: 그리 트리아농 디올 그래비티 스무스 가죽
+                    - generic [ref=e576]:
+                      - generic [ref=e577]: ₩910,000
+                      - list [ref=e579]:
+                        - listitem [ref=e580]
+                        - listitem [ref=e582]
+            - listitem [ref=e584]:
+              - generic [ref=e585]:
+                - generic [ref=e586]:
+                  - link "반지갑 라이트 블루 디올 그래비티 스무스 가죽 E01" [ref=e587] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH096GVM_H522
+                    - img "반지갑 라이트 블루 디올 그래비티 스무스 가죽 E01" [ref=e591]
+                  - generic [ref=e595]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e599] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e600]:
+                      - img [ref=e601]
+                - link "반지갑 라이트 블루 디올 그래비티 스무스 가죽 ₩910,000" [ref=e604] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH096GVM_H522
+                  - generic [ref=e605]:
+                    - generic [ref=e606]:
+                      - generic [ref=e608]: 반지갑
+                      - generic [ref=e610]: 라이트 블루 디올 그래비티 스무스 가죽
+                    - generic [ref=e613]: ₩910,000
+            - listitem [ref=e614]:
+              - generic [ref=e615]:
+                - generic [ref=e616]:
+                  - link "바이폴드 지갑 딥 그린 디올 그래비티 가죽 E01" [ref=e617] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027GLF_H620
+                    - img "바이폴드 지갑 딥 그린 디올 그래비티 가죽 E01" [ref=e621]
+                  - generic [ref=e625]:
+                    - list
+                  - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e629] [cursor=pointer]:
+                    - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e630]:
+                      - img [ref=e631]
+                - link "바이폴드 지갑 딥 그린 디올 그래비티 가죽 ₩910,000" [ref=e634] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027GLF_H620
+                  - generic [ref=e635]:
+                    - generic [ref=e636]:
+                      - generic [ref=e638]: 바이폴드 지갑
+                      - generic [ref=e640]: 딥 그린 디올 그래비티 가죽
+                    - generic [ref=e642]:
+                      - generic [ref=e643]: ₩910,000
+                      - list [ref=e645]:
+                        - listitem [ref=e646]
+            - listitem [ref=e648]:
+              - generic [ref=e649]:
+                - generic [ref=e650]:
+                  - link "바이폴드 지갑 네이비 블루 디올 그래비티 가죽 E01" [ref=e651] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027GLF_H523
+                    - img "바이폴드 지갑 네이비 블루 디올 그래비티 가죽 E01" [ref=e655]
+                  - generic [ref=e659]:
+                    - list
+                  - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e663] [cursor=pointer]:
+                    - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e664]:
+                      - img [ref=e665]
+                - link "바이폴드 지갑 네이비 블루 디올 그래비티 가죽 ₩910,000" [ref=e668] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027GLF_H523
+                  - generic [ref=e669]:
+                    - generic [ref=e670]:
+                      - generic [ref=e672]: 바이폴드 지갑
+                      - generic [ref=e674]: 네이비 블루 디올 그래비티 가죽
+                    - generic [ref=e676]:
+                      - generic [ref=e677]: ₩910,000
+                      - list [ref=e679]:
+                        - listitem [ref=e680]
+            - listitem [ref=e682]:
+              - generic [ref=e683]:
+                - generic [ref=e684]:
+                  - link "바이폴드 지갑 옐로우 디올 그래비티 스무스 가죽 E01" [ref=e685] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027GVM_H225
+                    - img "바이폴드 지갑 옐로우 디올 그래비티 스무스 가죽 E01" [ref=e689]
+                  - generic [ref=e693]:
+                    - list
+                  - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e697] [cursor=pointer]:
+                    - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e698]:
+                      - img [ref=e699]
+                - link "바이폴드 지갑 옐로우 디올 그래비티 스무스 가죽 ₩910,000" [ref=e702] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027GVM_H225
+                  - generic [ref=e703]:
+                    - generic [ref=e704]:
+                      - generic [ref=e706]: 바이폴드 지갑
+                      - generic [ref=e708]: 옐로우 디올 그래비티 스무스 가죽
+                    - generic [ref=e710]:
+                      - generic [ref=e711]: ₩910,000
+                      - list [ref=e713]:
+                        - listitem [ref=e714]
+                        - listitem [ref=e716]
+            - listitem [ref=e718]:
+              - generic [ref=e719]:
+                - generic [ref=e720]:
+                  - link "바이폴드 지갑 오렌지 디올 그래비티 스무스 가죽 E01" [ref=e721] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027GVM_H125
+                    - img "바이폴드 지갑 오렌지 디올 그래비티 스무스 가죽 E01" [ref=e725]
+                  - generic [ref=e729]:
+                    - list
+                  - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e733] [cursor=pointer]:
+                    - button "위시리스트에 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e734]:
+                      - img [ref=e735]
+                - link "바이폴드 지갑 오렌지 디올 그래비티 스무스 가죽 ₩910,000" [ref=e738] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027GVM_H125
+                  - generic [ref=e739]:
+                    - generic [ref=e740]:
+                      - generic [ref=e742]: 바이폴드 지갑
+                      - generic [ref=e744]: 오렌지 디올 그래비티 스무스 가죽
+                    - generic [ref=e746]:
+                      - generic [ref=e747]: ₩910,000
+                      - list [ref=e749]:
+                        - listitem [ref=e750]
+                        - listitem [ref=e752]
+            - listitem [ref=e754]:
+              - generic [ref=e755]:
+                - generic [ref=e756]:
+                  - link "디올리비에라 바이폴드 지갑 그레이 & 블루 선 스트라이프 카프스킨 마르퀘트리 E01" [ref=e757] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH096INT_H058
+                    - img "디올리비에라 바이폴드 지갑 그레이 & 블루 선 스트라이프 카프스킨 마르퀘트리 E01" [ref=e761]
+                  - list [ref=e766]:
+                    - listitem [ref=e767]:
+                      - paragraph [ref=e768]: 신제품
+                  - button "위시리스트에 디올리비에라 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e772] [cursor=pointer]:
+                    - button "위시리스트에 디올리비에라 바이폴드 지갑 추가 및 위시리스트 패널 열기" [ref=e773]:
+                      - img [ref=e774]
+                - link "디올리비에라 바이폴드 지갑 그레이 & 블루 선 스트라이프 카프스킨 마르퀘트리 ₩940,000" [ref=e777] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH096INT_H058
+                  - generic [ref=e778]:
+                    - generic [ref=e779]:
+                      - generic [ref=e781]: 디올리비에라 바이폴드 지갑
+                      - generic [ref=e783]: 그레이 & 블루 선 스트라이프 카프스킨 마르퀘트리
+                    - generic [ref=e786]: ₩940,000
+            - listitem [ref=e787]:
+              - generic [ref=e788]:
+                - generic [ref=e789]:
+                  - link "매직 지갑 브라이트 그린 디올 클로버 엠보싱 카프스킨 E01" [ref=e790] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESCH197TRF_H607
+                    - img "매직 지갑 브라이트 그린 디올 클로버 엠보싱 카프스킨 E01" [ref=e794]
+                  - generic [ref=e798]:
+                    - list
+                  - button "위시리스트에 매직 지갑 추가 및 위시리스트 패널 열기" [ref=e802] [cursor=pointer]:
+                    - button "위시리스트에 매직 지갑 추가 및 위시리스트 패널 열기" [ref=e803]:
+                      - img [ref=e804]
+                - link "매직 지갑 브라이트 그린 디올 클로버 엠보싱 카프스킨 ₩820,000" [ref=e807] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESCH197TRF_H607
+                  - generic [ref=e808]:
+                    - generic [ref=e809]:
+                      - generic [ref=e811]: 매직 지갑
+                      - generic [ref=e813]: 브라이트 그린 디올 클로버 엠보싱 카프스킨
+                    - generic [ref=e816]: ₩820,000
+            - listitem [ref=e817]:
+              - group [ref=e825]:
+                - generic [ref=e826]:
+                  - link "살펴보기" [ref=e834] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ICCH207IDC_H08G
+                  - generic "이전" [ref=e835] [cursor=pointer]
+                  - generic "다음" [ref=e836] [cursor=pointer]
+            - listitem [ref=e837]:
+              - generic [ref=e838]:
+                - generic [ref=e839]:
+                  - link "CD Icon 반지갑 블랙 그레인 송아지 가죽 E01" [ref=e840] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027CDI_H00N
+                    - img "CD Icon 반지갑 블랙 그레인 송아지 가죽 E01" [ref=e844]
+                  - generic [ref=e848]:
+                    - list
+                  - button "위시리스트에 CD Icon 반지갑 추가 및 위시리스트 패널 열기" [ref=e852] [cursor=pointer]:
+                    - button "위시리스트에 CD Icon 반지갑 추가 및 위시리스트 패널 열기" [ref=e853]:
+                      - img [ref=e854]
+                - link "CD Icon 반지갑 블랙 그레인 송아지 가죽 ₩790,000" [ref=e857] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027CDI_H00N
+                  - generic [ref=e858]:
+                    - generic [ref=e859]:
+                      - generic [ref=e861]: CD Icon 반지갑
+                      - generic [ref=e863]: 블랙 그레인 송아지 가죽
+                    - generic [ref=e865]:
+                      - generic [ref=e866]: ₩790,000
+                      - list [ref=e868]:
+                        - listitem [ref=e869]
+                        - listitem [ref=e871]
+            - listitem [ref=e873]:
+              - generic [ref=e874]:
+                - generic [ref=e875]:
+                  - link "[동전수납] CD 아이콘 지갑 블랙 그레인 카프스킨 E01" [ref=e876] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC027CDI_H00N
+                    - img "[동전수납] CD 아이콘 지갑 블랙 그레인 카프스킨 E01" [ref=e880]
+                  - generic [ref=e884]:
+                    - list
+                  - button "위시리스트에 [동전수납] CD 아이콘 지갑 추가 및 위시리스트 패널 열기" [ref=e888] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] CD 아이콘 지갑 추가 및 위시리스트 패널 열기" [ref=e889]:
+                      - img [ref=e890]
+                - link "[동전수납] CD 아이콘 지갑 블랙 그레인 카프스킨 ₩840,000" [ref=e893] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC027CDI_H00N
+                  - generic [ref=e894]:
+                    - generic [ref=e895]:
+                      - generic [ref=e897]: "[동전수납] CD 아이콘 지갑"
+                      - generic [ref=e899]: 블랙 그레인 카프스킨
+                    - generic [ref=e901]:
+                      - generic [ref=e902]: ₩840,000
+                      - list [ref=e904]:
+                        - listitem [ref=e905]
+                        - listitem [ref=e907]
+            - listitem [ref=e909]:
+              - generic [ref=e910]:
+                - generic [ref=e911]:
+                  - link "머니 클립 지갑 블랙 그레인 송아지 가죽 & CD Icon 시그니처 E01" [ref=e912] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH069CDI_H00N
+                    - img "머니 클립 지갑 블랙 그레인 송아지 가죽 & CD Icon 시그니처 E01" [ref=e916]
+                  - generic [ref=e920]:
+                    - list
+                  - button "위시리스트에 머니 클립 지갑 추가 및 위시리스트 패널 열기" [ref=e924] [cursor=pointer]:
+                    - button "위시리스트에 머니 클립 지갑 추가 및 위시리스트 패널 열기" [ref=e925]:
+                      - img [ref=e926]
+                - link "머니 클립 지갑 블랙 그레인 송아지 가죽 & CD Icon 시그니처 ₩840,000" [ref=e929] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH069CDI_H00N
+                  - generic [ref=e930]:
+                    - generic [ref=e931]:
+                      - generic [ref=e933]: 머니 클립 지갑
+                      - generic [ref=e935]: 블랙 그레인 송아지 가죽 & CD Icon 시그니처
+                    - generic [ref=e938]: ₩840,000
+            - listitem [ref=e939]:
+              - generic [ref=e940]:
+                - generic [ref=e941]:
+                  - link "CD Icon 버티컬 반지갑 블랙 그레인 송아지 가죽 E01" [ref=e942] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH072CDI_H00N
+                    - img "CD Icon 버티컬 반지갑 블랙 그레인 송아지 가죽 E01" [ref=e946]
+                  - generic [ref=e950]:
+                    - list
+                  - button "위시리스트에 CD Icon 버티컬 반지갑 추가 및 위시리스트 패널 열기" [ref=e954] [cursor=pointer]:
+                    - button "위시리스트에 CD Icon 버티컬 반지갑 추가 및 위시리스트 패널 열기" [ref=e955]:
+                      - img [ref=e956]
+                - link "CD Icon 버티컬 반지갑 블랙 그레인 송아지 가죽 ₩770,000" [ref=e959] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH072CDI_H00N
+                  - generic [ref=e960]:
+                    - generic [ref=e961]:
+                      - generic [ref=e963]: CD Icon 버티컬 반지갑
+                      - generic [ref=e965]: 블랙 그레인 송아지 가죽
+                    - generic [ref=e968]: ₩770,000
+            - listitem [ref=e969]:
+              - generic [ref=e975]:
+                - button "동영상 재생" [ref=e978] [cursor=pointer]:
+                  - img [ref=e979]
+                - generic [ref=e983]:
+                  - heading "2026 가을 컬렉션" [level=2] [ref=e984]
+                  - paragraph [ref=e985]: 하우스 코드와의 새로운 만남
+                  - link "더 알아보기 2026 가을 컬렉션" [ref=e986] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/mens-fashion/fall-collection
+                    - text: 더 알아보기
+            - listitem [ref=e987]:
+              - generic [ref=e988]:
+                - generic [ref=e989]:
+                  - link "반지갑 블랙 Dior Oblique 자카드 E01" [ref=e990] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2OBBH027YSE_H03E
+                    - img "반지갑 블랙 Dior Oblique 자카드 E01" [ref=e994]
+                  - generic [ref=e998]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1002] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1003]:
+                      - img [ref=e1004]
+                - link "반지갑 블랙 Dior Oblique 자카드 ₩790,000" [ref=e1007] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2OBBH027YSE_H03E
+                  - generic [ref=e1008]:
+                    - generic [ref=e1009]:
+                      - generic [ref=e1011]: 반지갑
+                      - generic [ref=e1013]: 블랙 Dior Oblique 자카드
+                    - generic [ref=e1015]:
+                      - generic [ref=e1016]: ₩790,000
+                      - list [ref=e1018]:
+                        - listitem [ref=e1019]
+            - listitem [ref=e1021]:
+              - generic [ref=e1022]:
+                - generic [ref=e1023]:
+                  - link "[동전수납] 지갑 블랙 디올 오블리크 자카드 E01" [ref=e1024] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2OBBC027YSE_H03E
+                    - img "[동전수납] 지갑 블랙 디올 오블리크 자카드 E01" [ref=e1028]
+                  - generic [ref=e1032]:
+                    - list
+                  - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1036] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1037]:
+                      - img [ref=e1038]
+                - link "[동전수납] 지갑 블랙 디올 오블리크 자카드 ₩840,000" [ref=e1041] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2OBBC027YSE_H03E
+                  - generic [ref=e1042]:
+                    - generic [ref=e1043]:
+                      - generic [ref=e1045]: "[동전수납] 지갑"
+                      - generic [ref=e1047]: 블랙 디올 오블리크 자카드
+                    - generic [ref=e1049]:
+                      - generic [ref=e1050]: ₩840,000
+                      - list [ref=e1052]:
+                        - listitem [ref=e1053]
+            - listitem [ref=e1055]:
+              - generic [ref=e1056]:
+                - generic [ref=e1057]:
+                  - link "반지갑 베이지 & 블랙 Dior Oblique 자카드 E01" [ref=e1058] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2OBBH027YSE_H05E
+                    - img "반지갑 베이지 & 블랙 Dior Oblique 자카드 E01" [ref=e1062]
+                  - generic [ref=e1066]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1070] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1071]:
+                      - img [ref=e1072]
+                - link "반지갑 베이지 & 블랙 Dior Oblique 자카드 ₩790,000" [ref=e1075] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2OBBH027YSE_H05E
+                  - generic [ref=e1076]:
+                    - generic [ref=e1077]:
+                      - generic [ref=e1079]: 반지갑
+                      - generic [ref=e1081]: 베이지 & 블랙 Dior Oblique 자카드
+                    - generic [ref=e1083]:
+                      - generic [ref=e1084]: ₩790,000
+                      - list [ref=e1086]:
+                        - listitem [ref=e1087]
+            - listitem [ref=e1089]:
+              - generic [ref=e1090]:
+                - generic [ref=e1091]:
+                  - link "[동전수납] 지갑 베이지 & 블랙 디올 오블리크 자카드 E01" [ref=e1092] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2OBBC027YSE_H05E
+                    - img "[동전수납] 지갑 베이지 & 블랙 디올 오블리크 자카드 E01" [ref=e1096]
+                  - generic [ref=e1100]:
+                    - list
+                  - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1104] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1105]:
+                      - img [ref=e1106]
+                - link "[동전수납] 지갑 베이지 & 블랙 디올 오블리크 자카드 ₩840,000" [ref=e1109] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2OBBC027YSE_H05E
+                  - generic [ref=e1110]:
+                    - generic [ref=e1111]:
+                      - generic [ref=e1113]: "[동전수납] 지갑"
+                      - generic [ref=e1115]: 베이지 & 블랙 디올 오블리크 자카드
+                    - generic [ref=e1117]:
+                      - generic [ref=e1118]: ₩840,000
+                      - list [ref=e1120]:
+                        - listitem [ref=e1121]
+            - listitem [ref=e1123]:
+              - generic [ref=e1124]:
+                - generic [ref=e1125]:
+                  - link "반지갑 블랙 Dior Gravity 가죽 E01" [ref=e1126] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027FLG_H00N
+                    - img "반지갑 블랙 Dior Gravity 가죽 E01" [ref=e1130]
+                  - generic [ref=e1134]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1138] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1139]:
+                      - img [ref=e1140]
+                - link "반지갑 블랙 Dior Gravity 가죽 ₩910,000 +1" [ref=e1143] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027FLG_H00N
+                  - generic [ref=e1144]:
+                    - generic [ref=e1145]:
+                      - generic [ref=e1147]: 반지갑
+                      - generic [ref=e1149]: 블랙 Dior Gravity 가죽
+                    - generic [ref=e1151]:
+                      - generic [ref=e1152]: ₩910,000
+                      - list [ref=e1154]:
+                        - listitem [ref=e1155]
+                        - listitem [ref=e1157]
+                        - listitem [ref=e1159]:
+                          - generic [ref=e1160]: "+1"
+            - listitem [ref=e1161]:
+              - generic [ref=e1162]:
+                - generic [ref=e1163]:
+                  - link "[동전수납] 지갑 블랙 디올 그래비티 가죽 E01" [ref=e1164] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC027FLG_H00N
+                    - img "[동전수납] 지갑 블랙 디올 그래비티 가죽 E01" [ref=e1168]
+                  - generic [ref=e1172]:
+                    - list
+                  - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1176] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1177]:
+                      - img [ref=e1178]
+                - link "[동전수납] 지갑 블랙 디올 그래비티 가죽 ₩940,000 +1" [ref=e1181] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC027FLG_H00N
+                  - generic [ref=e1182]:
+                    - generic [ref=e1183]:
+                      - generic [ref=e1185]: "[동전수납] 지갑"
+                      - generic [ref=e1187]: 블랙 디올 그래비티 가죽
+                    - generic [ref=e1189]:
+                      - generic [ref=e1190]: ₩940,000
+                      - list [ref=e1192]:
+                        - listitem [ref=e1193]
+                        - listitem [ref=e1195]:
+                          - generic [ref=e1196]: "+1"
+            - listitem [ref=e1197]:
+              - generic [ref=e1198]:
+                - generic [ref=e1199]:
+                  - link "반지갑 딥 그레이 Dior Gravity 가죽 E01" [ref=e1200] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027FLG_H830
+                    - img "반지갑 딥 그레이 Dior Gravity 가죽 E01" [ref=e1204]
+                  - generic [ref=e1208]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1212] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1213]:
+                      - img [ref=e1214]
+                - link "반지갑 딥 그레이 Dior Gravity 가죽 ₩910,000" [ref=e1217] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027FLG_H830
+                  - generic [ref=e1218]:
+                    - generic [ref=e1219]:
+                      - generic [ref=e1221]: 반지갑
+                      - generic [ref=e1223]: 딥 그레이 Dior Gravity 가죽
+                    - generic [ref=e1225]:
+                      - generic [ref=e1226]: ₩910,000
+                      - list [ref=e1228]:
+                        - listitem [ref=e1229]
+                        - listitem [ref=e1231]
+                        - listitem [ref=e1233]
+            - listitem [ref=e1235]:
+              - generic [ref=e1236]:
+                - generic [ref=e1237]:
+                  - link "[동전수납] 지갑 딥 그레이 디올 그래비티 가죽 E01" [ref=e1238] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC027FLG_H830
+                    - img "[동전수납] 지갑 딥 그레이 디올 그래비티 가죽 E01" [ref=e1242]
+                  - generic [ref=e1246]:
+                    - list
+                  - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1250] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1251]:
+                      - img [ref=e1252]
+                - link "[동전수납] 지갑 딥 그레이 디올 그래비티 가죽 ₩940,000" [ref=e1255] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC027FLG_H830
+                  - generic [ref=e1256]:
+                    - generic [ref=e1257]:
+                      - generic [ref=e1259]: "[동전수납] 지갑"
+                      - generic [ref=e1261]: 딥 그레이 디올 그래비티 가죽
+                    - generic [ref=e1263]:
+                      - generic [ref=e1264]: ₩940,000
+                      - list [ref=e1266]:
+                        - listitem [ref=e1267]
+                        - listitem [ref=e1269]
+            - listitem [ref=e1271]:
+              - generic [ref=e1272]:
+                - generic [ref=e1273]:
+                  - link "CD Icon 반지갑 딥 그레이 그레인 송아지 가죽 E01" [ref=e1274] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027CDI_H830
+                    - img "CD Icon 반지갑 딥 그레이 그레인 송아지 가죽 E01" [ref=e1278]
+                  - generic [ref=e1282]:
+                    - list
+                  - button "위시리스트에 CD Icon 반지갑 추가 및 위시리스트 패널 열기" [ref=e1286] [cursor=pointer]:
+                    - button "위시리스트에 CD Icon 반지갑 추가 및 위시리스트 패널 열기" [ref=e1287]:
+                      - img [ref=e1288]
+                - link "CD Icon 반지갑 딥 그레이 그레인 송아지 가죽 ₩790,000" [ref=e1291] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027CDI_H830
+                  - generic [ref=e1292]:
+                    - generic [ref=e1293]:
+                      - generic [ref=e1295]: CD Icon 반지갑
+                      - generic [ref=e1297]: 딥 그레이 그레인 송아지 가죽
+                    - generic [ref=e1299]:
+                      - generic [ref=e1300]: ₩790,000
+                      - list [ref=e1302]:
+                        - listitem [ref=e1303]
+                        - listitem [ref=e1305]
+            - listitem [ref=e1307]:
+              - generic [ref=e1308]:
+                - generic [ref=e1309]:
+                  - link "[동전수납] CD 아이콘 지갑 딥 그레이 그레인 카프스킨 E01" [ref=e1310] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC027CDI_H830
+                    - img "[동전수납] CD 아이콘 지갑 딥 그레이 그레인 카프스킨 E01" [ref=e1314]
+                  - generic [ref=e1318]:
+                    - list
+                  - button "위시리스트에 [동전수납] CD 아이콘 지갑 추가 및 위시리스트 패널 열기" [ref=e1322] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] CD 아이콘 지갑 추가 및 위시리스트 패널 열기" [ref=e1323]:
+                      - img [ref=e1324]
+                - link "[동전수납] CD 아이콘 지갑 딥 그레이 그레인 카프스킨 ₩840,000" [ref=e1327] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC027CDI_H830
+                  - generic [ref=e1328]:
+                    - generic [ref=e1329]:
+                      - generic [ref=e1331]: "[동전수납] CD 아이콘 지갑"
+                      - generic [ref=e1333]: 딥 그레이 그레인 카프스킨
+                    - generic [ref=e1335]:
+                      - generic [ref=e1336]: ₩840,000
+                      - list [ref=e1338]:
+                        - listitem [ref=e1339]
+                        - listitem [ref=e1341]
+            - listitem [ref=e1343]:
+              - generic [ref=e1344]:
+                - generic [ref=e1345]:
+                  - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드 E01" [ref=e1346] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBH076YKS_H05E
+                    - img "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드 E01" [ref=e1350]
+                  - generic [ref=e1354]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1358] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1359]:
+                      - img [ref=e1360]
+                - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드 ₩910,000" [ref=e1363] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBH076YKS_H05E
+                  - generic [ref=e1364]:
+                    - generic [ref=e1365]:
+                      - generic [ref=e1367]: Saddle 반지갑
+                      - generic [ref=e1369]: 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드
+                    - generic [ref=e1371]:
+                      - generic [ref=e1372]: ₩910,000
+                      - list [ref=e1374]:
+                        - listitem [ref=e1375]
+            - listitem [ref=e1377]:
+              - generic [ref=e1378]:
+                - generic [ref=e1379]:
+                  - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드 E01" [ref=e1380] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBC306YKS_H05E
+                    - img "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드 E01" [ref=e1384]
+                  - generic [ref=e1388]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1392] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1393]:
+                      - img [ref=e1394]
+                - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드 ₩940,000" [ref=e1397] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBC306YKS_H05E
+                  - generic [ref=e1398]:
+                    - generic [ref=e1399]:
+                      - generic [ref=e1401]: Saddle 반지갑
+                      - generic [ref=e1403]: 블랙 그레인 송아지 가죽 마르퀘트리 & 베이지, 블랙 Dior Oblique 자카드
+                    - generic [ref=e1405]:
+                      - generic [ref=e1406]: ₩940,000
+                      - list [ref=e1408]:
+                        - listitem [ref=e1409]
+            - listitem [ref=e1411]:
+              - generic [ref=e1412]:
+                - generic [ref=e1413]:
+                  - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드 E01" [ref=e1414] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBH076YKS_H03E
+                    - img "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드 E01" [ref=e1418]
+                  - generic [ref=e1422]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1426] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1427]:
+                      - img [ref=e1428]
+                - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드 ₩910,000" [ref=e1431] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBH076YKS_H03E
+                  - generic [ref=e1432]:
+                    - generic [ref=e1433]:
+                      - generic [ref=e1435]: Saddle 반지갑
+                      - generic [ref=e1437]: 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드
+                    - generic [ref=e1439]:
+                      - generic [ref=e1440]: ₩910,000
+                      - list [ref=e1442]:
+                        - listitem [ref=e1443]
+            - listitem [ref=e1445]:
+              - generic [ref=e1446]:
+                - generic [ref=e1447]:
+                  - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드 E01" [ref=e1448] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBC306YKS_H03E
+                    - img "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드 E01" [ref=e1452]
+                  - generic [ref=e1456]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1460] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1461]:
+                      - img [ref=e1462]
+                - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드 ₩940,000" [ref=e1465] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBC306YKS_H03E
+                  - generic [ref=e1466]:
+                    - generic [ref=e1467]:
+                      - generic [ref=e1469]: Saddle 반지갑
+                      - generic [ref=e1471]: 블랙 그레인 송아지 가죽 마르퀘트리 & 블랙 Dior Oblique 자카드
+                    - generic [ref=e1473]:
+                      - generic [ref=e1474]: ₩940,000
+                      - list [ref=e1476]:
+                        - listitem [ref=e1477]
+            - listitem [ref=e1479]:
+              - generic [ref=e1480]:
+                - generic [ref=e1481]:
+                  - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 E03" [ref=e1482] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBH076YKK_H00N
+                    - img "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 E03" [ref=e1486]
+                  - generic [ref=e1490]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1494] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1495]:
+                      - img [ref=e1496]
+                - link "Saddle 반지갑 블랙 그레인 송아지 가죽 마르퀘트리 ₩910,000" [ref=e1499] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBH076YKK_H00N
+                  - generic [ref=e1500]:
+                    - generic [ref=e1501]:
+                      - generic [ref=e1503]: Saddle 반지갑
+                      - generic [ref=e1505]: 블랙 그레인 송아지 가죽 마르퀘트리
+                    - generic [ref=e1508]: ₩910,000
+            - listitem [ref=e1509]:
+              - generic [ref=e1510]:
+                - generic [ref=e1511]:
+                  - link "[동전수납] 새들 지갑 블랙 그레인 카프스킨 마르퀘트리 E01" [ref=e1512] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBC306YKK_H00N
+                    - img "[동전수납] 새들 지갑 블랙 그레인 카프스킨 마르퀘트리 E01" [ref=e1516]
+                  - generic [ref=e1520]:
+                    - list
+                  - button "위시리스트에 [동전수납] 새들 지갑 추가 및 위시리스트 패널 열기" [ref=e1524] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 새들 지갑 추가 및 위시리스트 패널 열기" [ref=e1525]:
+                      - img [ref=e1526]
+                - link "[동전수납] 새들 지갑 블랙 그레인 카프스킨 마르퀘트리 ₩940,000" [ref=e1529] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBC306YKK_H00N
+                  - generic [ref=e1530]:
+                    - generic [ref=e1531]:
+                      - generic [ref=e1533]: "[동전수납] 새들 지갑"
+                      - generic [ref=e1535]: 블랙 그레인 카프스킨 마르퀘트리
+                    - generic [ref=e1538]: ₩940,000
+            - listitem [ref=e1539]:
+              - generic [ref=e1540]:
+                - generic [ref=e1541]:
+                  - link "Saddle 반지갑 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리 E01" [ref=e1542] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBH076DJD_H585
+                    - img "Saddle 반지갑 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리 E01" [ref=e1546]
+                  - generic [ref=e1550]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1554] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1555]:
+                      - img [ref=e1556]
+                - link "Saddle 반지갑 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리 ₩990,000" [ref=e1559] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBH076DJD_H585
+                  - generic [ref=e1560]:
+                    - generic [ref=e1561]:
+                      - generic [ref=e1563]: Saddle 반지갑
+                      - generic [ref=e1565]: 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리
+                    - generic [ref=e1568]: ₩990,000
+            - listitem [ref=e1569]:
+              - generic [ref=e1570]:
+                - generic [ref=e1571]:
+                  - link "Saddle 반지갑 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리 E01" [ref=e1572] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBC306DJD_H585
+                    - img "Saddle 반지갑 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리 E01" [ref=e1576]
+                  - generic [ref=e1580]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1584] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1585]:
+                      - img [ref=e1586]
+                - link "Saddle 반지갑 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리 ₩1,050,000" [ref=e1589] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBC306DJD_H585
+                  - generic [ref=e1590]:
+                    - generic [ref=e1591]:
+                      - generic [ref=e1593]: Saddle 반지갑
+                      - generic [ref=e1595]: 딥 블루 그레인 송아지 가죽 & 딥 블루 Dior Oblique Trio 자카드 마르퀘트리
+                    - generic [ref=e1598]: ₩1,050,000
+            - listitem [ref=e1599]:
+              - generic [ref=e1600]:
+                - generic [ref=e1601]:
+                  - link "Saddle 반지갑 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리 E01" [ref=e1602] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBH076YNZ_H983
+                    - img "Saddle 반지갑 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리 E01" [ref=e1606]
+                  - list [ref=e1611]:
+                    - listitem [ref=e1612]:
+                      - paragraph [ref=e1613]: 신제품
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1617] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1618]:
+                      - img [ref=e1619]
+                - link "Saddle 반지갑 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리 ₩990,000" [ref=e1622] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBH076YNZ_H983
+                  - generic [ref=e1623]:
+                    - generic [ref=e1624]:
+                      - generic [ref=e1626]: Saddle 반지갑
+                      - generic [ref=e1628]: 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리
+                    - generic [ref=e1631]: ₩990,000
+            - listitem [ref=e1632]:
+              - generic [ref=e1633]:
+                - generic [ref=e1634]:
+                  - link "Saddle 반지갑 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리 E01" [ref=e1635] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ADBC306YNZ_H983
+                    - img "Saddle 반지갑 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리 E01" [ref=e1639]
+                  - generic [ref=e1643]:
+                    - list
+                  - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1647] [cursor=pointer]:
+                    - button "위시리스트에 Saddle 반지갑 추가 및 위시리스트 패널 열기" [ref=e1648]:
+                      - img [ref=e1649]
+                - link "Saddle 반지갑 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리 ₩1,050,000" [ref=e1652] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ADBC306YNZ_H983
+                  - generic [ref=e1653]:
+                    - generic [ref=e1654]:
+                      - generic [ref=e1656]: Saddle 반지갑
+                      - generic [ref=e1658]: 블랙 그레인 송아지 가죽 & 실버 톤 메탈릭 Dior Oblique 자카드 마르퀘트리
+                    - generic [ref=e1661]: ₩1,050,000
+            - listitem [ref=e1662]:
+              - generic [ref=e1663]:
+                - generic [ref=e1664]:
+                  - link "반지갑 브라운 Dior Gravity Vintage 가죽 E01" [ref=e1665] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027KLF_H727
+                    - img "반지갑 브라운 Dior Gravity Vintage 가죽 E01" [ref=e1669]
+                  - generic [ref=e1673]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1677] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1678]:
+                      - img [ref=e1679]
+                - link "반지갑 브라운 Dior Gravity Vintage 가죽 ₩990,000" [ref=e1682] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027KLF_H727
+                  - generic [ref=e1683]:
+                    - generic [ref=e1684]:
+                      - generic [ref=e1686]: 반지갑
+                      - generic [ref=e1688]: 브라운 Dior Gravity Vintage 가죽
+                    - generic [ref=e1691]: ₩990,000
+            - listitem [ref=e1692]:
+              - generic [ref=e1693]:
+                - generic [ref=e1694]:
+                  - link "반지갑 브라운 Dior Gravity Vintage 가죽 E01" [ref=e1695] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC027KLF_H727
+                    - img "반지갑 브라운 Dior Gravity Vintage 가죽 E01" [ref=e1699]
+                  - generic [ref=e1703]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1707] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1708]:
+                      - img [ref=e1709]
+                - link "반지갑 브라운 Dior Gravity Vintage 가죽 ₩1,050,000" [ref=e1712] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC027KLF_H727
+                  - generic [ref=e1713]:
+                    - generic [ref=e1714]:
+                      - generic [ref=e1716]: 반지갑
+                      - generic [ref=e1718]: 브라운 Dior Gravity Vintage 가죽
+                    - generic [ref=e1721]: ₩1,050,000
+            - listitem [ref=e1722]:
+              - generic [ref=e1723]:
+                - generic [ref=e1724]:
+                  - link "반지갑 블루 Dior Gravity 가죽 E01" [ref=e1725] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH027FLG_H403
+                    - img "반지갑 블루 Dior Gravity 가죽 E01" [ref=e1729]
+                  - generic [ref=e1733]:
+                    - list
+                  - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1737] [cursor=pointer]:
+                    - button "위시리스트에 반지갑 추가 및 위시리스트 패널 열기" [ref=e1738]:
+                      - img [ref=e1739]
+                - link "반지갑 블루 Dior Gravity 가죽 ₩910,000 +1" [ref=e1742] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH027FLG_H403
+                  - generic [ref=e1743]:
+                    - generic [ref=e1744]:
+                      - generic [ref=e1746]: 반지갑
+                      - generic [ref=e1748]: 블루 Dior Gravity 가죽
+                    - generic [ref=e1750]:
+                      - generic [ref=e1751]: ₩910,000
+                      - list [ref=e1753]:
+                        - listitem [ref=e1754]
+                        - listitem [ref=e1756]
+                        - listitem [ref=e1758]:
+                          - generic [ref=e1759]: "+1"
+            - listitem [ref=e1760]:
+              - generic [ref=e1761]:
+                - generic [ref=e1762]:
+                  - link "[동전수납] 지갑 블루-블랙 그라데이션 디올 그래비티 가죽 E01" [ref=e1763] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBC027DLF_H537
+                    - img "[동전수납] 지갑 블루-블랙 그라데이션 디올 그래비티 가죽 E01" [ref=e1767]
+                  - generic [ref=e1771]:
+                    - list
+                  - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1775] [cursor=pointer]:
+                    - button "위시리스트에 [동전수납] 지갑 추가 및 위시리스트 패널 열기" [ref=e1776]:
+                      - img [ref=e1777]
+                - link "[동전수납] 지갑 블루-블랙 그라데이션 디올 그래비티 가죽 ₩1,050,000" [ref=e1780] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBC027DLF_H537
+                  - generic [ref=e1781]:
+                    - generic [ref=e1782]:
+                      - generic [ref=e1784]: "[동전수납] 지갑"
+                      - generic [ref=e1786]: 블루-블랙 그라데이션 디올 그래비티 가죽
+                    - generic [ref=e1789]: ₩1,050,000
+            - listitem [ref=e1790]:
+              - generic [ref=e1791]:
+                - generic [ref=e1792]:
+                  - link "머니 클립 지갑 블랙 Dior Oblique 자카드 E01" [ref=e1793] [cursor=pointer]:
+                    - /url: /ko_kr/fashion/products/2ESBH069YSE_H03E
+                    - img "머니 클립 지갑 블랙 Dior Oblique 자카드 E01" [ref=e1797]
+                  - generic [ref=e1801]:
+                    - list
+                  - button "위시리스트에 머니 클립 지갑 추가 및 위시리스트 패널 열기" [ref=e1805] [cursor=pointer]:
+                    - button "위시리스트에 머니 클립 지갑 추가 및 위시리스트 패널 열기" [ref=e1806]:
+                      - img [ref=e1807]
+                - link "머니 클립 지갑 블랙 Dior Oblique 자카드 ₩840,000" [ref=e1810] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/products/2ESBH069YSE_H03E
+                  - generic [ref=e1811]:
+                    - generic [ref=e1812]:
+                      - generic [ref=e1814]: 머니 클립 지갑
+                      - generic [ref=e1816]: 블랙 Dior Oblique 자카드
+                    - generic [ref=e1818]:
+                      - generic [ref=e1819]: ₩840,000
+                      - list [ref=e1821]:
+                        - listitem [ref=e1822]
+            - listitem [ref=e1824]
+            - listitem [ref=e1827]
+            - listitem [ref=e1830]
+            - listitem [ref=e1833]
+            - listitem [ref=e1836]
+            - listitem [ref=e1839]
+            - listitem [ref=e1842]
+            - listitem [ref=e1845]
+            - listitem [ref=e1848]
+            - listitem [ref=e1851]
+            - listitem [ref=e1854]
+            - listitem [ref=e1857]
+        - contentinfo [ref=e1860]:
+          - generic [ref=e1861]:
+            - list [ref=e1863]:
+              - listitem [ref=e1864]:
+                - link "메시지 커스터마이즈 맞춤 메시지 제작으로 나만의 특별한 선물을 주문하세요." [ref=e1865] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/gifts-personalization/gifts/the-art-of-gifting
+                  - generic [ref=e1866]:
+                    - paragraph [ref=e1867]: 메시지 커스터마이즈
+                    - paragraph [ref=e1868]: 맞춤 메시지 제작으로 나만의 특별한 선물을 주문하세요.
+                  - img [ref=e1869]
+              - listitem [ref=e1871]:
+                - link "Dior 시그니처 패키지 디올 하우스의 노하우를 고스란히 반영합니다." [ref=e1872] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/gifts-personalization/gifts/the-art-of-gifting
+                  - generic [ref=e1873]:
+                    - paragraph [ref=e1874]: Dior 시그니처 패키지
+                    - paragraph [ref=e1875]: 디올 하우스의 노하우를 고스란히 반영합니다.
+                  - img [ref=e1876]
+              - listitem [ref=e1878]:
+                - link "무료 배송 및 반품 무료배송 및 7일 이내 무료반품 및 30일 이내 무료 교환" [ref=e1879] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/couture-boutique-advantages
+                  - generic [ref=e1880]:
+                    - paragraph [ref=e1881]: 무료 배송 및 반품
+                    - paragraph [ref=e1882]: 무료배송 및 7일 이내 무료반품 및 30일 이내 무료 교환
+                  - img [ref=e1883]
+            - generic [ref=e1885]:
+              - generic [ref=e1887]:
+                - paragraph [ref=e1888]: Dior의 최신 소식 받고 영감 얻기
+                - generic [ref=e1889]:
+                  - text: 입력해 주신 귀하의 이메일 주소는 동의 철회 시까지
+                  - text: 이메일을 통한 뉴스레터, 제품정보, 전시 및 행사 안내 등
+                  - text: 영리목적 광고성 정보 전달에 활용되거나,
+                  - text: 영업 및 마케팅 목적으로 활용될 수 있습니다.
+                  - text: 귀하는 이에 동의하지 않으실 수 있으나,
+                  - text: 이 경우 Dior이 제공하는 뉴스레터를 제공받지
+                  - text: 못할 수 있습니다.
+                - generic [ref=e1890]:
+                  - generic [ref=e1891]:
+                    - generic: 이메일 *
+                    - generic [ref=e1892]:
+                      - textbox "이메일" [ref=e1893]
+                      - group:
+                        - generic: 이메일 *
+                  - button "확인" [ref=e1894] [cursor=pointer]:
+                    - paragraph [ref=e1895]: 확인
+              - generic [ref=e1897]:
+                - generic [ref=e1898]:
+                  - heading "dior 부티크" [level=2] [ref=e1899]
+                  - list [ref=e1900]:
+                    - listitem [ref=e1901]:
+                      - link "크리스챤 디올 꾸뛰르" [ref=e1903] [cursor=pointer]:
+                        - /url: https://www.dior.com/fashion/stores/ko_kr/search
+                    - listitem [ref=e1904]:
+                      - link "크리스챤 디올 코스메틱" [ref=e1906] [cursor=pointer]:
+                        - /url: https://www.dior.com/ko_kr/beauty/find-your-dior-store
+                - generic [ref=e1907]:
+                  - heading "고객 지원" [level=2] [ref=e1908]
+                  - list [ref=e1909]:
+                    - listitem [ref=e1910]:
+                      - button "고객센터" [ref=e1913] [cursor=pointer]:
+                        - heading "고객센터" [level=3] [ref=e1915]
+                        - img [ref=e1917]
+                    - listitem [ref=e1919]:
+                      - link "배송 및 반품" [ref=e1921] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/couture-boutique-advantages
+                    - listitem [ref=e1922]:
+                      - button "FAQ" [ref=e1925] [cursor=pointer]:
+                        - heading "FAQ" [level=3] [ref=e1927]
+                        - img [ref=e1929]
+                - generic [ref=e1931]:
+                  - heading "디올 하우스" [level=2] [ref=e1932]
+                  - list [ref=e1933]:
+                    - listitem [ref=e1934]:
+                      - button "디올 지속가능성" [ref=e1937] [cursor=pointer]:
+                        - heading "디올 지속가능성" [level=3] [ref=e1939]
+                        - img [ref=e1941]
+                    - listitem [ref=e1943]:
+                      - link "윤리 및 규정 준수" [ref=e1945] [cursor=pointer]:
+                        - /url: https://www.lvmh.com/en/ethics-and-compliance
+                    - listitem [ref=e1946]:
+                      - link "채용 정보" [ref=e1948] [cursor=pointer]:
+                        - /url: https://www.dior.com/carrieres/index.html?languageSelect=KO
+                - generic [ref=e1949]:
+                  - heading "법률" [level=2] [ref=e1950]
+                  - list [ref=e1951]:
+                    - listitem [ref=e1952]:
+                      - link "접근성" [ref=e1954] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/accessibility
+                    - listitem [ref=e1955]:
+                      - button "법적 고지" [ref=e1958] [cursor=pointer]:
+                        - heading "법적 고지" [level=3] [ref=e1960]
+                        - img [ref=e1962]
+                    - listitem [ref=e1964]:
+                      - button "일반 판매 조건" [ref=e1967] [cursor=pointer]:
+                        - heading "일반 판매 조건" [level=3] [ref=e1969]
+                        - img [ref=e1971]
+                    - listitem [ref=e1973]:
+                      - button "사이트맵" [ref=e1974] [cursor=pointer]:
+                        - heading "사이트맵" [level=3] [ref=e1975]
+                        - img [ref=e1976]
+                - generic [ref=e1978]:
+                  - heading "개인정보 처리방침" [level=2] [ref=e1979]
+                  - list [ref=e1980]:
+                    - listitem [ref=e1981]:
+                      - link "크리스챤 디올 꾸뛰르" [ref=e1983] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/personal-data
+                    - listitem [ref=e1984]:
+                      - link "크리스챤 디올 코스메틱" [ref=e1986] [cursor=pointer]:
+                        - /url: https://www.dior.com/ko_kr/beauty/folder?fid=personal-data#content-detail-privacy-statement
+            - generic [ref=e1987]:
+              - generic [ref=e1989] [cursor=pointer]:
+                - generic [ref=e1990]:
+                  - paragraph [ref=e1991]: 국가/지역
+                  - paragraph [ref=e1992]: 한국 (한국어)
+                - img [ref=e1993]
+              - generic [ref=e1996]:
+                - paragraph [ref=e1997]: 디올 소셜미디어
+                - list [ref=e1998]:
+                  - listitem [ref=e1999]:
+                    - link "Twitter" [ref=e2000] [cursor=pointer]:
+                      - /url: https://pf.kakao.com/_dyBaT
+                      - text: Kakaotalk
+                  - listitem [ref=e2001]:
+                    - link "Instagram" [ref=e2002] [cursor=pointer]:
+                      - /url: https://www.instagram.com/dior/
+                  - listitem [ref=e2003]:
+                    - link "Twitter" [ref=e2004] [cursor=pointer]:
+                      - /url: https://twitter.com/DIOR
+                      - text: X
+                  - listitem [ref=e2005]:
+                    - link "Facebook" [ref=e2006] [cursor=pointer]:
+                      - /url: https://www.facebook.com/Dior
+                  - listitem [ref=e2007]:
+                    - link "Pinterest" [ref=e2008] [cursor=pointer]:
+                      - /url: https://www.pinterest.fr/dior/
+                  - listitem [ref=e2009]:
+                    - link "Snapchat" [ref=e2010] [cursor=pointer]:
+                      - /url: https://www.snapchat.com/add/dior
+                  - listitem [ref=e2011]:
+                    - link "LinkedIn" [ref=e2012] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/christian-dior-couture/
+                  - listitem [ref=e2013]:
+                    - link "TikTok" [ref=e2014] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@dior
+                  - listitem [ref=e2015]:
+                    - link "YouTube" [ref=e2016] [cursor=pointer]:
+                      - /url: https://www.youtube.com/channel/UC6xD-jKli-_qIYXDTsNv4dw
+              - img "Dior" [ref=e2018]
+            - list [ref=e2021]:
+              - listitem [ref=e2022]:
+                - paragraph [ref=e2023]: "크리스챤디올꾸뛰르코리아주식회사 | 04539 서울특별시 중구 을지로5길 19, 26층(수하동) | 사업자등록번호: 120-81-74197"
+              - listitem [ref=e2024]:
+                - 'link "대표자: 캐롤 셰브론, 콩 메이 완 샤론 | 통신판매업" [ref=e2025] [cursor=pointer]':
+                  - /url: https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1208174197
+              - listitem [ref=e2026]:
+                - 'link "신고번호: 2021-서울중구-01116 | 사업자정보확인" [ref=e2027] [cursor=pointer]':
+                  - /url: https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1208174197
+              - listitem [ref=e2028]:
+                - paragraph [ref=e2029]: "고객 센터 : 02-3280-0104 (contactdiorkr@christiandior.com) | 호스팅 서비스: Smile Hosting"
+              - listitem [ref=e2030]:
+                - paragraph [ref=e2031]: COPYRIGHT © CHRISTIAN DIOR COUTURE KOREA ALL RIGHTS RESERVED.
+              - listitem [ref=e2032]:
+                - link "토스페이먼츠 구매안전서비스 이용 확인증 확인하기" [ref=e2033] [cursor=pointer]:
+                  - /url: https://www.dior.com/couture/en_int/folder-media/folder-fichiers/%EC%82%AC%EC%97%85%EC%9E%90%EC%A0%95%EB%B3%B4%ED%99%95%EC%9D%B8
+              - listitem [ref=e2034]:
+                - paragraph [ref=e2035]: 크리스챤디올꾸뛰르코리아㈜는 통신판매중개자로서 본 웹사이트와 연결된 사이트에서 엘브이엠에치코스메틱스(유)가 판매하는 뷰티 제품의 거래당사자가 아니며,
+              - listitem [ref=e2036]:
+                - paragraph [ref=e2037]: 엘브이엠에치코스메틱스(유)가 등록한 상품, 거래정보 및 거래에 대해 크리스챤디올꾸뛰르코리아㈜는 일체 책임을 지지 않습니다.
+        - status [ref=e2038]
+  - alert [ref=e2039]

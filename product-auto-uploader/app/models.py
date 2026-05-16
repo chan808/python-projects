@@ -18,6 +18,7 @@ class ProductInput(BaseModel):
     product_code: str
     category: str
     price: int = Field(ge=0)
+    original_price: Optional[int] = None
     color: Optional[str] = None
     material: Optional[str] = None
     size: Optional[str] = None

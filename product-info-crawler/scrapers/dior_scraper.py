@@ -5,6 +5,7 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
+from utils.dior_stock_api import fetch_stores_with_stock_via_driver
 from utils.helper import parse_price
 
 from .base_scraper import BaseScraper
@@ -23,6 +24,8 @@ class DiorScraper(BaseScraper):
         if not products:
             products = self._extract_products_from_selectors(html, category_name, category_url)
         return self._deduplicate_by_url(products)
+
+    # ── 카테고리 목록 추출 ─────────────────────────────────────────────────────
 
     def _extract_products_from_next_data(self, html: str, category_name: str) -> list[dict]:
         soup = BeautifulSoup(html, "html.parser")
@@ -44,41 +47,32 @@ class DiorScraper(BaseScraper):
         for key in dictionnary:
             for hit in (dictionnary[key] or {}).get("hits", []):
                 name = hit.get("title") or hit.get("titleInt") or "N/A"
-                price_data = hit.get("price", {})
+
+                price_data = hit.get("price") or {}
                 price = price_data.get("value") if isinstance(price_data, dict) else None
 
-                sku = hit.get("sku") or hit.get("style_color_ref") or ""
+                # code = 표시용 레퍼런스 ("2LLBH095MAR_H00N")
+                # sku는 사이즈 코드까지 포함 ("2LLBH095MAR_H00N_TU") — 사용 안 함
+                reference = hit.get("code") or hit.get("style_color_ref") or ""
 
-                # color.label_int(영문) 우선, 없으면 color.label(한글), 없으면 subtitle
-                color_data = hit.get("color", {})
-                if isinstance(color_data, dict):
-                    colors = color_data.get("label_int") or color_data.get("label") or ""
-                else:
-                    colors = hit.get("subtitle") or ""
+                # subtitle = 색상+소재 전체 표기 ("블랙 그레인 카프스킨")
+                colors = hit.get("subtitle") or ""
 
-                # 소재
-                material_data = hit.get("material", {})
-                material = ""
-                if isinstance(material_data, dict):
-                    material = material_data.get("label_int") or material_data.get("label") or ""
+                # 카테고리에서 material은 "가죽"처럼 단순 — fetch_detail 시 characteristics로 덮어씀
+                material_data = hit.get("material") or {}
+                material = material_data.get("label") or "" if isinstance(material_data, dict) else ""
 
-                # 사이즈 (variants / variantsWithStocks)
+                # 사이즈: 카테고리 hits는 대부분 빈 배열 — fetch_detail 시 sizeAndFit으로 채움
                 sizes = self._extract_sizes_from_hit(hit)
 
-                # 카테고리 페이지 리스팅 이미지 URL
+                # 리스팅 이미지: views.listing.images.r9x10listing.uri
                 listing_image = (
-                    (hit.get("views") or {})
-                    .get("listing") or {}
-                )
-                listing_image = (
-                    (listing_image.get("images") or {})
-                    .get("r9x10detail") or {}
-                )
+                    ((hit.get("views") or {}).get("listing") or {}).get("images") or {}
+                ).get("r9x10listing") or {}
                 listing_image = listing_image.get("uri", "")
 
-                url_path = (
-                    ((hit.get("attributes") or {}).get("productLink") or {}).get("uri", "")
-                )
+                # URL: hit.productLink.uri (hit.attributes.productLink은 존재하지 않음)
+                url_path = (hit.get("productLink") or {}).get("uri", "")
                 full_url = urljoin(self.BASE_URL, url_path) if url_path else ""
 
                 products.append({
@@ -86,7 +80,7 @@ class DiorScraper(BaseScraper):
                     "name": str(name).strip(),
                     "price": price,
                     "url": full_url,
-                    "reference": str(sku).strip(),
+                    "reference": str(reference).strip(),
                     "colors": str(colors).strip(),
                     "material": str(material).strip(),
                     "sizes": sizes,
@@ -96,9 +90,9 @@ class DiorScraper(BaseScraper):
         return products
 
     def _extract_sizes_from_hit(self, hit: dict) -> str:
-        """카테고리 hit 객체의 variants / variantsWithStocks에서 사이즈를 추출합니다."""
+        """카테고리 hit의 variantsWithStocks / variants에서 사이즈를 추출합니다."""
         for key in ("variantsWithStocks", "variants"):
-            items = hit.get(key, [])
+            items = hit.get(key) or []
             if not isinstance(items, list) or not items:
                 continue
             sizes = []
@@ -118,6 +112,19 @@ class DiorScraper(BaseScraper):
 
     # ── 상세 페이지 ────────────────────────────────────────────────────────────
 
+    def parse_detail(self, url: str) -> dict:
+        result = super().parse_detail(url)
+        # Dior URL 마지막 세그먼트 형식: "bifold-wallet--2LLBH095MAR_H00N"
+        last = url.rstrip("/").split("/")[-1]
+        code = last.split("--")[-1] if "--" in last else ""
+        if code:
+            try:
+                stores = fetch_stores_with_stock_via_driver(None, code)
+                result["store_inventory"] = ", ".join(stores)
+            except Exception as exc:
+                result["store_inventory"] = f"[API_ERROR] {exc}"
+        return result
+
     def _parse_detail_from_next_data(self, html: str) -> dict:
         soup = BeautifulSoup(html, "html.parser")
         script = soup.find("script", id="__NEXT_DATA__")
@@ -130,28 +137,56 @@ class DiorScraper(BaseScraper):
         except (json.JSONDecodeError, AttributeError):
             return {}
 
-        product = self._find_detail_product(page_props)
-
-        if not product:
-            # Dior 특화: queriesProductsDictionnary 첫 번째 히트에서 추출
-            dictionnary = page_props.get("queriesProductsDictionnary") or {}
-            for key in dictionnary:
-                hits = (dictionnary[key] or {}).get("hits", [])
-                if hits:
-                    product = hits[0]
-                    break
-
+        # 디올 상세 페이지: pageProps.product에 직접 상품 정보가 있음
+        product = page_props.get("product") or {}
         if not product:
             return {}
 
         return {
-            "description": self._extract_description(product),
-            "sizes": self._extract_sizes(product),
-            "image_urls": self._extract_image_urls(product),
-            "store_inventory": "",
+            "description": product.get("description") or "",
+            "sizes": self._extract_dior_sizes(product),
+            "material": self._extract_dior_material(product),
+            # image_urls는 빈값으로 두면 base class의 _extract_page_images(og:image 등)가 채움
         }
 
-    # ── 카테고리 목록 추출 ─────────────────────────────────────────────────────
+    def _extract_dior_sizes(self, product: dict) -> str:
+        """
+        variations에서 실제 사이즈를 추출합니다.
+        원사이즈(U/TU)인 경우 sizeAndFit의 치수 문자열로 대체합니다.
+        """
+        variations = product.get("variations") or []
+        size_labels = []
+        for v in variations:
+            if not isinstance(v, dict):
+                continue
+            label = v.get("sizeLabel") or v.get("title") or ""
+            if label and label not in ("U", "TU"):
+                size_labels.append(str(label))
+        if size_labels:
+            return ", ".join(dict.fromkeys(size_labels))
+
+        # 원사이즈 상품: sizeAndFit 첫 줄에서 치수 추출
+        size_and_fit = (product.get("sizeAndFit") or "").strip()
+        if size_and_fit:
+            first_line = size_and_fit.split("\r\n")[0].split("\n")[0].strip()
+            # "크기: 11 x 9.5 x 2.5cm (길이 x 높이 x 너비)" → "11 x 9.5 x 2.5cm"
+            if first_line.startswith("크기:"):
+                first_line = first_line.removeprefix("크기:").strip()
+            # cm 뒤 괄호 설명 제거
+            if "cm" in first_line:
+                first_line = first_line[:first_line.index("cm") + 2].strip()
+            return first_line
+
+        return ""
+
+    def _extract_dior_material(self, product: dict) -> str:
+        """characteristics 배열에서 '주요 소재: 카프스킨' 형태의 항목을 파싱합니다."""
+        for item in (product.get("characteristics") or []):
+            if isinstance(item, str) and item.startswith("주요 소재:"):
+                return item.removeprefix("주요 소재:").strip()
+        return ""
+
+    # ── CSS 셀렉터 폴백 ───────────────────────────────────────────────────────
 
     def _extract_products_from_selectors(self, html: str, category_name: str, category_url: str) -> list[dict]:
         selectors = self.config["selectors"]

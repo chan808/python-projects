@@ -1,0 +1,16 @@
+{
+  "data": {
+    "stocks": [
+      {
+        "code": "2LLBH095MAR_H00N",
+        "variations": [
+          {
+            "sku": "2LLBH095MAR_H00N_TU",
+            "stockLevel": "normal",
+            "isAvailableWarehouse": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -4,7 +4,7 @@ from typing import Optional
 
 
 EXCEL_OUTPUT_FOLDER_NAME = "Brand_Product_Data"
-SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "소재", "카테고리", "가격", "사이즈", "설명", "재고매장", "링크"]
+SHEET_HEADERS = ["번호", "상품명", "레퍼런스", "색상", "소재", "카테고리", "가격", "사이즈", "설명", "링크", "재고매장"]
 WRITE_MODE_APPEND = "append"
 WRITE_MODE_OVERWRITE = "overwrite"
 INVALID_FILE_NAME_CHARS = r'[<>:"/\\|?*]'
@@ -96,8 +96,8 @@ def append_products_to_excel_sheet(
             product["price"],
             product.get("sizes", ""),
             product.get("description", ""),
-            product.get("store_inventory", ""),
             product.get("url", ""),
+            product.get("store_inventory", ""),
         ])
 
     return len(products)

@@ -11,7 +11,12 @@
       "WebSearch",
       "mcp__playwright__browser_navigate",
       "mcp__playwright__browser_evaluate",
-      "PowerShell(Test-Path *)"
+      "PowerShell(Test-Path *)",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "Bash(python -c \"import app.uploaders.trenbe; print\\('OK'\\)\")",
+      "mcp__playwright__browser_tabs",
+      "Bash(python -c \"import app.uploaders.mustit; print\\('OK'\\)\")"
     ]
   }
 }

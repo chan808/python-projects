@@ -20,6 +20,7 @@
     "detail_page_delay_sec": 5,
     "detail_checkpoint_interval": 5,
     "download_images": true,
+    "process_images": true,
     "popup_selectors": [
       "#onetrust-accept-btn-handler",
       "button[aria-label='Close']",
@@ -46,6 +47,6 @@
   },
   "categories": {
     "Wallet(Man)": "https://www.dior.com/ko_kr/fashion/mens-fashion/small-leather-goods/compact-wallets",
-    "Ring(Woman)": "https://www.dior.com/ko_kr/fashion/%EC%97%AC%EC%84%B1-%ED%8C%A8%EC%85%98/%ED%8C%A8%EC%85%98%EC%A3%BC%EC%96%BC%EB%A6%AC/%EB%B0%98%EC%A7%80"
+    "Ring(Woman)": "https://www.dior.com/ko_kr/fashion/여성-패션/패션주얼리/반지"
   }
 }

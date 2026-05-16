@@ -42,11 +42,6 @@
     "price": ".lv-product-card__price",
     "link": "a.lv-product-card__url"
   },
-  "detail_selectors": {
-    "description": ".lv-product-description__text, .lv-pdp__description",
-    "sizes": ".lv-size-picker__option, .lv-product-size-option",
-    "images": ".lv-product-media__image img[src], .lv-media-gallery img[src]"
-  },
   "categories": {
     "Bag(Woman)": "https://kr.louisvuitton.com/kor-kr/women/handbags/_/N-tfr7qdp",
     "Wallet(Woman)": "https://kr.louisvuitton.com/kor-kr/women/small-leather-goods/all-wallets-and-small-leather-goods/_/N-t164iz3b",

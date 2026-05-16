@@ -1,0 +1,47 @@
+#197 [POST] https://api-fashion.dior.com/graph?GetProductStocks
+
+  General
+    status:    [200] 
+    duration:  647ms
+    type:      fetch
+    mimeType:  application/json
+
+  Request headers
+    x-checkout-authentication-type: SLAS
+    sec-ch-ua-platform: "Windows"
+    x-dior-locale: ko_kr
+    referer: https://www.dior.com/
+    sec-ch-ua: "Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"
+    x-dior-long-session-id: 6krfjs1piur7e8sc
+    x-dior-page-session-id: swboakhwzz4rb10c:/static/[device]/[locale]/[universe]/products/[identifier]
+    x-dior-universe: couture
+    sec-ch-ua-mobile: ?0
+    user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+    accept: */*
+    apollographql-client-version: 5.418.0-git25ffc045.hotfix
+    content-type: application/json
+    apollographql-client-name: Newlook Couture Catalog V2 K8S
+
+  Response headers
+    access-control-expose-headers: x-bearer-expire-time,x-checkout-refresh-token,x-checkout-access-token-expiration
+    content-encoding: gzip
+    etag: W/"cb-23q7wT3dvS1r8MEL1OMKhOFxWkU"
+    access-control-allow-methods: GET,POST,PUT,PATCH,HEAD,OPTIONS,DELETE
+    server-timing: dtSInfo;desc="1", dtTao;desc="1"
+    alt-svc: h3=":443"; ma=93600
+    date: Sat, 16 May 2026 16:22:40 GMT
+    content-type: application/json; charset=utf-8
+    vary: Accept-Encoding, Origin
+    access-control-allow-headers: Authorization,Content-Type,Request-Context,Request-Id,X-Requested-With,X-Dior-PCD-SFCC,X-Dior-Frontend-Version,X-Dior-Locale,X-Dior-Preview,X-Dior-Universe,apollographql-client-name,apollographql-client-version,x-dtpc,X-Ctrl-beauty-collection,X-Ctrl-collaboration-page,X-Ctrl-discovery-landing-page,X-Ctrl-frontpage,X-Ctrl-home-collection,X-Ctrl-home-collection-haute-jo,X-Ctrl-home-collection-pap-collection,X-Ctrl-home-pap-collection,X-Ctrl-mcd-collection,X-Ctrl-news-landing-page,X-Ctrl-product-page,X-Ctrl-range-page-cdc,X-Ctrl-range-page-pcd,x-bearer-expire-time,x-checkout-refresh-token,x-checkout-access-token-expiration,x-checkout-authentication-type,X-Dior-Touchpoint,x-dior-long-session-id,x-dior-page-session-id
+    x-checkout-authentication-type: SLAS
+    strict-transport-security: max-age=31536000; includeSubDomains
+    cache-control: max-age=10, public
+    timing-allow-origin: *
+    x-powered-by-stack: gateway-2.46.71
+    quic-version: 0x00000001
+    access-control-allow-credentials: true
+    access-control-allow-origin: https://www.dior.com
+    content-length: 163
+
+Call browser_network_request with part="request-body" to read the request body.
+Call browser_network_request with part="response-body" to read the response body.

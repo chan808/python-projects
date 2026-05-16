@@ -1,0 +1,770 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - status [ref=e3]
+    - generic [ref=e4]:
+      - link [ref=e688] [cursor=pointer]:
+        - /url: "#nav"
+        - text: aria_goToMenu
+      - link [ref=e689] [cursor=pointer]:
+        - /url: "#main"
+        - text: aria_goToContent
+      - banner [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - button [ref=e690] [cursor=pointer]
+          - listitem [ref=e11]:
+            - button [ref=e691] [cursor=pointer]
+        - status [ref=e13]:
+          - link [ref=e692] [cursor=pointer]:
+            - /url: /ko_kr/fashion/mens-fashion/ready-to-wear/all-ready-to-wear
+            - paragraph [ref=e17]: 봄을 완성하는 디올 남성 컬렉션을 만나보세요.
+          - link [ref=e693] [cursor=pointer]:
+            - /url: /ko_kr/fashion/mens-fashion/shoes/all-shoes
+            - paragraph [ref=e21]: 새로운 디올 남성 슈즈 컬렉션을 만나보세요.
+        - button [ref=e694] [cursor=pointer]:
+          - img [ref=e23]
+      - main [ref=e25]:
+        - banner [ref=e26]:
+          - button [ref=e695] [cursor=pointer]:
+            - img [ref=e29]
+          - list [ref=e32]:
+            - listitem [ref=e33]
+            - listitem [ref=e34]
+            - listitem [ref=e35]
+            - listitem [ref=e36]
+          - list [ref=e37]:
+            - listitem [ref=e38]
+            - listitem [ref=e39]
+            - listitem [ref=e40]
+            - listitem [ref=e41]
+          - list [ref=e42]:
+            - listitem [ref=e43]
+            - listitem [ref=e44]
+          - list [ref=e45]:
+            - listitem [ref=e46]
+            - listitem [ref=e47]
+            - listitem [ref=e48]
+            - listitem [ref=e49]
+            - listitem [ref=e50]
+            - listitem [ref=e51]
+          - list [ref=e52]:
+            - listitem [ref=e53]
+            - listitem [ref=e54]
+          - list [ref=e55]:
+            - listitem [ref=e56]
+            - listitem [ref=e57]
+          - list [ref=e58]:
+            - listitem [ref=e59]
+            - listitem [ref=e60]
+          - list [ref=e61]:
+            - listitem [ref=e62]
+            - listitem [ref=e63]
+            - listitem [ref=e64]
+            - listitem [ref=e65]
+          - list [ref=e66]:
+            - listitem [ref=e67]
+            - listitem [ref=e68]
+            - listitem [ref=e69]
+            - listitem [ref=e70]
+          - list [ref=e71]:
+            - listitem [ref=e72]
+            - listitem [ref=e73]
+          - list [ref=e74]:
+            - listitem [ref=e75]
+            - listitem [ref=e76]
+          - list [ref=e77]:
+            - listitem [ref=e78]
+            - listitem [ref=e79]
+          - list [ref=e80]:
+            - listitem [ref=e81]
+            - listitem [ref=e82]
+            - listitem [ref=e83]
+            - listitem [ref=e84]
+          - list [ref=e85]:
+            - listitem [ref=e86]
+            - listitem [ref=e87]
+            - listitem [ref=e88]
+            - listitem [ref=e89]
+            - listitem [ref=e90]
+            - listitem [ref=e91]
+          - list [ref=e92]:
+            - listitem [ref=e93]
+            - listitem [ref=e94]
+            - listitem [ref=e95]
+            - listitem [ref=e96]
+          - list [ref=e97]:
+            - listitem [ref=e98]
+          - list [ref=e99]:
+            - listitem [ref=e100]
+            - listitem [ref=e101]
+            - listitem [ref=e102]
+            - listitem [ref=e103]
+            - listitem [ref=e104]
+            - listitem [ref=e105]
+          - list [ref=e106]:
+            - listitem [ref=e107]
+          - list [ref=e108]:
+            - listitem [ref=e109]
+            - listitem [ref=e110]
+            - listitem [ref=e111]
+            - listitem [ref=e112]
+          - list [ref=e113]:
+            - listitem [ref=e114]
+            - listitem [ref=e115]
+          - list [ref=e116]:
+            - listitem [ref=e117]
+            - listitem [ref=e118]
+            - listitem [ref=e119]
+            - listitem [ref=e120]
+            - listitem [ref=e121]
+            - listitem [ref=e122]
+          - list [ref=e123]:
+            - listitem [ref=e124]
+            - listitem [ref=e125]
+            - listitem [ref=e126]
+          - list [ref=e127]:
+            - listitem [ref=e128]
+            - listitem [ref=e129]
+            - listitem [ref=e130]
+            - listitem [ref=e131]
+          - list [ref=e132]:
+            - listitem [ref=e133]
+            - listitem [ref=e134]
+          - list [ref=e135]:
+            - listitem [ref=e136]
+            - listitem [ref=e137]
+          - list [ref=e138]:
+            - listitem [ref=e139]
+          - list [ref=e140]:
+            - listitem [ref=e141]
+            - listitem [ref=e142]
+          - list [ref=e143]:
+            - listitem [ref=e144]
+            - listitem [ref=e145]
+            - listitem [ref=e146]
+            - listitem [ref=e147]
+            - listitem [ref=e148]
+            - listitem [ref=e149]
+          - list [ref=e150]:
+            - listitem [ref=e151]
+            - listitem [ref=e152]
+            - listitem [ref=e153]
+            - listitem [ref=e154]
+            - listitem [ref=e155]
+            - listitem [ref=e156]
+          - list [ref=e157]:
+            - listitem [ref=e158]
+          - list [ref=e159]:
+            - listitem [ref=e160]
+            - listitem [ref=e161]
+            - listitem [ref=e162]
+            - listitem [ref=e163]
+          - tablist [ref=e164]:
+            - tab [selected] [ref=e696] [cursor=pointer]: 패션 & 액세서리 패션 & 액세서리
+            - tab [ref=e697] [cursor=pointer]: 향수 & 뷰티 향수 & 뷰티
+          - navigation [ref=e168]:
+            - generic [ref=e169]:
+              - generic [ref=e170]:
+                - link [ref=e698] [cursor=pointer]:
+                  - /url: /ko_kr/fashion
+                  - img [ref=e699]
+                - list [ref=e181]:
+                  - listitem [ref=e182] [cursor=pointer]:
+                    - button [ref=e700]:
+                      - img [ref=e184]
+                  - listitem [ref=e186] [cursor=pointer]:
+                    - button [ref=e701]:
+                      - status [ref=e188]
+                      - img [ref=e189]
+                  - listitem [ref=e191] [cursor=pointer]:
+                    - button [ref=e702]:
+                      - img [ref=e193]
+                  - listitem [ref=e195] [cursor=pointer]:
+                    - link [ref=e703]:
+                      - /url: /ko_kr/couture/basket
+                      - img [ref=e197]
+              - status [ref=e199]
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - list [ref=e204]:
+              - listitem [ref=e205]:
+                - button [ref=e704] [cursor=pointer]
+              - listitem [ref=e209]:
+                - button [ref=e705] [cursor=pointer]
+              - listitem [ref=e212]:
+                - button [ref=e706] [cursor=pointer]
+              - listitem [ref=e215]:
+                - button [ref=e707] [cursor=pointer]
+              - listitem [ref=e218]:
+                - button [ref=e708] [cursor=pointer]
+            - generic [ref=e224]:
+              - generic [ref=e225]:
+                - generic [ref=e226]:
+                  - generic [ref=e227]:
+                    - heading [level=1] [ref=e709]: 디올 아치 반지갑
+                    - button [ref=e710] [cursor=pointer]:
+                      - img [ref=e231]
+                  - generic [ref=e233]:
+                    - alert [ref=e711]:
+                      - heading [level=2] [ref=e712]: 블랙 그레인 카프스킨
+                    - paragraph [ref=e236]: "상품번호: 2LLBH095MAR_H00N"
+                - generic [ref=e237]:
+                  - generic [ref=e238]:
+                    - button [ref=e713] [cursor=pointer]:
+                      - generic [ref=e240]: 장바구니
+                      - status [ref=e241]: ₩890,000
+                    - generic [ref=e244]:
+                      - button [ref=e714] [cursor=pointer]:
+                        - img [ref=e252]
+                        - text: 빠른 구매
+                      - status [ref=e256]: 발송일 기준 1-2일 내 배송 예정
+                  - link [ref=e715] [cursor=pointer]:
+                    - /url: tel:+82 2 3280 0104
+                    - text: 제품, 재고 확인, 방문예약은 맞춤 상담으로 안내 드립니다. +82 2 3280 0104
+              - generic [ref=e260]:
+                - tablist [ref=e716]:
+                  - tab [ref=e717] [cursor=pointer]:
+                    - paragraph [ref=e265]: 상세 설명
+                  - tab [ref=e718] [cursor=pointer]:
+                    - paragraph [ref=e267]: 사이즈 가이드
+                  - tab [selected] [ref=e719] [cursor=pointer]:
+                    - paragraph [ref=e269]: 문의 및 매장 재고
+                  - tab [ref=e720] [cursor=pointer]:
+                    - paragraph [ref=e271]: 무료 배송 및 반품
+                - separator [ref=e273]
+                - tabpanel [ref=e721]:
+                  - list [ref=e659]:
+                    - listitem [ref=e660]:
+                      - button [active] [ref=e722] [cursor=pointer]:
+                        - generic [ref=e662]:
+                          - paragraph [ref=e663]:
+                            - img [ref=e665]
+                            - generic [ref=e667]: 부티크 구매 가능 여부
+                          - img [ref=e668]
+                      - separator [ref=e670]
+                    - listitem [ref=e671]:
+                      - link [ref=e723] [cursor=pointer]:
+                        - /url: https://www.dior.com/fashion/stores/ko_kr/search
+                        - generic [ref=e674]:
+                          - paragraph [ref=e675]:
+                            - img [ref=e677]
+                            - generic [ref=e679]: 부티크 찾기
+                          - img [ref=e680]
+                    - listitem [ref=e682]:
+                      - paragraph [ref=e686]:
+                        - text: "궁금한 점이 있으시면 Dior 어드바이저가 도와드리겠습니다. 다음으로 문의해 주세요:"
+                        - link [ref=e724] [cursor=pointer]:
+                          - /url: tel:+82 2 3280 0104
+                          - text: +82 2 3280 0104
+          - generic [ref=e304]:
+            - generic [ref=e305]: 추천 상품
+            - group [ref=e306]:
+              - list [ref=e307]:
+                - generic [ref=e308]:
+                  - listitem [ref=e309]:
+                    - generic [ref=e310]:
+                      - generic [ref=e311]:
+                        - link [ref=e725] [cursor=pointer]:
+                          - /url: /ko_kr/fashion/products/2LLBC350MAR_H00N
+                          - img [ref=e726]
+                        - button [ref=e727] [cursor=pointer]:
+                          - button [ref=e728]:
+                            - img [ref=e324]
+                      - link [ref=e729] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/products/2LLBC350MAR_H00N
+                        - generic [ref=e328]:
+                          - generic [ref=e329]:
+                            - generic [ref=e331]: "[동전수납] 디올 아치 지갑"
+                            - generic [ref=e333]: 블랙 그레인 카프스킨
+                          - generic [ref=e336]: ₩930,000
+                  - listitem [ref=e337]:
+                    - generic [ref=e338]:
+                      - generic [ref=e339]:
+                        - link [ref=e730] [cursor=pointer]:
+                          - /url: /ko_kr/fashion/products/2ESBH027CDI_H00N_TU
+                          - img [ref=e731]
+                        - button [ref=e732] [cursor=pointer]:
+                          - button [ref=e733]:
+                            - img [ref=e352]
+                      - link [ref=e734] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/products/2ESBH027CDI_H00N_TU
+                        - generic [ref=e356]:
+                          - generic [ref=e357]:
+                            - generic [ref=e359]: CD Icon 반지갑
+                            - generic [ref=e361]: 블랙 그레인 송아지 가죽
+                          - generic [ref=e364]: ₩790,000
+                  - listitem [ref=e365]:
+                    - generic [ref=e366]:
+                      - generic [ref=e367]:
+                        - link [ref=e735] [cursor=pointer]:
+                          - /url: /ko_kr/fashion/products/2ESBC027CDI_H00N_TU
+                          - img [ref=e736]
+                        - button [ref=e737] [cursor=pointer]:
+                          - button [ref=e738]:
+                            - img [ref=e380]
+                      - link [ref=e739] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/products/2ESBC027CDI_H00N_TU
+                        - generic [ref=e384]:
+                          - generic [ref=e385]:
+                            - generic [ref=e387]: "[동전수납] CD 아이콘 지갑"
+                            - generic [ref=e389]: 블랙 그레인 카프스킨
+                          - generic [ref=e392]: ₩840,000
+                  - listitem [ref=e393]:
+                    - generic [ref=e394]:
+                      - generic [ref=e395]:
+                        - link [ref=e740] [cursor=pointer]:
+                          - /url: /ko_kr/fashion/products/2ESBH027FLG_H00N_TU
+                          - img [ref=e741]
+                        - button [ref=e742] [cursor=pointer]:
+                          - button [ref=e743]:
+                            - img [ref=e408]
+                      - link [ref=e744] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/products/2ESBH027FLG_H00N_TU
+                        - generic [ref=e412]:
+                          - generic [ref=e413]:
+                            - generic [ref=e415]: 반지갑
+                            - generic [ref=e417]: 블랙 Dior Gravity 가죽
+                          - generic [ref=e420]: ₩910,000
+          - generic [ref=e421]:
+            - heading [level=2] [ref=e745]: 최근 본 상품
+            - group [ref=e423]:
+              - list [ref=e424]:
+                - generic [ref=e425]:
+                  - listitem [ref=e426]:
+                    - generic [ref=e429]:
+                      - link [ref=e430] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/products/1DBBA265MLL_H522
+                        - img [ref=e434]
+                      - button [ref=e746] [cursor=pointer]:
+                        - button [ref=e747]:
+                          - img [ref=e442]
+                  - listitem [ref=e444]:
+                    - generic [ref=e447]:
+                      - link [ref=e448] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/products/S2220QGME_M45I
+                        - img [ref=e452]
+                      - button [ref=e748] [cursor=pointer]:
+                        - button [ref=e749]:
+                          - img [ref=e460]
+        - list [ref=e464]:
+          - listitem [ref=e465]:
+            - link [ref=e750] [cursor=pointer]:
+              - /url: /ko_kr/fashion/gifts/women-s-fashion-and-accessories-gifts
+              - text: 그녀를 위한 기프트
+          - listitem [ref=e467]:
+            - link [ref=e751] [cursor=pointer]:
+              - /url: /ko_kr/fashion/gifts/gifts-for-him
+              - text: 그를 위한 기프트
+          - listitem [ref=e469]:
+            - link [ref=e752] [cursor=pointer]:
+              - /url: /ko_kr/fashion/womens-fashion/bags/all-the-bags
+              - text: 여성 가방
+          - listitem [ref=e471]:
+            - link [ref=e753] [cursor=pointer]:
+              - /url: /ko_kr/fashion/mens-fashion/shoes/all-shoes
+              - text: 남성 스니커즈
+          - listitem [ref=e473]:
+            - link [ref=e754] [cursor=pointer]:
+              - /url: /ko_kr/fashion/womens-fashion/fashion-jewellery/jewellery
+              - text: 여성 패션 주얼리
+          - listitem [ref=e475]:
+            - link [ref=e755] [cursor=pointer]:
+              - /url: /ko_kr/fashion/womens-fashion/small-leather-goods/all-small-leather-goods
+              - text: 여성 가죽 소품
+        - contentinfo [ref=e477]:
+          - generic [ref=e478]:
+            - list [ref=e480]:
+              - listitem [ref=e481]:
+                - link [ref=e756] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/gifts-personalization/gifts/the-art-of-gifting
+                  - generic [ref=e483]:
+                    - paragraph [ref=e484]: 메시지 커스터마이즈
+                    - paragraph [ref=e485]: 맞춤 메시지 제작으로 나만의 특별한 선물을 주문하세요.
+                  - img [ref=e486]
+              - listitem [ref=e488]:
+                - link [ref=e757] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/gifts-personalization/gifts/the-art-of-gifting
+                  - generic [ref=e490]:
+                    - paragraph [ref=e491]: Dior 시그니처 패키지
+                    - paragraph [ref=e492]: 디올 하우스의 노하우를 고스란히 반영합니다.
+                  - img [ref=e493]
+              - listitem [ref=e495]:
+                - link [ref=e758] [cursor=pointer]:
+                  - /url: /ko_kr/fashion/couture-boutique-advantages
+                  - generic [ref=e497]:
+                    - paragraph [ref=e498]: 무료 배송 및 반품
+                    - paragraph [ref=e499]: 무료배송 및 7일 이내 무료반품 및 30일 이내 무료 교환
+                  - img [ref=e500]
+            - generic [ref=e502]:
+              - generic [ref=e504]:
+                - paragraph [ref=e505]: Dior의 최신 소식 받고 영감 얻기
+                - generic [ref=e506]: 입력해 주신 귀하의 이메일 주소는 동의 철회 시까지 이메일을 통한 뉴스레터, 제품정보, 전시 및 행사 안내 등 영리목적 광고성 정보 전달에 활용되거나, 영업 및 마케팅 목적으로 활용될 수 있습니다. 귀하는 이에 동의하지 않으실 수 있으나, 이 경우 Dior이 제공하는 뉴스레터를 제공받지 못할 수 있습니다.
+                - generic [ref=e507]:
+                  - generic [ref=e508]:
+                    - generic: 이메일 *
+                    - generic [ref=e509]:
+                      - textbox [ref=e759]
+                      - group:
+                        - generic: 이메일 *
+                  - button [ref=e760] [cursor=pointer]:
+                    - paragraph [ref=e512]: 확인
+              - generic [ref=e514]:
+                - generic [ref=e515]:
+                  - heading [level=2] [ref=e761]: dior 부티크
+                  - list [ref=e517]:
+                    - listitem [ref=e518]:
+                      - link [ref=e762] [cursor=pointer]:
+                        - /url: https://www.dior.com/fashion/stores/ko_kr/search
+                        - text: 크리스챤 디올 꾸뛰르
+                    - listitem [ref=e521]:
+                      - link [ref=e763] [cursor=pointer]:
+                        - /url: https://www.dior.com/ko_kr/beauty/find-your-dior-store
+                        - text: 크리스챤 디올 코스메틱
+                - generic [ref=e524]:
+                  - heading [level=2] [ref=e764]: 고객 지원
+                  - list [ref=e526]:
+                    - listitem [ref=e527]:
+                      - button [ref=e765] [cursor=pointer]:
+                        - heading [level=3] [ref=e766]: 고객센터
+                        - img [ref=e534]
+                    - listitem [ref=e536]:
+                      - link [ref=e767] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/couture-boutique-advantages
+                        - text: 배송 및 반품
+                    - listitem [ref=e539]:
+                      - button [ref=e768] [cursor=pointer]:
+                        - heading [level=3] [ref=e769]: FAQ
+                        - img [ref=e546]
+                - generic [ref=e548]:
+                  - heading [level=2] [ref=e770]: 디올 하우스
+                  - list [ref=e550]:
+                    - listitem [ref=e551]:
+                      - button [ref=e771] [cursor=pointer]:
+                        - heading [level=3] [ref=e772]: 디올 지속가능성
+                        - img [ref=e558]
+                    - listitem [ref=e560]:
+                      - link [ref=e773] [cursor=pointer]:
+                        - /url: https://www.lvmh.com/en/ethics-and-compliance
+                        - text: 윤리 및 규정 준수
+                    - listitem [ref=e563]:
+                      - link [ref=e774] [cursor=pointer]:
+                        - /url: https://www.dior.com/carrieres/index.html?languageSelect=KO
+                        - text: 채용 정보
+                - generic [ref=e566]:
+                  - heading [level=2] [ref=e775]: 법률
+                  - list [ref=e568]:
+                    - listitem [ref=e569]:
+                      - link [ref=e776] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/accessibility
+                        - text: 접근성
+                    - listitem [ref=e572]:
+                      - button [ref=e777] [cursor=pointer]:
+                        - heading [level=3] [ref=e778]: 법적 고지
+                        - img [ref=e579]
+                    - listitem [ref=e581]:
+                      - button [ref=e779] [cursor=pointer]:
+                        - heading [level=3] [ref=e780]: 일반 판매 조건
+                        - img [ref=e588]
+                    - listitem [ref=e590]:
+                      - button [ref=e781] [cursor=pointer]:
+                        - heading [level=3] [ref=e782]: 사이트맵
+                        - img [ref=e593]
+                - generic [ref=e595]:
+                  - heading [level=2] [ref=e783]: 개인정보 처리방침
+                  - list [ref=e597]:
+                    - listitem [ref=e598]:
+                      - link [ref=e784] [cursor=pointer]:
+                        - /url: /ko_kr/fashion/personal-data
+                        - text: 크리스챤 디올 꾸뛰르
+                    - listitem [ref=e601]:
+                      - link [ref=e785] [cursor=pointer]:
+                        - /url: https://www.dior.com/ko_kr/beauty/folder?fid=personal-data#content-detail-privacy-statement
+                        - text: 크리스챤 디올 코스메틱
+            - generic [ref=e604]:
+              - generic [ref=e606] [cursor=pointer]:
+                - generic [ref=e607]:
+                  - paragraph [ref=e608]: 국가/지역
+                  - paragraph [ref=e609]: 한국 (한국어)
+                - img [ref=e610]
+              - generic [ref=e613]:
+                - paragraph [ref=e614]: 디올 소셜미디어
+                - list [ref=e615]:
+                  - listitem [ref=e616]:
+                    - link [ref=e786] [cursor=pointer]:
+                      - /url: https://pf.kakao.com/_dyBaT
+                      - text: Kakaotalk
+                  - listitem [ref=e618]:
+                    - link [ref=e787] [cursor=pointer]:
+                      - /url: https://www.instagram.com/dior/
+                      - text: Instagram
+                  - listitem [ref=e620]:
+                    - link [ref=e788] [cursor=pointer]:
+                      - /url: https://twitter.com/DIOR
+                      - text: X
+                  - listitem [ref=e622]:
+                    - link [ref=e789] [cursor=pointer]:
+                      - /url: https://www.facebook.com/Dior
+                      - text: Facebook
+                  - listitem [ref=e624]:
+                    - link [ref=e790] [cursor=pointer]:
+                      - /url: https://www.pinterest.fr/dior/
+                      - text: Pinterest
+                  - listitem [ref=e626]:
+                    - link [ref=e791] [cursor=pointer]:
+                      - /url: https://www.snapchat.com/add/dior
+                      - text: Snapchat
+                  - listitem [ref=e628]:
+                    - link [ref=e792] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/company/christian-dior-couture/
+                      - text: LinkedIn
+                  - listitem [ref=e630]:
+                    - link [ref=e793] [cursor=pointer]:
+                      - /url: https://www.tiktok.com/@dior
+                      - text: TikTok
+                  - listitem [ref=e632]:
+                    - link [ref=e794] [cursor=pointer]:
+                      - /url: https://www.youtube.com/channel/UC6xD-jKli-_qIYXDTsNv4dw
+                      - text: YouTube
+              - img [ref=e795]
+            - list [ref=e638]:
+              - listitem [ref=e639]:
+                - paragraph [ref=e640]: "크리스챤디올꾸뛰르코리아주식회사 | 04539 서울특별시 중구 을지로5길 19, 26층(수하동) | 사업자등록번호: 120-81-74197"
+              - listitem [ref=e641]:
+                - link [ref=e796] [cursor=pointer]:
+                  - /url: https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1208174197
+                  - text: "대표자: 캐롤 셰브론, 콩 메이 완 샤론 | 통신판매업"
+              - listitem [ref=e643]:
+                - link [ref=e797] [cursor=pointer]:
+                  - /url: https://www.ftc.go.kr/bizCommPop.do?wrkr_no=1208174197
+                  - text: "신고번호: 2021-서울중구-01116 | 사업자정보확인"
+              - listitem [ref=e645]:
+                - paragraph [ref=e646]: "고객 센터 : 02-3280-0104 (contactdiorkr@christiandior.com) | 호스팅 서비스: Smile Hosting"
+              - listitem [ref=e647]:
+                - paragraph [ref=e648]: COPYRIGHT © CHRISTIAN DIOR COUTURE KOREA ALL RIGHTS RESERVED.
+              - listitem [ref=e649]:
+                - link [ref=e798] [cursor=pointer]:
+                  - /url: https://www.dior.com/couture/en_int/folder-media/folder-fichiers/%EC%82%AC%EC%97%85%EC%9E%90%EC%A0%95%EB%B3%B4%ED%99%95%EC%9D%B8
+                  - text: 토스페이먼츠 구매안전서비스 이용 확인증 확인하기
+              - listitem [ref=e651]:
+                - paragraph [ref=e652]: 크리스챤디올꾸뛰르코리아㈜는 통신판매중개자로서 본 웹사이트와 연결된 사이트에서 엘브이엠에치코스메틱스(유)가 판매하는 뷰티 제품의 거래당사자가 아니며,
+              - listitem [ref=e653]:
+                - paragraph [ref=e654]: 엘브이엠에치코스메틱스(유)가 등록한 상품, 거래정보 및 거래에 대해 크리스챤디올꾸뛰르코리아㈜는 일체 책임을 지지 않습니다.
+        - status [ref=e655]
+  - alert [ref=e656]
+  - generic [ref=e800]:
+    - generic [ref=e801]:
+      - generic [ref=e802]:
+        - heading "부티크 구매 가능 여부" [level=2] [ref=e804]
+        - button "대화상자 닫기" [ref=e805] [cursor=pointer]:
+          - img [ref=e806]
+      - separator [ref=e808]
+    - generic [ref=e809]:
+      - generic [ref=e810]:
+        - generic [ref=e814]:
+          - paragraph [ref=e816]: 디올 아치 반지갑
+          - generic [ref=e817]:
+            - paragraph [ref=e818]: 블랙 그레인 카프스킨
+            - paragraph [ref=e819]: ₩890,000
+        - generic [ref=e820]:
+          - group "사이즈를 선택하신 후 문의 주시기 바랍니다." [ref=e821]:
+            - generic [ref=e822]: 사이즈를 선택하신 후 문의 주시기 바랍니다.
+            - group [ref=e824]:
+              - list [ref=e825]:
+                - listitem [ref=e827]:
+                  - generic [ref=e828]:
+                    - radio "U" [checked] [ref=e829] [cursor=pointer]
+                    - generic [ref=e830]: U
+          - generic [ref=e831]:
+            - paragraph [ref=e832]: 부티크
+            - list [ref=e833]:
+              - listitem [ref=e834]:
+                - separator [ref=e835]
+                - generic [ref=e837]:
+                  - generic [ref=e838]:
+                    - heading "갤러리아 남성" [level=3] [ref=e839]
+                    - generic [ref=e841]:
+                      - generic [ref=e842]: 압구정로 343
+                      - generic [ref=e843]: 갤러리아백화점 서관 4층
+                      - generic [ref=e844]: 서울
+                      - generic [ref=e846]: +82 02-518-8484
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e848] [cursor=pointer]':
+                      - generic [ref=e849]: "오픈 :"
+                      - generic [ref=e850]: 오늘 20:30 까지
+                      - img [ref=e851]
+                  - generic [ref=e853]: 구매 가능
+              - listitem [ref=e854]:
+                - separator [ref=e855]
+                - generic [ref=e856]:
+                  - generic [ref=e857]:
+                    - generic [ref=e858]:
+                      - heading "하우스 오브 디올" [level=3] [ref=e859]
+                      - generic [ref=e861]:
+                        - generic [ref=e862]: 압구정로 464
+                        - generic [ref=e863]: 서울
+                        - generic [ref=e865]: +82 02-513-0300
+                      - 'button "오픈 : 오늘 19:00 까지" [ref=e867] [cursor=pointer]':
+                        - generic [ref=e868]: "오픈 :"
+                        - generic [ref=e869]: 오늘 19:00 까지
+                        - img [ref=e870]
+                    - generic [ref=e872]: 구매 가능
+                  - generic [ref=e873]:
+                    - generic [ref=e874]: "서비스 :"
+                    - text: ABCDior 맞춤 서비스, Couture Maroquinerie, Demi Mesure 서비스
+              - listitem [ref=e875]:
+                - separator [ref=e876]
+                - generic [ref=e878]:
+                  - generic [ref=e879]:
+                    - heading "신세계 부산점 남성" [level=3] [ref=e880]
+                    - generic [ref=e882]:
+                      - generic [ref=e883]: 센텀남대로 35
+                      - generic [ref=e884]: 신세계백화점 센텀시티점 5층
+                      - generic [ref=e885]: 부산
+                      - generic [ref=e887]: +82 051-745-2956
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e889] [cursor=pointer]':
+                      - generic [ref=e890]: "오픈 :"
+                      - generic [ref=e891]: 오늘 20:30 까지
+                      - img [ref=e892]
+                  - generic [ref=e894]: 구매 가능
+              - listitem [ref=e895]:
+                - separator [ref=e896]
+                - generic [ref=e898]:
+                  - generic [ref=e899]:
+                    - heading "신세계 대전점 남성" [level=3] [ref=e900]
+                    - generic [ref=e902]:
+                      - generic [ref=e903]: 엑스포로 1
+                      - generic [ref=e904]: 신세계백화점 대전점 2층
+                      - generic [ref=e905]: 대전
+                      - generic [ref=e907]: +82 042-607-8270
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e909] [cursor=pointer]':
+                      - generic [ref=e910]: "오픈 :"
+                      - generic [ref=e911]: 오늘 20:30 까지
+                      - img [ref=e912]
+                  - generic [ref=e914]: 구매 가능
+              - listitem [ref=e915]:
+                - separator [ref=e916]
+                - generic [ref=e918]:
+                  - generic [ref=e919]:
+                    - heading "롯데 잠실점 남성" [level=3] [ref=e920]
+                    - generic [ref=e922]:
+                      - generic [ref=e923]: 올림픽로 300
+                      - generic [ref=e924]: 롯데백화점 에비뉴엘 월드타워점 4층
+                      - generic [ref=e925]: 서울
+                      - generic [ref=e927]: +82 02-3213-2462
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e929] [cursor=pointer]':
+                      - generic [ref=e930]: "오픈 :"
+                      - generic [ref=e931]: 오늘 20:30 까지
+                      - img [ref=e932]
+                  - generic [ref=e934]: 구매 가능
+              - listitem [ref=e935]:
+                - separator [ref=e936]
+                - generic [ref=e938]:
+                  - generic [ref=e939]:
+                    - heading "롯데 본점 남성" [level=3] [ref=e940]
+                    - generic [ref=e942]:
+                      - generic [ref=e943]: 을지로 30
+                      - generic [ref=e944]: 롯데백화점 본점 5층
+                      - generic [ref=e945]: 서울
+                      - generic [ref=e947]: +82 02-772-3562
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e949] [cursor=pointer]':
+                      - generic [ref=e950]: "오픈 :"
+                      - generic [ref=e951]: 오늘 20:30 까지
+                      - img [ref=e952]
+                  - generic [ref=e954]: 구매 가능
+              - listitem [ref=e955]:
+                - separator [ref=e956]
+                - generic [ref=e958]:
+                  - generic [ref=e959]:
+                    - heading "현대 본점 남성 4F" [level=3] [ref=e960]
+                    - generic [ref=e962]:
+                      - generic [ref=e963]: 압구정로 165
+                      - generic [ref=e964]: 현대백화점 본점 4층
+                      - generic [ref=e965]: 서울
+                      - generic [ref=e967]: +82 02-3446-9198
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e969] [cursor=pointer]':
+                      - generic [ref=e970]: "오픈 :"
+                      - generic [ref=e971]: 오늘 20:30 까지
+                      - img [ref=e972]
+                  - generic [ref=e974]: 구매 가능
+              - listitem [ref=e975]:
+                - separator [ref=e976]
+                - generic [ref=e977]:
+                  - generic [ref=e978]:
+                    - generic [ref=e979]:
+                      - heading "디올 성수" [level=3] [ref=e980]
+                      - generic [ref=e982]:
+                        - generic [ref=e983]: 연무장5길 7
+                        - generic [ref=e984]: 서울
+                        - generic [ref=e986]: +82 02-423-2133
+                      - 'button "오픈 : 오늘 20:00 까지" [ref=e988] [cursor=pointer]':
+                        - generic [ref=e989]: "오픈 :"
+                        - generic [ref=e990]: 오늘 20:00 까지
+                        - img [ref=e991]
+                    - generic [ref=e993]: 구매 가능
+                  - generic [ref=e994]:
+                    - generic [ref=e995]: "서비스 :"
+                    - text: ABCDior 맞춤 서비스
+              - listitem [ref=e996]:
+                - separator [ref=e997]
+                - generic [ref=e999]:
+                  - generic [ref=e1000]:
+                    - heading "현대 판교점 남성" [level=3] [ref=e1001]
+                    - generic [ref=e1003]:
+                      - generic [ref=e1004]: 판교역로 20, 146번길
+                      - generic [ref=e1005]: 현대백화점 판교점 6층
+                      - generic [ref=e1006]: 성남시
+                      - generic [ref=e1008]: +82 031-5170-1673
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e1010] [cursor=pointer]':
+                      - generic [ref=e1011]: "오픈 :"
+                      - generic [ref=e1012]: 오늘 20:30 까지
+                      - img [ref=e1013]
+                  - generic [ref=e1015]: 구매 가능
+              - listitem [ref=e1016]:
+                - separator [ref=e1017]
+                - generic [ref=e1019]:
+                  - generic [ref=e1020]:
+                    - heading "신세계 본점 남성" [level=3] [ref=e1021]
+                    - generic [ref=e1023]:
+                      - generic [ref=e1024]: 퇴계로 77
+                      - generic [ref=e1025]: 신세계백화점 신관 6층
+                      - generic [ref=e1026]: 서울
+                      - generic [ref=e1028]: +82 02-779-6510
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e1030] [cursor=pointer]':
+                      - generic [ref=e1031]: "오픈 :"
+                      - generic [ref=e1032]: 오늘 20:30 까지
+                      - img [ref=e1033]
+                  - generic [ref=e1035]: 구매 가능
+              - listitem [ref=e1036]:
+                - separator [ref=e1037]
+                - generic [ref=e1038]:
+                  - generic [ref=e1039]:
+                    - generic [ref=e1040]:
+                      - heading "더 현대 서울" [level=3] [ref=e1041]
+                      - generic [ref=e1043]:
+                        - generic [ref=e1044]: 여의대로 108
+                        - generic [ref=e1045]: 더 현대 서울 1층
+                        - generic [ref=e1046]: 서울
+                        - generic [ref=e1048]: +82 02-3277-8566
+                      - 'button "오픈 : 오늘 20:30 까지" [ref=e1050] [cursor=pointer]':
+                        - generic [ref=e1051]: "오픈 :"
+                        - generic [ref=e1052]: 오늘 20:30 까지
+                        - img [ref=e1053]
+                    - generic [ref=e1055]: 구매 가능
+                  - generic [ref=e1056]:
+                    - generic [ref=e1057]: "서비스 :"
+                    - text: ABCDior 맞춤 서비스
+              - listitem [ref=e1058]:
+                - separator [ref=e1059]
+                - generic [ref=e1061]:
+                  - generic [ref=e1062]:
+                    - heading "신세계 강남점 남성" [level=3] [ref=e1063]
+                    - generic [ref=e1065]:
+                      - generic [ref=e1066]: 신반포로 176
+                      - generic [ref=e1067]: 신세계백화점 강남점 6층
+                      - generic [ref=e1068]: 서울
+                      - generic [ref=e1070]: +82 02-3479-1738
+                    - 'button "오픈 : 오늘 20:30 까지" [ref=e1072] [cursor=pointer]':
+                      - generic [ref=e1073]: "오픈 :"
+                      - generic [ref=e1074]: 오늘 20:30 까지
+                      - img [ref=e1075]
+                  - generic [ref=e1077]: 재고 소량 보유
+      - paragraph [ref=e1078]: 부티크에서 보유 중인 재고가 수시로 변동하므로, 해당 품목의 구매 가능 여부 역시 달라질 수 있습니다. “재고 소량 보유”라는 문구는 해당 품목이 현재 부티크에서 적은 수량만 판매 가능하다는 것을 나타냅니다. 제품, 재고 확인, 방문예약은 맞춤 상담으로 안내 드립니다. +82 2 3280 0104

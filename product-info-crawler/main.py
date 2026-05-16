@@ -32,7 +32,7 @@ STORAGE_TARGET_GOOGLE_SHEETS = "google_sheets"
 STORAGE_TARGET_EXCEL = "excel"
 
 # 재고 확인 API가 구현된 브랜드 목록 — 새 브랜드 추가 시 여기에 등록
-STOCK_CHECK_SUPPORTED_BRANDS = {"lv"}
+STOCK_CHECK_SUPPORTED_BRANDS = {"lv", "dior"}
 
 
 # ── 상품 수집 ────────────────────────────────────────────────────────────────
@@ -275,12 +275,21 @@ def run_inventory_check(
     selected_sheets: list[str],
     delay_sec: float,
     config: dict,
+    brand_id: str,
 ) -> None:
     from openpyxl import load_workbook
-    from utils.lv_stock_api import fetch_stores_with_stock_via_driver
-    from selenium.webdriver.support.ui import WebDriverWait
-    from selenium.webdriver.support import expected_conditions as EC
-    from selenium.webdriver.common.by import By
+
+    if brand_id == "lv":
+        from utils.lv_stock_api import fetch_stores_with_stock_via_driver
+        needs_browser = True
+        warmup_url = "https://kr.louisvuitton.com/kor-kr/homepage"
+    elif brand_id == "dior":
+        from utils.dior_stock_api import fetch_stores_with_stock_via_driver
+        needs_browser = False
+        warmup_url = None
+    else:
+        st.error(f"재고 확인이 지원되지 않는 브랜드입니다: {brand_id}")
+        return
 
     try:
         workbook = load_workbook(excel_path)
@@ -293,39 +302,44 @@ def run_inventory_check(
         if sheet_name not in workbook.sheetnames:
             continue
         for row in workbook[sheet_name].iter_rows(min_row=2):
-            sku = str(row[2].value or "").strip()
-            if sku:
-                tasks.append((row, sku))
+            reference = str(row[2].value or "").strip()
+            if reference:
+                tasks.append((row, reference))
 
     if not tasks:
-        st.warning("선택한 시트에 레퍼런스(SKU)가 있는 상품이 없습니다.")
+        st.warning("선택한 시트에 레퍼런스가 있는 상품이 없습니다.")
         return
 
     total = len(tasks)
-    progress_bar = st.progress(0.0, text="브라우저 세션 초기화 중...")
+    init_text = "브라우저 세션 초기화 중..." if needs_browser else "초기화 중..."
+    progress_bar = st.progress(0.0, text=init_text)
     status = st.empty()
 
     driver = None
     try:
-        driver = build_driver(config)
+        if needs_browser:
+            from selenium.webdriver.support.ui import WebDriverWait
+            from selenium.webdriver.support import expected_conditions as EC
+            from selenium.webdriver.common.by import By
 
-        # LV 도메인 접속 — Akamai 쿠키(_abck) 획득
-        driver.get("https://kr.louisvuitton.com/kor-kr/homepage")
-        WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
-        time.sleep(random.uniform(4, 6))
+            driver = build_driver(config)
+            driver.get(warmup_url)
+            WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+            time.sleep(random.uniform(4, 6))
 
         success_count = 0
         fail_count = 0
 
-        for i, (row, sku) in enumerate(tasks):
+        for i, (row, reference) in enumerate(tasks):
             category = str(row[5].value or "")
-            status.caption(f"{category} — {sku} ({i + 1}/{total})")
+            status.caption(f"{category} — {reference} ({i + 1}/{total})")
 
             try:
-                stores = fetch_stores_with_stock_via_driver(driver, sku)
-                row[9].value = ", ".join(stores)
+                stores = fetch_stores_with_stock_via_driver(driver, reference)
+                row[10].value = ", ".join(stores)
                 success_count += 1
-            except Exception:
+            except Exception as exc:
+                row[10].value = f"[오류] {exc}"
                 fail_count += 1
 
             progress_bar.progress((i + 1) / total, text=f"{i + 1}/{total} 처리 중")
@@ -475,7 +489,7 @@ def _inventory_mode_ui(brand_summaries: list) -> None:
         return
 
     if st.button("재고 확인 시작", type="primary", disabled=not selected_sheets):
-        run_inventory_check(excel_path, selected_sheets, delay_sec, config)
+        run_inventory_check(excel_path, selected_sheets, delay_sec, config, selected_brand.scraper_key)
 
 
 def main() -> None:

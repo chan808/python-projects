@@ -1,0 +1,321 @@
+# python -m pip install requests openpyxl
+import csv
+import os
+import requests
+import json
+import openpyxl as xl
+import time
+import re
+
+class Common:
+    def __init__(self):
+        pass
+
+    def chkFile(self, path):
+        return os.path.isfile(path)
+
+class ProductGet:
+    def __init__(self):
+        pass
+
+    def readToCSV(self, csvFile):
+        csvData = []
+
+        with open(csvFile, 'r', encoding='utf-8', newline='') as CSV:
+            read = csv.reader(CSV)
+            # header = next(read)
+
+            for row in read:
+                csvData.append(row[0])
+
+        return csvData
+    
+class StoreQueryAPI:
+    def __init__(self):
+        self.commonURL = 'https://api.louisvuitton.com/eco-eu/search-merch-eapi/v1/kor-kr/stores/query'
+
+        self.commonCookie = {}
+
+        self.commonHeader = {
+            'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36',
+            'Accept': 'application/json, text/plain, */*',
+            'Accept-Language': 'ko-KR,ko;q=0.9',
+            'client_id': '607e3016889f431fb8020693311016c9',
+            'client_secret': '60bbcdcD722D411B88cBb72C8246a22F',
+            'Content-Type': 'application/json',
+            'Origin': 'https://kr.louisvuitton.com',
+        }
+
+        self.commonData = {
+            'country': 'KR',
+            'latitudeCenter': '38.6',
+            'longitudeCenter': '126.9',
+            'latitudeA': '37.7',
+            'longitudeA': '124.6',
+            'latitudeB': '33.2',
+            'longitudeB': '129.6',
+            'query': 'kr'
+        }
+
+    def allStoresQuery(self):
+        allStoreList = []
+        seoulStoreList = []
+
+        queryData = {
+            'pageType': 'store_locator'
+        }
+
+        max_retry = 3
+        retry_delay = 5  # 초 단위
+        attempt = 0
+        queryResponse = None
+
+        while attempt < max_retry:
+            queryResponse = requests.post(
+                url = self.commonURL,
+                cookies = self.commonCookie,
+                headers = self.commonHeader,
+                json = self.commonData | queryData
+            )
+            if queryResponse.status_code == 200:
+                break
+            elif queryResponse.status_code in [500, 504]:
+                print(f'⚠️ {queryResponse.status_code} Gateway Timeout in allStoresQuery - {retry_delay}초 후 재시도 ({attempt+1}/{max_retry})')
+                time.sleep(retry_delay)
+                attempt += 1
+            else:
+                print(f'❌ Unhandled status code in allStoresQuery: {queryResponse.status_code}')
+                print(f'Response: {queryResponse.text}')
+                return [], [] # Return empty lists on unhandled error
+
+        if queryResponse is None or queryResponse.status_code != 200:
+            print("❌ allStoresQuery failed after retries.")
+            return [], []
+
+        # print(f'{queryResponse.text}') #### TEST PRINT ####
+        queryResponseDict = json.loads(queryResponse.text)
+        # print(queryResponseDict) #### TEST PRINT ####
+
+        if 'hits' not in queryResponseDict:
+            print("Error: 'hits' key not found in API response for allStoresQuery.")
+            print("Response text:", queryResponse.text)
+            return [], []
+
+        for hits in queryResponseDict['hits']:
+            allStoreList.append([f'{hits["name"]}', hits["geo"]["latitude"], hits["geo"]["longitude"]])
+        
+        allStoreList = sorted(allStoreList, key=lambda x : (x[1], -x[2]), reverse=True)
+
+        for c in allStoreList:
+            if c[1] >= 37.45 and c[2] <= 127.18:
+                seoulStoreList.append(c)
+
+        return allStoreList, seoulStoreList
+
+    def prdStoresQuery(self, num, sku):
+        num += 1
+        storeAvailList = []
+        storeAvailList.append([])
+        storeAvailList[0].append(num)
+        storeAvailList[0].append(sku)
+        storeAvailList[0].append([])
+
+        queryData = {
+            'flagShip': False,
+            'clickAndCollect': False,
+            'skuId' : sku,
+            'pageType': 'productsheet'
+        }
+
+        queryResponse = requests.post(
+            url = self.commonURL,
+            cookies = self.commonCookie,
+            headers = self.commonHeader,
+            json = self.commonData | queryData
+        )
+
+        max_retry = 3
+        retry_delay = 5  # 초 단위
+        attempt = 0
+
+        while attempt < max_retry:
+            queryResponse = requests.post(
+                url = self.commonURL,
+                cookies = self.commonCookie,
+                headers = self.commonHeader,
+                json = self.commonData | queryData
+            )
+            # print(f'[SKU {sku}] 응답 상태 코드: {queryResponse.status_code}')
+
+            if queryResponse.status_code == 200:
+                break
+            elif queryResponse.status_code == 500:
+                print(f'⚠️ 500 Gateway Timeout 발생 - {retry_delay}초 후 재시도 ({attempt+1}/{max_retry})')
+                time.sleep(retry_delay)
+                attempt += 1
+            elif queryResponse.status_code == 504:
+                print(f'⚠️ 504 Gateway Timeout 발생 - {retry_delay}초 후 재시도 ({attempt+1}/{max_retry})')
+                time.sleep(retry_delay)
+                attempt += 1
+            else:
+                print(f'❌ 처리 불가 상태 코드: {queryResponse.status_code}')
+                return storeAvailList  # 실패한 경우라도 형식 유지해서 반환
+
+        # 반복문 탈출 후 처리
+        try:
+            storeList = json.loads(queryResponse.text)
+        except json.JSONDecodeError as e:
+            print(f'❌ JSON 파싱 오류: {e}')
+            return storeAvailList
+
+        for h in storeList['hits']:
+            #print(f'{n2+1}: ' + h.get('name'), end=': ')
+            for t in h['additionalProperty']:
+                if t['name'] == 'stockAvailability':
+                    if t['value'] == 'true':
+                        pass
+                        #print(n1, h.get('name'), f'O', end=', ')
+                        storeAvailList[0][2].append([h.get('name'), f'O'])
+                    elif t['value'] == 'false':
+                        pass
+                        #print(n1, h.get('name'), f'X', end=', ')
+                        storeAvailList[0][2].append([h.get('name'), f'X'])
+                    else:
+                        pass
+                        #print(n1, h.get('name'), f'?', end=', ')
+                        storeAvailList[0][2].append([h.get('name'), f'?'])
+
+        #for n1 in range(len(storeAvailList[0])):
+        #    for n2 in range(len(storeAvailList[0][2])):
+        #        print(f'{storeAvailList[0][2][n2][0]}', end=', ')
+        #        print(f'{storeAvailList[0][2][n2][1]}')
+
+        return storeAvailList
+
+class ExportExcel:
+    def __init__(self, filepath, timestamp):
+        self.timestamp = timestamp
+        self.wb = xl.Workbook()
+        self.filepath = f'{filepath}_{self.timestamp}.xlsx'
+        self.ws1 = self.wb[self.wb.sheetnames[0]]
+        self.ws1.title = '전국'
+        self.ws1.append(['순번', 'SKU'])
+        self.wb.save(f'{self.filepath}')
+        self.wb.close()
+
+    def allStoreQueryToExcel(self, allStoreList):
+        wb = xl.load_workbook(self.filepath)
+        ws1 = wb[self.ws1.title]
+
+        for index, k in enumerate(allStoreList):
+            storeName = k[0]
+            ws1.cell(1, index + 3, storeName)
+
+        wb.save(self.filepath)
+        wb.close()
+
+    def prdStoresQueryToExcel(self, rows, prdStoreList):
+        wb = xl.load_workbook(self.filepath)
+        ws1 = wb[self.ws1.title]
+
+        #print(f'{prdStoreList[0][2]}')
+        for cols, k in enumerate(prdStoreList[0][2]):
+            ws1.cell(rows + 2, 1, prdStoreList[0][0])
+            ws1.cell(rows + 2, 2, prdStoreList[0][1])
+
+            #print(prdStoreList[0][2])
+
+            for a, b in enumerate(prdStoreList[0][2]):
+                #print(f'{rows, prdStoreList[0][2][cols][0]}')
+                if ws1.cell(1, a + 3).value == prdStoreList[0][2][cols][0]:
+                    ws1.cell(rows + 2, a + 3, prdStoreList[0][2][cols][1])
+                    #print(rows, a)
+            #print(prdStoreList[0][2][cols][1])
+            #print(rows, cols)
+            #print(k)
+        #ws1.cell(2, 2, prdStoreList[0][1][0])
+
+        #self.prdStoreList = prdStoreList
+        #for n1, x1 in enumerate(prdStoreList):
+            #ws.cell(n1 + 2, 1, x1[0])
+            #ws.cell(n1 + 2, 2, x1[1])
+            #for n2, x2 in enumerate(x1[1]):
+                #for n3, x3 in enumerate(x2):
+            #print(f'{x1}')
+                #ws.cell(n1 + 2, 2, x2[1])
+
+        wb.save(self.filepath)
+        wb.close()
+
+    def TitleChange(self):
+        wb = xl.load_workbook(self.filepath)
+        ws1 = wb[self.ws1.title]
+
+        cols = 3
+        
+        #print(ws1.cell(1, 3).value)
+        for i in range (ws1.max_column):
+            if i >= (cols - 1):
+                ws1.cell(1, i + 1, re.findall(r'^루이\s비통\s(.*)', ws1.cell(1, i + 1).value)[0])
+
+        wb.save(self.filepath)
+        wb.close()
+
+    def CopySheet(self, seoulStoreList):
+        wb = xl.load_workbook(self.filepath)
+        ws1 = wb[self.ws1.title]
+
+        cols = 3
+
+        ws2 = wb.copy_worksheet(ws1)
+        ws2.title = '서울'
+        wb.move_sheet(ws2, -1)
+
+        for i in range (ws2.max_column):
+            if i >= (cols - 1):
+                for s in seoulStoreList:
+                    if ws2.cell(1, i + 1).value == s[0]:
+                        print(i)
+                
+
+
+        #ws2.delete_cols()
+
+        wb.save(self.filepath)
+        wb.close()
+
+def main():
+    c = Common()
+    csvFile = f'lv_check_product_inventory_multiple.csv'
+    path = f'./{csvFile}'
+
+    if c.chkFile(path) == False:
+        print(f'"{csvFile}" 파일이 존재하지 않습니다.')
+        exit()
+
+    p = ProductGet()
+    prdSKU = p.readToCSV(csvFile)
+
+    try:
+        filepath = 'LOUIS_VUITTON'
+        timestamp = int(time.time())
+
+        a = StoreQueryAPI()
+        r = ExportExcel(filepath, timestamp)
+
+        allStoreList, seoulStoreList = a.allStoresQuery()
+        r.allStoreQueryToExcel(allStoreList)
+
+        for num, sku in enumerate(prdSKU):
+            print(f'{num + 1}: {sku}')
+            prdStoreList = a.prdStoresQuery(num, sku)
+            r.prdStoresQueryToExcel(num, prdStoreList)
+            # print(prdStoreList)
+            time.sleep(3)
+
+    except KeyboardInterrupt:
+        exit(0)
+
+
+if __name__ == '__main__':
+    main()

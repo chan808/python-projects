@@ -43,7 +43,10 @@ class GucciScraper(BaseScraper):
 | 메서드 | 오버라이드 시점 |
 |---|---|
 | `extract_products_from_html()` | 필수. 카테고리 목록 파싱 |
-| `_parse_detail_from_next_data()` | __NEXT_DATA__ 구조가 브랜드마다 다를 때 |
+| `_parse_detail_from_next_data()` | `__NEXT_DATA__` 구조가 브랜드마다 다를 때. Vue/Nuxt 앱이면 `return {}` |
+| `_fill_from_selectors()` | CSS 셀렉터로 상세 필드 추출 로직이 브랜드별로 다를 때 |
+| `_wait_for_detail_content()` | 상세 페이지 SPA 렌더링 완료 시점 감지가 필요할 때 (기본: `pass`) |
 | `_before_navigate()` | 페이지 이동 전 추가 대기/처리 필요 시 |
 | `_detail_wait_range()` | 상세 페이지 로딩 대기 시간 조정 |
+| `parse_detail()` | 상세 수집 후 외부 API 추가 호출 필요 시 (예: LV 재고 API) |
 | `parse_category()` | 페이지네이션 방식 등 플로우 자체가 다를 때 |

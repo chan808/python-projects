@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable, Dict, List, Optional, Type
@@ -48,15 +49,20 @@ class UploadService:
                 self.logger.warning("이미지 폴더 없음, 이미지 없이 진행 (%s): %s", product.product_code, exc)
                 product_images = ProductImages(directory=Path(), files=[])
 
-            for site in sites:
-                if on_progress:
-                    on_progress(done, total, product.product_code, site)
-                site_price = self.pricing_service.calculate(site, product.price)
-                product_for_site = product.model_copy(update={"price": site_price})
-                result = uploaders[site].run(product_for_site, product_images)
-                self._write_result(result)
-                results.append(result)
-                done += 1
+            def _run_site(site: str, prod=product, imgs=product_images) -> UploadResult:
+                site_price = self.pricing_service.calculate(site, prod.price)
+                product_for_site = prod.model_copy(update={"price": site_price, "original_price": prod.price})
+                return uploaders[site].run(product_for_site, imgs)
+
+            with ThreadPoolExecutor(max_workers=len(sites)) as executor:
+                futures = {executor.submit(_run_site, site): site for site in sites}
+                for future in as_completed(futures):
+                    result = future.result()
+                    self._write_result(result)
+                    results.append(result)
+                    done += 1
+                    if on_progress:
+                        on_progress(done, total, result.product_code, result.site)
 
         return results
 

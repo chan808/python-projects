@@ -27,7 +27,8 @@
       "Bash(Get-ChildItem \"C:\\\\Users\\\\freetime\\\\Desktop\\\\python-projects\\\\product-info-crawler\\\\tmp_debug\" -Recurse)",
       "Bash(Select-Object FullName, LastWriteTime)",
       "Bash(Sort-Object LastWriteTime -Descending)",
-      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\freetime\\\\Desktop\\\\python-projects\\\\product-info-crawler\\\\tmp_debug\" -Recurse -Force | ForEach-Object { $_.FullName })"
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\freetime\\\\Desktop\\\\python-projects\\\\product-info-crawler\\\\tmp_debug\" -Recurse -Force | ForEach-Object { $_.FullName })",
+      "mcp__playwright__browser_close"
     ]
   }
 }

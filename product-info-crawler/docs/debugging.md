@@ -25,10 +25,23 @@ JSON 구조:
   "detail": {
     "description": "...",
     "sizes": "...",
-    "image_urls": "..."
+    "colors": "...",
+    "material": "...",
+    "image_urls": "...",
+    "store_inventory": "..."
   }
 }
 ```
+
+## 상세 수집 예외 로그
+
+상세 페이지 수집 중 예외 발생 시 자동으로 기록된다.
+
+```
+tmp_debug/detail_errors.log
+```
+
+각 항목은 상품 URL + Python traceback으로 구성. diag 파일이 생성되지 않거나 특정 상품에서 계속 실패한다면 이 파일을 먼저 확인.
 
 ## 분석 스크립트
 
@@ -43,3 +56,5 @@ JSON 구조:
 | `RuntimeError: 상품을 찾지 못했습니다` | 셀렉터 불일치 또는 차단 | HTML 스냅샷에서 실제 구조 확인 |
 | `gspread.SpreadsheetNotFound` | Sheets 파일명 불일치 | `config.google_sheets.spreadsheet_name` 확인 |
 | `ConfigError: 서비스 계정 키 파일이 없습니다` | credentials 파일 누락 | `credentials/service_account.json` 확인 |
+| 상세 수집 후 색상/소재/설명 모두 빈값 | SPA 렌더링 전에 HTML 캡처됨 | `_wait_for_detail_content()` 오버라이드 확인, `detail_errors.log` 확인 |
+| LV 재고매장 빈값 | 실제 매장 재고 없음(정상) 또는 API 오류 | `store_inventory` 칸에 `[API_ERROR]` 접두사 있으면 오류, 없으면 정상 |

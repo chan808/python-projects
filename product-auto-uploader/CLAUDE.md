@@ -7,7 +7,8 @@
 
 - 브라우저 세션 저장 방식으로 비밀번호 불필요 (최초 1회 수동 로그인 후 재사용)
 - GUI(Tkinter) + CLI 둘 다 지원
-- 미리보기 모드(첫 상품만, 자동 제출 안 함) / 자동 제출 모드
+- 수동 모드(1개씩 폼 채운 뒤 브라우저에서 확인) / 자동 모드(순차 자동 제출)
+- 마지막 업로드 행 번호 자동 저장, 재시작 시 이어서 진행
 ---
 ## 로그인용 계정 정보
 - 나중에 변경할 비밀번호라서 일단 보안은 신경쓸 필요가 적음
@@ -30,6 +31,7 @@ PW : Qhdks1q2w#$
 - 트렌비는 다음 방식으로 실제 판매 등록 페이지에 접근 가능
 1. 다음 사이트에 접속 "https://partner.trenbe.com/v2/product"
 2. ID와 PW 입력 후 로그인
+3. "신규 상품 생성" 버튼 클릭
 
 
 
@@ -140,18 +142,38 @@ register_pic_root/
 
 ---
 
-## 현재 상태 (TODO)
+## 사이트별 구현 현황
 
-**3개 사이트 모두 selectors/*.json이 TODO 플레이스홀더 상태** → 실제 폼 셀렉터 입력 필요.
+### 머스트잇 (mustit) — 구현 완료
+- `app/uploaders/mustit.py` — base.py를 상속하되 `run()` 완전 오버라이드
+- add01 → add02 페이지 전환, 동의 모달 처리
+- 브랜드: JS DOM에서 `[id^="brand_list_"] span` 텍스트 매칭 후 클릭
+- 카테고리: `#flag_Women` 클릭 → 검색창 입력 → 첫 번째 결과 클릭
+- 색상/사이즈: 옵션 체크박스 활성화 후 텍스트 입력 (각 10자 제한)
+- 이미지: `input[type='file']` → `input#uploadfiles` 버튼 클릭
+- 자동 로그인: `input[name='id']`, `input[name='pw']`
 
-각 사이트별로 필요한 항목:
-1. 상품 등록 페이지 URL (`register_url`)
-2. 로그인 확인 CSS 셀렉터 (`login_check_selector`) — 로그인 후 보이는 요소
-3. 폼 필드 CSS 셀렉터: category, brand_name, product_code, product_name, price, color, material, size, description
-4. 이미지 업로드 `<input type="file">` 셀렉터
-5. 제출 버튼 셀렉터
+### 필웨이 (fillway) — 구현 완료 (테스트 필요)
+- `app/uploaders/fillway.py` — base.py를 상속하되 `run()` 완전 오버라이드
+- 약관: `#clauseTotal` 전체 동의 체크
+- 브랜드: `#brandAutoCompleteKeyword` 타입 → 자동완성 목록 첫 번째 클릭
+- 카테고리: `_CATEGORY_MAP`으로 키워드 매핑 → 라디오 버튼 클릭
+- 필드: `#proprietaryName`(상품명), `#sellingPrice`(가격), `input[name='model_name']`(레퍼런스), `textarea#g_intro`(설명)
+- 이미지: `input.photoFile` 첫 번째에 파일 세팅
+- 제출: `button#productRegisterSubmit`
+- 자동 로그인: `input[name='id']`, `input[name='passwd']` (passwd 주의)
 
-TODO 셀렉터가 있는 필드는 자동 스킵됨 (크래시 없음). 값이 None인 선택 필드도 자동 스킵.
+### 트렌비 (trenbe) — 미구현
+- `app/uploaders/trenbe.py` — 빈 클래스 상태
+- `selectors/trenbe.json` — TODO 플레이스홀더 상태
+- 등록 URL: `https://partner.trenbe.com/v2/product`
+
+---
+
+## 참고: selectors/*.json 역할
+
+머스트잇·필웨이처럼 `run()`을 완전 오버라이드한 업로더는 selectors JSON을 직접 참조하지 않음.
+base.py의 `_fill_fields`를 그대로 쓰는 업로더(트렌비 등)만 selectors JSON 필요.
 
 각 필드의 `action` 종류:
 - `fill`: 일반 텍스트 입력

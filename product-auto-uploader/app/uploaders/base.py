@@ -34,15 +34,13 @@ class PlaywrightUploader(BaseUploader):
 
     def run(self, product: ProductInput, product_images: ProductImages) -> UploadResult:
         started_at = datetime.now(timezone.utc)
-        screenshot_path = None
-        context = None
-        page = None
+        register_url = self._require_url(self.site_config.register_url)
 
-        try:
-            register_url = self._require_url(self.site_config.register_url)
-
-            with sync_playwright() as playwright:
-                context = self._launch_context(playwright)
+        with sync_playwright() as playwright:
+            context = self._launch_context(playwright)
+            page = None
+            screenshot_path = None
+            try:
                 context.set_default_navigation_timeout(self.config.browser.navigation_timeout_ms)
                 context.set_default_timeout(self.config.browser.action_timeout_ms)
 
@@ -70,22 +68,21 @@ class PlaywrightUploader(BaseUploader):
                     finished_at=datetime.now(timezone.utc),
                     message=message,
                 )
-        except Exception as exc:
-            self.logger.exception("%s uploader failed: %s", self.SITE, exc)
-            if page is not None:
-                screenshot_path = self._capture_screenshot(page, product.product_code)
-            return UploadResult(
-                site=self.SITE,
-                product_code=product.product_code,
-                success=False,
-                submit_mode=product.submit_mode,
-                started_at=started_at,
-                finished_at=datetime.now(timezone.utc),
-                message=str(exc),
-                screenshot_path=screenshot_path,
-            )
-        finally:
-            if context is not None:
+            except Exception as exc:
+                self.logger.exception("%s uploader failed: %s", self.SITE, exc)
+                if page is not None:
+                    screenshot_path = self._capture_screenshot(page, product.product_code)
+                return UploadResult(
+                    site=self.SITE,
+                    product_code=product.product_code,
+                    success=False,
+                    submit_mode=product.submit_mode,
+                    started_at=started_at,
+                    finished_at=datetime.now(timezone.utc),
+                    message=str(exc),
+                    screenshot_path=screenshot_path,
+                )
+            finally:
                 context.close()
 
     def prepare_login_session(self) -> str:
@@ -199,6 +196,17 @@ class PlaywrightUploader(BaseUploader):
         if not cleaned:
             raise ValueError(f"[{self.SITE}] 등록 URL이 설정되지 않았습니다.")
         return cleaned
+
+    def _build_description_text(self, product: ProductInput) -> str:
+        fields = [
+            ("상품명", product.product_name),
+            ("SKU", product.product_code),
+            ("색상", product.color),
+            ("소재", product.material),
+            ("사이즈", product.size),
+        ]
+        parts = [f"{label}: {value}" for label, value in fields if value and str(value).strip()]
+        return " / ".join(parts)
 
     def _require_selector(self, value: str) -> str:
         cleaned = value.strip()

@@ -11,6 +11,7 @@ from app.models import AppConfig, BrowserConfig, RuntimePaths, SiteConfig, SiteC
 APP_NAME = "ProductAutoUploader"
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SITES = ("mustit", "trenbe", "fillway")
+CREDENTIALS_PATH = PROJECT_ROOT / "credentials.json"
 
 DEFAULT_BROWSER_CONFIG = {
     "headless": False,
@@ -136,18 +137,18 @@ def save_user_settings(user_settings: Dict[str, Any]) -> Path:
 
 
 def load_credentials() -> Dict[str, Any]:
+    # 프로젝트 루트 credentials.json 우선, 없으면 APPDATA 폴백
+    if CREDENTIALS_PATH.exists():
+        return _read_json(CREDENTIALS_PATH)
     settings_dir, _, _ = get_app_directories()
-    path = settings_dir / "credentials.json"
-    if not path.exists():
-        return {}
-    return _read_json(path)
+    legacy_path = settings_dir / "credentials.json"
+    if legacy_path.exists():
+        return _read_json(legacy_path)
+    return {}
 
 
 def save_credentials(data: Dict[str, Any]) -> None:
-    settings_dir, _, _ = get_app_directories()
-    settings_dir.mkdir(parents=True, exist_ok=True)
-    path = settings_dir / "credentials.json"
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    CREDENTIALS_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def save_last_ui(ui_payload: Dict[str, Any]) -> Path:

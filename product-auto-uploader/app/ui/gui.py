@@ -393,7 +393,7 @@ class ProductAutoUploaderApp:
     def _on_upload_current(self) -> None:
         if self.is_busy or not self.products:
             return
-        self._run_background_task(lambda: self._upload_single_worker(self.current_index, auto=False))
+        self._run_background_task(lambda: self._upload_single_worker(self.current_index, submit_mode="preview"))
 
     def _on_auto_start(self) -> None:
         if self.is_busy or not self.products:
@@ -415,7 +415,7 @@ class ProductAutoUploaderApp:
         message = uploader.prepare_login_session()
         return f"[{SITE_LABELS[site]}] {message}"
 
-    def _upload_single_worker(self, index: int, auto: bool = False) -> str:
+    def _upload_single_worker(self, index: int, submit_mode: str = "preview") -> str:
         self._save_settings()
         excel_path = Path(self.excel_path_var.get().strip())
         if not excel_path.exists():
@@ -427,18 +427,18 @@ class ProductAutoUploaderApp:
 
         product = self.products[index]
         service = UploadService(self.config, self.logger)
-        results = service.run_batch([product], selected_sites, "submit")
+        results = service.run_batch([product], selected_sites, submit_mode)
 
         success = all(r.success for r in results)
-        if success:
+        if success and submit_mode == "submit":
             self._save_last_row(index)
 
         label = f"[{index + 1}/{len(self.products)}] {product.product_code}"
         if success:
-            return f"{label} 업로드 성공"
+            return f"{label} {'업로드 완료' if submit_mode == 'submit' else '미리보기 완료'}"
         else:
             failed_msgs = "; ".join(r.message for r in results if not r.success)
-            raise RuntimeError(f"{label} 업로드 실패: {failed_msgs}")
+            raise RuntimeError(f"{label} 실패: {failed_msgs}")
 
     def _auto_upload_worker(self) -> str:
         success_count = 0
@@ -452,7 +452,7 @@ class ProductAutoUploaderApp:
             self.event_queue.put(("progress", msg))
 
             try:
-                self._upload_single_worker(idx, auto=True)
+                self._upload_single_worker(idx, submit_mode="submit")
                 success_count += 1
             except Exception as exc:
                 fail_count += 1
@@ -498,12 +498,13 @@ class ProductAutoUploaderApp:
                 self._refresh_product_display()
             elif event_type == "success":
                 self.status_var.set("완료")
-                if not self.auto_mode_var.get():
-                    # 수동 모드: 성공 후 자동으로 다음 상품으로 이동
+                self._append_log(payload)
+                if self.auto_mode_var.get():
+                    messagebox.showinfo("완료", payload)
+                else:
                     if self.current_index < len(self.products) - 1:
                         self.current_index += 1
                         self._refresh_product_display()
-                messagebox.showinfo("완료", payload)
             elif event_type == "error":
                 self.status_var.set("실패")
                 messagebox.showerror("오류", payload)

@@ -76,8 +76,8 @@ class LvScraper(BaseScraper):
             try:
                 stores = fetch_stores_with_stock_via_driver(self.driver, sku)
                 result["store_inventory"] = ", ".join(stores)
-            except Exception:
-                pass
+            except Exception as e:
+                result["store_inventory"] = f"[API_ERROR] {e}"
         return result
 
     def _parse_detail_from_next_data(self, html: str) -> dict:
